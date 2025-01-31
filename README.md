@@ -17,6 +17,9 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Developer Center](https://nimiq.com/developers/): The official Nimiq developer center for documentation, tutorials, and more. [Source code](https://github.com/nimiq/developer-center)
 - [Validators Dashboard & API](https://validators-api-mainnet.nuxt.dev/): A dashboard and API for Nimiq validators. [Source code](https://github.com/nimiq/validators-api)
 
+
+
+
 ## Libraries and utilities
 
 - [Nimiq Utils](https://github.com/nimiq/utils): A collection of utilities for Nimiq.
@@ -29,11 +32,13 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Albatross Node in Docker](https://hub.docker.com/r/maestroi/nimiq-albatross): A Docker image for Nimiq Albatross node.
 - [Nimiq Nuxt Module](https://github.com/blouflashdb/nimiq-nuxt-module): A Nuxt 3 module for Nimiq.
 - [Nimiq Playground](https://nimiq-playground.pages.dev/): An online IDE for Nimiq. [Source code](https://github.com/onmax/nimiq-playground)
+- [Telegram bot for staking notifications](https://github.com/Albermonte/validator-election-bot/blob/main/bot.ts): Sends notifications about validator elections to a Telegram chat.
 
-## Games
+## Community Apps
 
 - [Nimtris](https://nimtris.com/): A Nimiq-themed version of the classic game Tris.
 - [Nimiq Sunset Cybersapce](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1): Play and Earn NIM tokens.
+- [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot): Sends tips to users in a chat.
 
 ## Styles & User Interfaces
 
