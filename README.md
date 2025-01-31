@@ -22,7 +22,7 @@ Please feel free to contribute by adding missing resources to this list.
 
 ## Libraries and utilities
 
-- [Nimiq Utils](https://github.com/nimiq/utils): A collection of utilities for Nimiq.
+- [Nimiq Utils](https://github.com/nimiq/nimiq-utils): A collection of utilities in JS for Nimiq.
 - [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts): A fully typed Nimiq RPC client for TypeScript. 
 - [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc): JSON-RPC Client for the Nimiq Albatross Blockchain. 
 - [Nimiq Core Rust](https://github.com/nimiq/core-rs-albatross): Rust implementation of the Albatross protocol .
