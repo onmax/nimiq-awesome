@@ -36,7 +36,7 @@ Please feel free to contribute by adding missing resources to this list.
 
 ## Community Apps
 
-- [Nimtris](https://nimtris.com/): A Nimiq-themed version of the classic game Tris.
+- [Nimtris](https://nimtris.com/): A fun online Tetris-like game where you can earn NIM. [Source code](https://github.com/Eligioo/nimtris).
 - [Nimiq Sunset Cybersapce](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1): Play and Earn NIM tokens.
 - [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot): Sends tips to users in a chat.
 
