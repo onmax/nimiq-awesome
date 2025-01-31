@@ -39,9 +39,9 @@ Please feel free to contribute by adding missing resources to this list.
 
 - [Nimiq Styles](https://nimiq.github.io/nimiq-style/): The official Nimiq style rules and guidelines.
 - [Nimiq CSS](https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-css): A modern and more robust UI library for Nimiq. Implement Nimiq's design language in your own projects with CSS or UnoCSS.
-- [Nimiq Icons](https://www.nimiq.com/developers/build/ui/design/icons): An iconify icon set for Nimiq. Use it in your own projects with iconify solutions in any framework.
+- [Nimiq Icons](https://www.nimiq.com/developers/build/ui/design/icons): An iconify icon set for Nimiq. Use it in your own projects with iconify solutions in any framework. [Source code](https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-icons)
 - [Nimiq Identicons](https://github.com/nimiq/identicons): A JS library for generating identicons from Nimiq addresses.
-- [Nimiq Identicons ESM](https://github.com/onmax/identicons-esm): A fork of the Nimiq Identicons library with ESM, different environments support and more.
+- [Nimiq Identicons ESM](https://onmax.github.io/nimiq-identicons/): A fork of the Nimiq Identicons library with ESM, different environments support and more. [Source code](https://github.com/onmax/nimiq-identicons)
 
 
 ## Explorers
