@@ -17,15 +17,13 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Developer Center](https://nimiq.com/developers/): The official Nimiq developer center for documentation, tutorials, and more. [Source code](https://github.com/nimiq/developer-center)
 - [Validators Dashboard & API](https://validators-api-mainnet.nuxt.dev/): A dashboard and API for Nimiq validators. [Source code](https://github.com/nimiq/validators-api)
 
-
-
-
 ## Libraries and utilities
 
-- [Nimiq Utils](https://github.com/nimiq/nimiq-utils): A collection of utilities in JS for Nimiq.
+- [Nimiq Core Rust](https://github.com/nimiq/core-rs-albatross): Rust implementation of the Albatross protocol .
+- [Nimiq Gleam](https://github.com/sisou/nimiq_gleam): Various modules and helpers for working with Nimiq primitives in Gleam.
 - [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts): A fully typed Nimiq RPC client for TypeScript. 
 - [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc): JSON-RPC Client for the Nimiq Albatross Blockchain. 
-- [Nimiq Core Rust](https://github.com/nimiq/core-rs-albatross): Rust implementation of the Albatross protocol .
+- [Nimiq Utils](https://github.com/nimiq/nimiq-utils): A collection of utilities in JS for Nimiq.
 - [arpl](https://github.com/sisou/arpl): Straight-forward remote management for Nimiq Albatross nodes.
 - [Postgres Chain Mirror](https://github.com/sisou/bun-drizzle-chain-mirror): Nimiq chain-to-database mirror with Bun & Drizzle. 
 - [Nim log](https://nimlog.paberr.net/history.html): Nimiq blockchain log explorer.
