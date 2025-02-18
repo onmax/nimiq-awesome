@@ -13,7 +13,7 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Keyguard](https://keyguard.nimiq.com/): The official app that holds the privates keys for Nimiq users. [Source code](https://github.com/nimiq/keyguard) 
 - [Nimiq Pay](https://nimiq.com/nimiq-pay): The official app that allows users to send and receive Nimiq.
 - [Nimiq Crypto Map](https://nimiq.com/crypto-map): A real-world map of bussinesses and locations that accept Nimiq and other cryptocurrencies. [Source code](https://github.com/nimiq/crypto-map)
-- [Nimiq Staking Calculator](https://nimiq.com/staking-calculator): The official app that allows users to calculate the staking rewards for their Nimiq.
+- [Nimiq Staking Calculator](https://nimiq.com/staking-calculator): The official app that allows users to calculate the staking rewards for their NIM.
 - [Validators Dashboard & API](https://validators-api-mainnet.nuxt.dev/): A dashboard and API for Nimiq validators. [Source code](https://github.com/nimiq/validators-api)
 
 ## Documentation
