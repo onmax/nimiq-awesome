@@ -14,9 +14,13 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Pay](https://nimiq.com/nimiq-pay): The official app that allows users to send and receive Nimiq.
 - [Nimiq Crypto Map](https://nimiq.com/crypto-map): A real-world map of bussinesses and locations that accept Nimiq and other cryptocurrencies. [Source code](https://github.com/nimiq/crypto-map)
 - [Nimiq Staking Calculator](https://nimiq.com/staking-calculator): The official app that allows users to calculate the staking rewards for their Nimiq.
-- [Nimiq Developer Center](https://nimiq.com/developers/): The official Nimiq developer center for documentation, tutorials, and more. [Source code](https://github.com/nimiq/developer-center)
 - [Validators Dashboard & API](https://validators-api-mainnet.nuxt.dev/): A dashboard and API for Nimiq validators. [Source code](https://github.com/nimiq/validators-api)
 
+## Documentation
+
+- [Nimiq Developer Center](https://nimiq.com/developers/): The official Nimiq developer center for documentation, tutorials, and more. [Source code](https://github.com/nimiq/developer-center)
+- [NimiqHub Docs](https://www.nimiqhub.com/docs/rpc): Documentation page made by the community
+- 
 ## Libraries and utilities
 
 - [Nimiq Core Rust](https://github.com/nimiq/core-rs-albatross): Rust implementation of the Albatross protocol .
@@ -45,7 +49,6 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Icons](https://www.nimiq.com/developers/build/ui/design/icons): An iconify icon set for Nimiq. Use it in your own projects with iconify solutions in any framework. [Source code](https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-icons)
 - [Nimiq Identicons](https://github.com/nimiq/identicons): A JS library for generating identicons from Nimiq addresses.
 - [Nimiq Identicons ESM](https://onmax.github.io/nimiq-identicons/): A fork of the Nimiq Identicons library with ESM, different environments support and more. [Source code](https://github.com/onmax/nimiq-identicons)
-
 
 ## Explorers
 
