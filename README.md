@@ -19,7 +19,7 @@ Please feel free to contribute by adding missing resources to this list.
 ## Documentation
 
 - [Nimiq Developer Center](https://nimiq.com/developers/): The official Nimiq developer center for documentation, tutorials, and more. [Source code](https://github.com/nimiq/developer-center)
-- [NimiqHub Docs](https://www.nimiqhub.com/docs/rpc): RPC documentation page made by the community
+- [NimiqHub RPC Docs](https://www.nimiqhub.com/docs/rpc): RPC documentation page made by the community
 - 
 ## Libraries and utilities
 
