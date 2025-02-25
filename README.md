@@ -35,6 +35,8 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Nuxt Module](https://github.com/blouflashdb/nimiq-nuxt-module): A Nuxt 3 module for Nimiq.
 - [Nimiq Playground](https://nimiq-playground.pages.dev/): An online IDE for Nimiq. [Source code](https://github.com/onmax/nimiq-playground)
 - [Telegram bot for staking notifications](https://github.com/Albermonte/validator-election-bot): Sends notifications about validator elections to a Telegram chat.
+- [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc)
+
 
 ## Community Apps
 
