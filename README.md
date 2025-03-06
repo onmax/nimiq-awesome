@@ -23,7 +23,7 @@ Please feel free to contribute by adding missing resources to this list.
 ## Documentation
 
 - [Nimiq Developer Center](https://nimiq.com/developers/) (@Nimiq): Official guide with tutorials and technical references. [Source code](https://github.com/nimiq/developer-center)
-- [NimiqHub RPC Docs](https://www.nimiqhub.com/docs/rpc) (@Community): Documentation for the Nimiq JSON-RPC interface.
+- [NimiqHub RPC Docs](https://www.nimiqhub.com/docs/rpc) (@DovAzencot): Documentation for the Nimiq JSON-RPC interface.
 - [Nimiq Demo Project](https://github.com/nimiq/nimiq-demo) (@Nimiq): Simple project demonstrating wallet and transaction functions. [Source code](https://github.com/nimiq/nimiq-demo)
 
 ---
@@ -41,20 +41,14 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Albatross Node in Docker](https://hub.docker.com/r/maestroi/nimiq-albatross) (@maestroi): Docker image for running a Nimiq full/validator node.
 - [Nimiq Nuxt Module](https://github.com/blouflashdb/nimiq-nuxt-module) (@blouflashdb): Nuxt 3 module for integrating a Nimiq client in Vue apps. [Source code](https://github.com/blouflashdb/nimiq-nuxt-module)
 - [Nimiq Playground](https://nimiq-playground.pages.dev/) (@onmax): Online IDE for testing and experimenting with Nimiq code. [Source code](https://github.com/onmax/nimiq-playground)
-- [Telegram Bot for Staking Notifications](https://github.com/Albermonte/validator-election-bot) (@Albermonte): Sends alerts about validator elections on Telegram. [Source code](https://github.com/Albermonte/validator-election-bot)
+- [Telegram Bot for Staking Notifications](https://github.com/Albermonte/validator-election-bot) (@albermonte): Sends alerts about validator elections on Telegram. [Source code](https://github.com/Albermonte/validator-election-bot)
 - [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc) (@sisou): Gleam library for Nimiq JSON-RPC interaction. [Source code](https://github.com/sisou/gleam-nimiq-rpc)
-
----
-
-## Node Management & Monitoring
-
-- [NimiqHub Blockchain Explorer](https://nimiqhub.com/) (@Community): Explorer showing real-time blocks, transactions, and validator stats.
 
 ---
 
 ## Developer Tools
 
-- [Nimiq Cashlink Bulk Generator](https://github.com/community/nimiq-cashlink-bulk) (@Community): Tool to create and manage NIM cashlinks in bulk. [Source code](https://github.com/community/nimiq-cashlink-bulk)
+- [Nimiq Cashlink Bulk Generator](https://github.com/nimiq/cashlink-generator) (@Nimiq): Tool to create and manage NIM cashlinks in bulk. [Source code](https://github.com/nimiq/cashlink-generator/tree/master)
 
 ---
 
@@ -72,15 +66,15 @@ Please feel free to contribute by adding missing resources to this list.
 
 - [Nimiq Watch](https://nimiq.watch/) (@Nimiq): Official blockchain explorer for blocks, transactions, and addresses.
 - [Nimiq Scan](https://nimiqscan.com/) (@Community): Community explorer for detailed block and transaction info.
-- [NimiqHub Explorer](https://nimiqhub.com/) (@Community): Explorer feature on NimiqHub for browsing blockchain data.
+- [NimiqHub Explorer](https://nimiqhub.com/) (@DovAzencot): Explorer feature on NimiqHub for browsing blockchain data.
 
 ---
 
 ## Community Apps
 
 - [Nimtris](https://nimtris.com/) (@Eligioo): Tetris-like game where players earn NIM tokens. [Source code](https://github.com/Eligioo/nimtris)
-- [Nimiq Sunset Cybersapce](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1) (@Community): Mobile app to play and earn NIM tokens.
-- [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot) (@Community): Bot that sends NIM tips in Telegram chats.
+- [Nimiq Sunset Cybersapce](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1) (@albermonte): Mobile app to play and earn NIM tokens.
+- [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot) (@albermonte): Bot that sends NIM tips in Telegram chats.
 
 ---
 
