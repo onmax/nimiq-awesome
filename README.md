@@ -32,8 +32,6 @@ Please feel free to contribute by adding missing resources to this list.
 
 - [Nimiq Core Rust](https://github.com/nimiq/core-rs-albatross) (@Nimiq): Rust implementation of Nimiq consensus (Albatross/PoS). [Source code](https://github.com/nimiq/core-rs-albatross)
 - [Nimiq Gleam](https://github.com/sisou/nimiq_gleam) (@sisou): Modules and helpers for Nimiq in Gleam. [Source code](https://github.com/sisou/nimiq_gleam)
-- [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts) (@onmax): Fully typed RPC client for Nimiq in TypeScript. [Source code](https://github.com/onmax/albatross-rpc-client-ts)
-- [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc) (@blouflash): JSON-RPC client for Nimiq blockchain. [Source code](https://jsr.io/@blouflash/nimiq-rpc)
 - [Nimiq Utils](https://github.com/nimiq/nimiq-utils) (@Nimiq): Collection of JS utilities for Nimiq. [Source code](https://github.com/nimiq/nimiq-utils)
 - [arpl](https://github.com/sisou/arpl) (@sisou): CLI tool for remote management of Nimiq nodes. [Source code](https://github.com/sisou/arpl)
 - [Postgres Chain Mirror](https://github.com/sisou/bun-drizzle-chain-mirror) (@sisou): Mirrors Nimiq blockchain data into a PostgreSQL database. [Source code](https://github.com/sisou/bun-drizzle-chain-mirror)
@@ -42,9 +40,15 @@ Please feel free to contribute by adding missing resources to this list.
 - [Nimiq Nuxt Module](https://github.com/blouflashdb/nimiq-nuxt-module) (@blouflashdb): Nuxt 3 module for integrating a Nimiq client in Vue apps. [Source code](https://github.com/blouflashdb/nimiq-nuxt-module)
 - [Nimiq Playground](https://nimiq-playground.pages.dev/) (@onmax): Online IDE for testing and experimenting with Nimiq code. [Source code](https://github.com/onmax/nimiq-playground)
 - [Telegram Bot for Staking Notifications](https://github.com/Albermonte/validator-election-bot) (@albermonte): Sends alerts about validator elections on Telegram. [Source code](https://github.com/Albermonte/validator-election-bot)
-- [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc) (@sisou): Gleam library for Nimiq JSON-RPC interaction. [Source code](https://github.com/sisou/gleam-nimiq-rpc)
 
 ---
+
+## RPC
+
+- [Open RPC server](https://rpc.nimiqwatch.com/) (@sisou): A public JSON-RPC server to make initial developements easier.
+- [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc) (@sisou): Gleam library for Nimiq JSON-RPC interaction. [Source code](https://github.com/sisou/gleam-nimiq-rpc)
+- [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts) (@onmax): Fully typed RPC client for Nimiq in TypeScript. [Source code](https://github.com/onmax/albatross-rpc-client-ts)
+- [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc) (@blouflash): JSON-RPC client for Nimiq blockchain. [Source code](https://jsr.io/@blouflash/nimiq-rpc)
 
 ## Developer Tools
 
