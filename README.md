@@ -78,6 +78,7 @@ Please feel free to contribute by adding missing resources to this list.
 
 - [Nimtris](https://nimtris.com/) (@Eligioo): Tetris-like game where players earn NIM tokens. [Source code](https://github.com/Eligioo/nimtris)
 - [Nimiq Sunset Cybersapce](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1) (@albermonte): Mobile app to play and earn NIM tokens.
+- [Nimiq 2048](https://nimiq2048.com/): Join the numbers and get to the 2048 tile!
 - [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot) (@albermonte): Bot that sends NIM tips in Telegram chats.
 
 ---
