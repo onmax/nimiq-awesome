@@ -6,10 +6,10 @@ import { consola } from 'consola';
 
 // Use standard Node.js path for cross-platform compatibility
 const __dirname = dirname('.');
-const scriptDir = __dirname;
-const dataDir = resolve(scriptDir, 'data');
+const srcDir = resolve(__dirname, '../src');
+const dataDir = resolve(srcDir, 'data');
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json');
-const nimiqAppArchiveJson = resolve(dataDir, './archive/nimiq-apps.archive.json');
+const nimiqAppArchiveJson = resolve(dataDir, 'archive/nimiq-apps.archive.json');
 
 // Get git repository information
 async function getGitInfo() {
@@ -24,7 +24,7 @@ async function getGitInfo() {
   }
 }
 
-consola.info(`Running build script from ${scriptDir}`);
+consola.info(`Running build script from ${srcDir}`);
 
 type AppType = 'Insights' | 'E-commerce' | 'Games' | 'Faucet' | 'Promotion' | 'Miner' | 'Wallets' | 'Infrastructure' | 'Bots';
 
@@ -134,14 +134,106 @@ for (const app of sortedApps) {
 }
 
 // Write the markdown to apps.md file
-const markdownPath = resolve(__dirname, 'apps.md');
+const markdownPath = resolve(srcDir, 'apps.md');
 writeFileSync(markdownPath, markdown);
 consola.success(`Markdown file generated at ${markdownPath}`);
 
 // Create distribution version with GitHub raw URLs for assets
+// Resource Types
+type ResourceType = 'developer-tool' | 'validator' | 'documentation' | 'core' | 'utils' | 'node' | 'infrastructure' | 'rpc' | 'ui';
+
+interface Resource {
+  type: ResourceType;
+  name: string;
+  link: string;
+  source: string | null;
+  description: string;
+  author: string;
+}
+
+const ResourceTypeSchema = union([
+  literal('developer-tool'),
+  literal('validator'),
+  literal('documentation'),
+  literal('core'),
+  literal('utils'),
+  literal('node'),
+  literal('infrastructure'),
+  literal('rpc'),
+  literal('ui')
+]);
+
+const ResourceSchema = object({
+  type: ResourceTypeSchema,
+  name: string(),
+  link: string(),
+  source: nullable(string()),
+  description: string(),
+  author: string()
+});
+
+const ResourceArraySchema = array(ResourceSchema);
+
+// Resources order by importance
+const resourceTypeOrder = [
+  'developer-tool',
+  'documentation',
+  'core',
+  'rpc',
+  'ui',
+  'utils',
+  'validator',
+  'node',
+  'infrastructure'
+];
+
 async function main() {
   // Validate JSON and generate markdown first
-  // ...existing code until dist generation...
+  const nimiqResourcesJson = resolve(dataDir, 'nimiq-resources.json');
+  const resourcesJson = readFileSync(nimiqResourcesJson, 'utf-8');
+  const parsedResourcesJson = JSON.parse(resourcesJson) as Resource[];
+
+  // Validate resources JSON
+  const resourcesValidationResult = safeParse(ResourceArraySchema, parsedResourcesJson);
+  if (!resourcesValidationResult.success) {
+    consola.error('Resources JSON validation failed');
+    consola.error(resourcesValidationResult.issues);
+    process.exit(1);
+  } else {
+    consola.success('Resources JSON validation successful');
+  }
+
+  // Sort resources by type
+  const sortedResources = [...parsedResourcesJson].sort((a, b) => {
+    const indexA = resourceTypeOrder.indexOf(a.type);
+    const indexB = resourceTypeOrder.indexOf(b.type);
+    return indexA - indexB;
+  });
+
+  // Generate resources markdown
+  let resourcesMarkdown = "## Developer Resources\n";
+  let currentResourceType = '';
+
+  for (const resource of sortedResources) {
+    if (resource.type !== currentResourceType) {
+      currentResourceType = resource.type;
+      const formattedType = currentResourceType
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      resourcesMarkdown += `\n### ${formattedType}\n\n`;
+    }
+
+    const sourceLink = resource.source ? ` ([Source](${resource.source}))` : '';
+    resourcesMarkdown += `- [${resource.name}](${resource.link})${sourceLink} (${resource.author}): ${resource.description}\n`;
+  }
+
+  // Write resources markdown to file
+  const resourcesMarkdownPath = resolve(srcDir, 'resources.md');
+  writeFileSync(resourcesMarkdownPath, resourcesMarkdown);
+  consola.success(`Resources markdown file generated at ${resourcesMarkdownPath}`);
+
+  // ...existing code for apps...
 
   const { owner, repo } = await getGitInfo();
   const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`;
@@ -151,7 +243,7 @@ async function main() {
     screenshot: app.screenshot ? `${baseGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : ""
   }));
 
-  const distFolder = resolve(dataDir, './dist');
+  const distFolder = resolve(dataDir, 'dist');
   const distJsonPath = resolve(distFolder, 'nimiq.json');
   writeFileSync(distJsonPath, JSON.stringify(distApps, null, 2));
   consola.success(`Distribution JSON generated at ${distJsonPath}`);
@@ -165,11 +257,11 @@ async function main() {
   const distArchiveJsonPath = resolve(distFolder, 'nimiq-archive.json');
   writeFileSync(distArchiveJsonPath, JSON.stringify(distArchiveApps, null, 2));
 
-  // Update the main README.md with the apps.md content
-  const scriptPath = __dirname;
-  const appsPath = resolve(scriptPath, '..');
-  const readmePath = resolve(appsPath, 'README.md');
+  const distResourcesJsonPath = resolve(distFolder, 'nimiq-resources.json');
+  writeFileSync(distResourcesJsonPath, JSON.stringify(parsedResourcesJson, null, 2));
 
+  // Update the main README.md with the apps.md content
+  const readmePath = resolve(__dirname, '../README.md');
   consola.info(`Looking for README.md at: ${readmePath}`);
 
   // Read the README.md content
@@ -177,7 +269,7 @@ async function main() {
     let readmeContent = readFileSync(readmePath, 'utf-8');
 
     // Define the markers for automatic content insertion in README.md
-    const startMarker = '<!-- automd:file src="./src/src.md" -->';
+    const startMarker = '<!-- automd:file src="./src/apps.md" -->';
     const endMarker = '<!-- /automd -->';
 
     // Find the section in README.md to update
@@ -197,8 +289,35 @@ async function main() {
     } else {
       consola.error('Could not find the automd markers in README.md');
     }
-  } else {
-    consola.error(`README.md not found at ${readmePath}`);
+
+    // Update resources section
+    const resourcesStartMarker = '<!-- automd:file src="./src/resources.md" -->';
+    const resourcesEndMarker = '<!-- /automd -->';
+    const resourcesStartIndex = readmeContent.indexOf(resourcesStartMarker);
+    const resourcesEndIndex = readmeContent.indexOf(resourcesEndMarker, resourcesStartIndex);
+
+    if (resourcesStartIndex !== -1 && resourcesEndIndex !== -1) {
+      readmeContent =
+        readmeContent.substring(0, resourcesStartIndex + resourcesStartMarker.length) +
+        '\n' + resourcesMarkdown + '\n' +
+        readmeContent.substring(resourcesEndIndex);
+    }
+
+    // Update apps section (existing code)
+    const appsStartMarker = '<!-- automd:file src="./src/apps.md" -->';
+    const appsEndMarker = '<!-- /automd -->';
+    const appsStartIndex = readmeContent.indexOf(appsStartMarker);
+    const appsEndIndex = readmeContent.indexOf(appsEndMarker, appsStartIndex);
+
+    if (appsStartIndex !== -1 && appsEndIndex !== -1) {
+      readmeContent =
+        readmeContent.substring(0, appsStartIndex + appsStartMarker.length) +
+        '\n' + markdown + '\n' +
+        readmeContent.substring(appsEndIndex);
+    }
+
+    writeFileSync(readmePath, readmeContent);
+    consola.success('Successfully updated README.md with both resources and apps content');
   }
 
   consola.success('Build script completed successfully');

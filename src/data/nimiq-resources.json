@@ -1,0 +1,210 @@
+[
+    {
+        "type": "developer-tool",
+        "name": "Nimiq Hub",
+        "link": "https://hub.nimiq.com/",
+        "source": "https://github.com/nimiq/hub",
+        "description": "Unified interface for accounts, addresses, and contracts",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "developer-tool",
+        "name": "Nimiq Keyguard",
+        "link": "https://keyguard.nimiq.com/",
+        "source": "https://github.com/nimiq/keyguard",
+        "description": "Secure key management and transaction signing",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "validator",
+        "name": "Validators Dashboard & API",
+        "link": "https://validators-api-mainnet.nuxt.dev/",
+        "source": "https://github.com/nimiq/validators-api",
+        "description": "Dashboard and API for monitoring validators",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "documentation",
+        "name": "Nimiq Developer Center",
+        "link": "https://nimiq.com/developers/",
+        "source": "https://github.com/nimiq/developer-center",
+        "description": "Official guide with tutorials and technical references",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "documentation",
+        "name": "NimiqHub RPC Docs",
+        "link": "https://www.nimiqhub.com/docs/rpc",
+        "source": null,
+        "description": "Documentation for the Nimiq JSON-RPC interface",
+        "author": "@DovAzencot"
+    },
+    {
+        "type": "developer-tool",
+        "name": "Nimiq Demo Project",
+        "link": "https://github.com/nimiq/nimiq-demo",
+        "source": "https://github.com/nimiq/nimiq-demo",
+        "description": "Simple project demonstrating wallet and transaction functions",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "core",
+        "name": "Nimiq Core Rust",
+        "link": "https://github.com/nimiq/core-rs-albatross",
+        "source": "https://github.com/nimiq/core-rs-albatross",
+        "description": "Rust implementation of Nimiq consensus (Albatross/PoS)",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "core",
+        "name": "Nimiq Gleam",
+        "link": "https://github.com/sisou/nimiq_gleam",
+        "source": "https://github.com/sisou/nimiq_gleam",
+        "description": "Modules and helpers for Nimiq in Gleam",
+        "author": "@sisou"
+    },
+    {
+        "type": "utils",
+        "name": "Nimiq Utils",
+        "link": "https://github.com/nimiq/nimiq-utils",
+        "source": "https://github.com/nimiq/nimiq-utils",
+        "description": "Collection of JS utilities for Nimiq",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "node",
+        "name": "arpl",
+        "link": "https://github.com/sisou/arpl",
+        "source": "https://github.com/sisou/arpl",
+        "description": "CLI tool for remote management of Nimiq nodes",
+        "author": "@sisou"
+    },
+    {
+        "type": "node",
+        "name": "Postgres Chain Mirror",
+        "link": "https://github.com/sisou/bun-drizzle-chain-mirror",
+        "source": "https://github.com/sisou/bun-drizzle-chain-mirror",
+        "description": "Mirrors Nimiq blockchain data into a PostgreSQL database",
+        "author": "@sisou"
+    },
+    {
+        "type": "core",
+        "name": "Nim Log",
+        "link": "https://nimlog.paberr.net/history.html",
+        "source": null,
+        "description": "Explorer for Nimiq blockchain logs and transactions",
+        "author": "@paberr"
+    },
+    {
+        "type": "infrastructure",
+        "name": "Nimiq Albatross Node in Docker",
+        "link": "https://hub.docker.com/r/maestroi/nimiq-albatross",
+        "source": null,
+        "description": "Docker image for running a Nimiq full/validator node",
+        "author": "@maestroi"
+    },
+    {
+        "type": "utils",
+        "name": "Nimiq Nuxt Module",
+        "link": "https://github.com/blouflashdb/nimiq-nuxt-module",
+        "source": "https://github.com/blouflashdb/nimiq-nuxt-module",
+        "description": "Nuxt 3 module for integrating a Nimiq client in Vue apps",
+        "author": "@blouflashdb"
+    },
+    {
+        "type": "developer-tool",
+        "name": "Nimiq Playground",
+        "link": "https://nimiq-playground.pages.dev/",
+        "source": "https://github.com/onmax/nimiq-playground",
+        "description": "Online IDE for testing and experimenting with Nimiq code",
+        "author": "@onmax"
+    },
+    {
+        "type": "validator",
+        "name": "Telegram Bot for Staking Notifications",
+        "link": "https://github.com/Albermonte/validator-election-bot",
+        "source": "https://github.com/Albermonte/validator-election-bot",
+        "description": "Sends alerts about validator elections on Telegram",
+        "author": "@albermonte"
+    },
+    {
+        "type": "rpc",
+        "name": "Open RPC server",
+        "link": "https://rpc.nimiqwatch.com/",
+        "source": null,
+        "description": "A public JSON-RPC server to make initial developments easier",
+        "author": "@sisou"
+    },
+    {
+        "type": "rpc",
+        "name": "Nimiq JSON-RPC Client for Gleam",
+        "link": "https://github.com/sisou/gleam-nimiq-rpc",
+        "source": "https://github.com/sisou/gleam-nimiq-rpc",
+        "description": "Gleam library for Nimiq JSON-RPC interaction",
+        "author": "@sisou"
+    },
+    {
+        "type": "rpc",
+        "name": "Albatross RPC Client TS",
+        "link": "https://github.com/onmax/albatross-rpc-client-ts",
+        "source": "https://github.com/onmax/albatross-rpc-client-ts",
+        "description": "Fully typed RPC client for Nimiq in TypeScript",
+        "author": "@onmax"
+    },
+    {
+        "type": "rpc",
+        "name": "Nimiq RPC Client for TS",
+        "link": "https://jsr.io/@blouflash/nimiq-rpc",
+        "source": "https://jsr.io/@blouflash/nimiq-rpc",
+        "description": "JSON-RPC client for Nimiq blockchain",
+        "author": "@blouflash"
+    },
+    {
+        "type": "developer-tool",
+        "name": "Nimiq Cashlink Bulk Generator",
+        "link": "https://github.com/nimiq/cashlink-generator",
+        "source": "https://github.com/nimiq/cashlink-generator/tree/master",
+        "description": "Tool to create and manage NIM cashlinks in bulk",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "ui",
+        "name": "Nimiq Style Framework",
+        "link": "https://nimiq.github.io/nimiq-style/",
+        "source": null,
+        "description": "Official CSS framework with Nimiq colors and fonts",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "ui",
+        "name": "Nimiq CSS",
+        "link": "https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-css",
+        "source": "https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-css",
+        "description": "Modern CSS library for Nimiq styling with UnoCSS/Tailwind presets",
+        "author": "@onmax"
+    },
+    {
+        "type": "ui",
+        "name": "Nimiq Icons",
+        "link": "https://www.nimiq.com/developers/build/ui/design/icons",
+        "source": "https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-icons",
+        "description": "Icon set for Nimiq, ready for any framework",
+        "author": "@onmax"
+    },
+    {
+        "type": "ui",
+        "name": "Nimiq Identicons",
+        "link": "https://github.com/nimiq/identicons",
+        "source": "https://github.com/nimiq/identicons",
+        "description": "JS library for generating identicons from Nimiq addresses",
+        "author": "@Nimiq"
+    },
+    {
+        "type": "ui",
+        "name": "Identicons ESM",
+        "link": "https://onmax.github.io/nimiq-identicons/",
+        "source": "https://github.com/onmax/nimiq-identicons",
+        "description": "Fork of Nimiq Identicons with ESM and TS support",
+        "author": "@onmax"
+    }
+]

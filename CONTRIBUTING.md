@@ -1,0 +1,1 @@
+If you want to update the information of the list, please do so by edditing either [./src/data/nimiq-apps.json](./src/data/nimiq-apps.json) or [./src/data/nimiq-apps.yml](./src/data/nimiq-apps.yml) and then create a PR, the CI will take care of the rest.
