@@ -4,9 +4,9 @@
         "name": "Nimiq Pay App",
         "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Supports Bitcoin and NIM Decentralized",
         "link": "https://nimiq.com/nimiq-pay/",
-        "type": null,
+        "type": "Wallets",
         "logo": "",
-        "screenshot": "./assets/nimiq-pay-app.svg",
+        "screenshot": "./assets/nimiq-pay.webp",
         "developer": null
     },
     {
@@ -135,7 +135,7 @@
         "description": "Send NIM transactions via Telegram.",
         "link": "https://t.me/PayNimBot",
         "type": "Bots",
-        "logo": "./assets/paynim-telegram-bot-app.svg",
+        "logo": "./assets/paynim-telegram-bot.svg",
         "screenshot": "",
         "developer": "PayNim"
     },

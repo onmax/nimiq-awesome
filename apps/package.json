@@ -4,7 +4,18 @@
   "description": "A collection of Nimiq Apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esno ./scripts/build.ts"
   },
-  "keywords": []
+  "type": "module",
+  "keywords": [],
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "consola": "^3.4.0",
+    "pathe": "^2.0.3",
+    "valibot": "1.0.0-rc.4"
+  },
+  "dependencies": {
+    "esno": "^4.8.0",
+    "execa": "^9.5.2"
+  }
 }
