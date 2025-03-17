@@ -1,0 +1,162 @@
+[
+  {
+    "isOfficial": true,
+    "name": "Nimiq Pay App",
+    "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Supports Bitcoin and NIM Decentralized",
+    "link": "https://nimiq.com/nimiq-pay/",
+    "type": "Wallets",
+    "logo": "",
+    "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-pay.webp",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "Nimiq Wallet",
+    "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Available without sign-up Decentralised ",
+    "link": "https://nimiq.com/wallet/",
+    "type": "Wallets",
+    "logo": "",
+    "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-wallet.svg",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "Crypto Map",
+    "description": "Discover the best places to buy with crypto. Find crypto-friendly locations worldwide in our map. Start spending your crypto today!",
+    "link": "https://map.nimiq.com",
+    "type": "Insights",
+    "logo": "",
+    "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/crypto-map.webp",
+    "developer": null
+  },
+  {
+    "isOfficial": false,
+    "name": "NimWorld",
+    "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
+    "link": "https://world.nimpowered.com/",
+    "type": "Games",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-world.webp",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": false,
+    "name": "Nimtris",
+    "description": "Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.d",
+    "link": "https://nimtris.com/",
+    "type": "Games",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimtris.webp",
+    "screenshot": "",
+    "developer": "Stefan"
+  },
+  {
+    "isOfficial": false,
+    "name": "Trust Wallet",
+    "description": "A wallet app for managing your coins on Android and iOS.",
+    "link": "https://trustwallet.com/nimiq-wallet",
+    "type": "Wallets",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/trust-wallet.svg",
+    "screenshot": "",
+    "developer": "Trustwallet"
+  },
+  {
+    "isOfficial": true,
+    "name": "Cryptopayment.link",
+    "description": "Get paid in crypto! Charge your customers with Nimiq, Bitcoin or Ethereum. Create a custom link and QR code in seconds.",
+    "link": "https://cryptopayment.link/",
+    "type": "E-commerce",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/crypto-payment-logo.svg",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "Nimiq Shop",
+    "description": "Use your NIM to get Nimiq Swag. Experience the swift Nimiq Checkout.",
+    "link": "https://shop.nimiq.com/",
+    "type": "E-commerce",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-shop.svg",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "Nimiq Gift Cards",
+    "description": "Treat your friends and family to the future of money! Find different gift card themes for different Holidays! Gift NIM today!",
+    "link": "https://www.nimiq.com/cards/",
+    "type": "Promotion",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-gift-card.svg",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "NIM Donations",
+    "description": "Easily receive donations by creating a personalized button or QR code.",
+    "link": "https://www.nimiq.com/accept-donations/",
+    "type": "Infrastructure",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/accept-donations.svg",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": true,
+    "name": "Nimiq.watch",
+    "description": "Nimiq Blockchain Explorer.",
+    "link": "https://nimiq.watch/",
+    "type": "Insights",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-watch.svg",
+    "screenshot": "",
+    "developer": null
+  },
+  {
+    "isOfficial": false,
+    "name": "Nimiq Sunset Cyberspace",
+    "description": "Score points, beat your own records and earn as many NIM as you can!",
+    "link": "https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US",
+    "type": "Games",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-sunset-cyberspace.webp",
+    "screenshot": "",
+    "developer": "Albermonte"
+  },
+  {
+    "isOfficial": false,
+    "name": "Nimiq Game Store",
+    "description": "Buy PC games with NIM and experience the Nimiq Checkout.",
+    "link": "https://nimiq-game-store.paulgertz.com/",
+    "type": "E-commerce",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-game-store.webp",
+    "screenshot": "",
+    "developer": "Paul"
+  },
+  {
+    "isOfficial": false,
+    "name": "PayNim Telegram Bot",
+    "description": "Send NIM transactions via Telegram.",
+    "link": "https://t.me/PayNimBot",
+    "type": "Bots",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/paynim-telegram-bot.svg",
+    "screenshot": "",
+    "developer": "PayNim"
+  },
+  {
+    "isOfficial": false,
+    "name": "Twini",
+    "description": "Frictionless donations with NIM for Twitch.tv",
+    "link": "https://github.com/Eligioo/twinibot-telegram",
+    "type": "Bots",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/twini-app.svg",
+    "screenshot": "",
+    "developer": "Twini"
+  },
+  {
+    "isOfficial": true,
+    "name": "Staking Calculator",
+    "description": "Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.",
+    "link": "https://www.nimiq.com/staking-calculator/",
+    "type": "Insights",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/staking-calculator.svg",
+    "screenshot": "",
+    "developer": null
+  }
+]
