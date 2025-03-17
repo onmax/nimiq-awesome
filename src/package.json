@@ -1,7 +1,7 @@
 {
-  "name": "nimiq-apps",
+  "name": "nimiq-awesome-src",
   "version": "1.0.0",
-  "description": "A collection of Nimiq Apps",
+  "description": "A collection of Nimiq apps and services.",
   "main": "index.js",
   "scripts": {
     "build": "esno ./scripts/build.ts"

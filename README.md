@@ -73,13 +73,13 @@ Please feel free to contribute by adding missing resources to this list.
 ## Community Apps
 
 - [Nimtris](https://nimtris.com/) (@Eligioo): Tetris-like game where players earn NIM tokens. [Source code](https://github.com/Eligioo/nimtris)
-- [Nimiq Sunset Cyberspace](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&pli=1) (@albermonte): Mobile app to play and earn NIM tokens.
+- [Nimiq Sunset Cyberspace](https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&pli=1) (@albermonte): Mobile app to play and earn NIM tokens.
 - [Nimiq 2048](https://nimiq2048.com/): Join the numbers and get to the 2048 tile!
 - [Nimiq Telegram Tip Bot](https://t.me/NimiqTip_bot) (@albermonte): Bot that sends NIM tips in Telegram chats.
 
 ---
 
-<!-- automd:file src="./apps/apps.md" -->
+<!-- automd:file src="./src/src.md" -->
 ## Apps
 
 ### Wallets
@@ -102,7 +102,7 @@ Please feel free to contribute by adding missing resources to this list.
 
 - [NimWorld](https://world.nimpowered.com/) (@Unknown): A pixel war / million dollar page on a world map powered by Nimiq blockchain
 - [Nimtris](https://nimtris.com/) (@Stefan): Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.d
-- [Nimiq Sunset Cyberspace](https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US) (@Albermonte): Score points, beat your own records and earn as many NIM as you can!
+- [Nimiq Sunset Cyberspace](https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US) (@Albermonte): Score points, beat your own records and earn as many NIM as you can!
 
 ### Insights
 

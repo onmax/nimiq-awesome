@@ -1,12 +1,13 @@
-name: Update Apps
+name: Update Source
 
 on:
   push:
     paths:
-      - 'apps/**'
+      - 'src/**'
       # Ignore changes from the action itself
-      - '!apps/apps.md'
-      - '!apps/data/nimiq-dist.json'
+      - '!src/src.md'
+      - '!src/data/dist/nimiq.json'
+      - '!src/data/dist/nimiq-archive.json'
   # Allow manual trigger
   workflow_dispatch:
 
@@ -14,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  update-apps:
+  update-src:
     runs-on: ubuntu-latest
     
     steps:
@@ -45,10 +46,10 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: cd apps && pnpm install
+        run: cd src && pnpm install
         
-      - name: Build apps
-        run: cd apps && pnpm run build
+      - name: Build src
+        run: cd src && pnpm run build
         
       - name: Check for changes
         id: git-check

@@ -1,6 +1,6 @@
 import { resolve, dirname } from 'pathe';
 import { readFileSync, existsSync, writeFileSync } from 'fs';
-import {$} from 'execa';
+import { $ } from 'execa';
 import { safeParse, object, string, boolean, array, literal, union, nullable } from 'valibot';
 import { consola } from 'consola';
 
@@ -9,6 +9,7 @@ const __dirname = dirname('.');
 const scriptDir = __dirname;
 const dataDir = resolve(scriptDir, 'data');
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json');
+const nimiqAppArchiveJson = resolve(dataDir, './archive/nimiq-apps.archive.json');
 
 // Get git repository information
 async function getGitInfo() {
@@ -52,7 +53,9 @@ const AppSchema = object({
 });
 
 const json = readFileSync(nimiqAppJson, 'utf-8');
+const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8');
 const parsedJson = JSON.parse(json) as App[];
+const parsedArchiveJson = JSON.parse(jsonArchive) as App[];
 
 const AppArraySchema = array(AppSchema);
 
@@ -141,16 +144,26 @@ async function main() {
   // ...existing code until dist generation...
 
   const { owner, repo } = await getGitInfo();
-  const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/apps/data`;
+  const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`;
   const distApps = parsedJson.map(app => ({
     ...app,
     logo: app.logo ? `${baseGithubRawUrl}/${app.logo.replace(/^\.\//, '')}` : "",
     screenshot: app.screenshot ? `${baseGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : ""
   }));
 
-  const distJsonPath = resolve(dataDir, 'nimiq-dist.json');
+  const distFolder = resolve(dataDir, './dist');
+  const distJsonPath = resolve(distFolder, 'nimiq.json');
   writeFileSync(distJsonPath, JSON.stringify(distApps, null, 2));
   consola.success(`Distribution JSON generated at ${distJsonPath}`);
+  
+  const baseArchiveGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data/archive`;
+  const distArchiveApps = parsedArchiveJson.map(app => ({
+    ...app,
+    logo: app.logo ? `${baseArchiveGithubRawUrl}/${app.logo.replace(/^\.\//, '')}` : "",
+    screenshot: app.screenshot ? `${baseArchiveGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : ""
+  }));
+  const distArchiveJsonPath = resolve(distFolder, 'nimiq-archive.json');
+  writeFileSync(distArchiveJsonPath, JSON.stringify(distArchiveApps, null, 2));
 
   // Update the main README.md with the apps.md content
   const scriptPath = __dirname;
@@ -164,7 +177,7 @@ async function main() {
     let readmeContent = readFileSync(readmePath, 'utf-8');
 
     // Define the markers for automatic content insertion in README.md
-    const startMarker = '<!-- automd:file src="./apps/apps.md" -->';
+    const startMarker = '<!-- automd:file src="./src/src.md" -->';
     const endMarker = '<!-- /automd -->';
 
     // Find the section in README.md to update
