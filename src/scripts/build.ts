@@ -244,7 +244,7 @@ async function main() {
   }));
 
   const distFolder = resolve(dataDir, 'dist');
-  const distJsonPath = resolve(distFolder, 'nimiq.json');
+  const distJsonPath = resolve(distFolder, 'nimiq-apps.json');
   writeFileSync(distJsonPath, JSON.stringify(distApps, null, 2));
   consola.success(`Distribution JSON generated at ${distJsonPath}`);
   
@@ -254,7 +254,7 @@ async function main() {
     logo: app.logo ? `${baseArchiveGithubRawUrl}/${app.logo.replace(/^\.\//, '')}` : "",
     screenshot: app.screenshot ? `${baseArchiveGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : ""
   }));
-  const distArchiveJsonPath = resolve(distFolder, 'nimiq-archive.json');
+  const distArchiveJsonPath = resolve(distFolder, 'nimiq-apps.archive.json');
   writeFileSync(distArchiveJsonPath, JSON.stringify(distArchiveApps, null, 2));
 
   const distResourcesJsonPath = resolve(distFolder, 'nimiq-resources.json');

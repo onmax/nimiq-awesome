@@ -6,8 +6,8 @@ on:
       - 'src/**'
       # Ignore changes from the action itself
       - '!src/src.md'
-      - '!src/data/dist/nimiq.json'
-      - '!src/data/dist/nimiq-archive.json'
+      - '!src/data/dist/nimiq-apps.json'
+      - '!src/data/dist/nimiq-apps.archive.json'
   # Allow manual trigger
   workflow_dispatch:
 
