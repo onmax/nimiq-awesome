@@ -117,13 +117,11 @@ const sortedApps = [...parsedJson].sort((a, b) => {
 });
 
 // Function to get author link
-function getAuthorLink(author: string | null, isOfficial: boolean): string {
-  if (isOfficial) {
-    return "[Nimiq](https://github.com/nimiq)";
-  } else if (author === null || author.trim() === '') {
+function getAuthorLink(author: string | null): string {
+  if (author === null || author.trim() === '') {
     return "Unknown";
   } else {
-    return `[${author}](https://github.com/onmax)`;
+    return `[${author}](https://github.com/${author})`;
   }
 }
 
@@ -139,7 +137,7 @@ for (const app of sortedApps) {
   }
 
   // Use linked author name
-  const authorLink = getAuthorLink(app.developer, app.isOfficial);
+  const authorLink = getAuthorLink(app.developer);
 
   markdown += `- [${app.name}](${app.link}) (${authorLink}): ${app.description}\n`;
 }

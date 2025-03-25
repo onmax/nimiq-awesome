@@ -1,6 +1,5 @@
 [
   {
-    "isOfficial": true,
     "name": "SuperSimpleSwap",
     "description": "The easiest way to buy and sell BTC, NIM etc. Without registration, at low fees and super easy to use.  Buy and sell directly to your bank account Available without sign-up",
     "link": "https://nimiq.co/supersimpleswap/",
@@ -10,7 +9,6 @@
     "developer": null
   },
   {
-    "isOfficial": false,
     "name": "Nimiq Vouchers",
     "description": "Nimiq Vouchers is developed, maintained and hosted by the Nimiq community. You can buy all kinds of gift cards and vouchers using your NIM. The shop uses Nimiq's CryptoPayment.link to process your payment in NIM.",
     "link": "https://nimiqvouchers.com/",
@@ -20,7 +18,6 @@
     "developer": "Paul"
   },
   {
-    "isOfficial": false,
     "name": "Nimiq Mopsus",
     "description": "Nimiq Blockchain Explorer.",
     "link": "https://nimiq.mopsus.com/",
@@ -30,7 +27,6 @@
     "developer": "Ken Blazer"
   },
   {
-    "isOfficial": true,
     "name": "Web Miner",
     "description": "Participate in securing the Network and get NIM for mined blocks.",
     "link": "https://miner.nimiq.com",
@@ -40,7 +36,6 @@
     "developer": null
   },
   {
-    "isOfficial": false,
     "name": "Project Nimizuela",
     "description": "Philanthropic project to raise awareness about Nimiq in Venezuela.",
     "link": "https://nimizuela.org/",
@@ -50,7 +45,6 @@
     "developer": "Project Nimizuela"
   },
   {
-    "isOfficial": false,
     "name": "NimiPay",
     "description": "Simple and Flexible Payments Gateway.",
     "link": "https://nimipay.com/",
@@ -60,7 +54,6 @@
     "developer": "Nimipay"
   },
   {
-    "isOfficial": false,
     "name": "Albermonte's Miner",
     "description": "Mine faster with Albermonte's Miner for desktop and servers, supporting NVidia and AMD GPUs.",
     "link": "https://hub.shortnim.me/",
@@ -70,7 +63,6 @@
     "developer": "Albermonte"
   },
   {
-    "isOfficial": false,
     "name": "Nini",
     "description": "Collection of online utilities on the Nimiq Blockchain.",
     "link": "https://nini.smitop.com/",
@@ -80,7 +72,6 @@
     "developer": "Smitop"
   },
   {
-    "isOfficial": false,
     "name": "Nimiq WP",
     "description": "Wordpress mining plugin for content monetization.",
     "link": "https://github.com/pom75/nimiqWP",
@@ -90,7 +81,6 @@
     "developer": "Stephane"
   },
   {
-    "isOfficial": true,
     "name": "Desktop Miner",
     "description": "Mining client with improved performance.",
     "link": "",
@@ -100,7 +90,6 @@
     "developer": null
   },
   {
-    "isOfficial": false,
     "name": "Short NIM",
     "description": "URL shortener with integrated miner for content monetization.",
     "link": "https://shortnim.vercel.app/",
