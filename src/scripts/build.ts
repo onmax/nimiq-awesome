@@ -116,6 +116,17 @@ const sortedApps = [...parsedJson].sort((a, b) => {
   return indexA - indexB;
 });
 
+// Function to get author link
+function getAuthorLink(author: string | null, isOfficial: boolean): string {
+  if (isOfficial) {
+    return "[Nimiq](https://github.com/nimiq)";
+  } else if (author === null || author.trim() === '') {
+    return "Unknown";
+  } else {
+    return `[${author}](https://github.com/onmax)`;
+  }
+}
+
 // Generate markdown
 let markdown = "## Apps\n";
 let currentType = '';
@@ -127,10 +138,10 @@ for (const app of sortedApps) {
     markdown += `\n### ${currentType}\n\n`;
   }
 
-  // Use Nimiq for official apps, otherwise use the developer name
-  const author = app.isOfficial ? "Nimiq" : app.developer || "Unknown";
+  // Use linked author name
+  const authorLink = getAuthorLink(app.developer, app.isOfficial);
 
-  markdown += `- [${app.name}](${app.link}) (@${author}): ${app.description}\n`;
+  markdown += `- [${app.name}](${app.link}) (${authorLink}): ${app.description}\n`;
 }
 
 // Write the markdown to apps.md file
@@ -225,7 +236,9 @@ async function main() {
     }
 
     const sourceLink = resource.source ? ` ([Source](${resource.source}))` : '';
-    resourcesMarkdown += `- [${resource.name}](${resource.link})${sourceLink} (${resource.author}): ${resource.description}\n`;
+    // Link the author name to GitHub profile
+    const authorLink = `[${resource.author}](https://github.com/onmax)`;
+    resourcesMarkdown += `- [${resource.name}](${resource.link})${sourceLink} (${authorLink}): ${resource.description}\n`;
   }
 
   // Write resources markdown to file
