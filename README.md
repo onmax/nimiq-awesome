@@ -122,4 +122,6 @@
 
 <!-- /automd -->
 
-Enjoy building on Nimiq!
+---
+
+If you are interested in starting your journey building in the Nimiq Ecosystem, you can start by checking the [Nimiq Developer Center](https://nimiq.com/developers/). Enjoy building on Nimiq!
