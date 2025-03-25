@@ -235,7 +235,7 @@ async function main() {
 
     const sourceLink = resource.source ? ` ([Source](${resource.source}))` : '';
     // Link the author name to GitHub profile
-    const authorLink = `[${resource.author}](https://github.com/onmax)`;
+    const authorLink = getAuthorLink(resource.author);
     resourcesMarkdown += `- [${resource.name}](${resource.link})${sourceLink} (${authorLink}): ${resource.description}\n`;
   }
 
