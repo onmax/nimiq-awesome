@@ -6,7 +6,7 @@
         "type": "Wallets",
         "logo": "",
         "screenshot": "./assets/nimiq-pay.webp",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Nimiq Wallet",
@@ -15,7 +15,7 @@
         "type": "Wallets",
         "logo": "",
         "screenshot": "./assets/nimiq-wallet.svg",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Crypto Map",
@@ -24,7 +24,7 @@
         "type": "Insights",
         "logo": "",
         "screenshot": "./assets/crypto-map.webp",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "NimWorld",
@@ -42,7 +42,7 @@
         "type": "Games",
         "logo": "./assets/nimtris.webp",
         "screenshot": "",
-        "developer": "Stefan"
+        "developer": "@Eligioo"
     },
     {
         "name": "Trust Wallet",
@@ -51,7 +51,7 @@
         "type": "Wallets",
         "logo": "./assets/trust-wallet.svg",
         "screenshot": "",
-        "developer": "Trustwallet"
+        "developer": "@trustwallet"
     },
     {
         "name": "Cryptopayment.link",
@@ -60,7 +60,7 @@
         "type": "E-commerce",
         "logo": "./assets/crypto-payment-logo.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Nimiq Shop",
@@ -69,7 +69,7 @@
         "type": "E-commerce",
         "logo": "./assets/nimiq-shop.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Nimiq Gift Cards",
@@ -78,7 +78,7 @@
         "type": "Promotion",
         "logo": "./assets/nimiq-gift-card.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "NIM Donations",
@@ -87,7 +87,7 @@
         "type": "Infrastructure",
         "logo": "./assets/accept-donations.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Nimiq.watch",
@@ -96,7 +96,7 @@
         "type": "Insights",
         "logo": "./assets/nimiq-watch.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@sisou"
     },
     {
         "name": "Nimiq Sunset Cyberspace",
@@ -105,7 +105,7 @@
         "type": "Games",
         "logo": "./assets/nimiq-sunset-cyberspace.webp",
         "screenshot": "",
-        "developer": "Albermonte"
+        "developer": "@albermonte"
     },
     {
         "name": "Nimiq Game Store",
@@ -132,7 +132,7 @@
         "type": "Bots",
         "logo": "./assets/twini-app.svg",
         "screenshot": "",
-        "developer": "Twini"
+        "developer": "@Eligioo"
     },
     {
         "name": "Staking Calculator",
@@ -141,7 +141,7 @@
         "type": "Insights",
         "logo": "./assets/staking-calculator.svg",
         "screenshot": "",
-        "developer": null
+        "developer": "@nimiq"
     },
     {
         "name": "Nimiq Tip Bot",
@@ -150,7 +150,7 @@
         "type": "Bots",
         "logo": "./assets/nimiq-tip-bot.svg",
         "screenshot": "",
-        "developer": "Albermonte"
+        "developer": "@albermonte"
     },
     {
         "name": "Nimiq 2048",

@@ -6,7 +6,7 @@
     "type": "Infrastructure",
     "logo": "./assets/supersimpleswap.svg",
     "screenshot": "./assets/supersimpleswap.svg",
-    "developer": null
+    "developer": "@nimiq"
   },
   {
     "name": "Nimiq Vouchers",
@@ -33,7 +33,7 @@
     "type": "Miner",
     "logo": "./assets/web-miner.svg",
     "screenshot": "",
-    "developer": null
+    "developer": "@nimiq"
   },
   {
     "name": "Project Nimizuela",
@@ -60,7 +60,7 @@
     "type": "Miner",
     "logo": "./assets/desktop-miner.svg",
     "screenshot": "",
-    "developer": "Albermonte"
+    "developer": "@albermonte"
   },
   {
     "name": "Nini",
@@ -78,7 +78,7 @@
     "type": "Miner",
     "logo": "./assets/web-miner.svg",
     "screenshot": "",
-    "developer": "Stephane"
+    "developer": "@Eligioo"
   },
   {
     "name": "Desktop Miner",
@@ -87,7 +87,7 @@
     "type": "Miner",
     "logo": "./assets/desktop-miner.svg",
     "screenshot": "",
-    "developer": null
+    "developer": "@nimiq"
   },
   {
     "name": "Short NIM",
@@ -96,6 +96,6 @@
     "type": "Miner",
     "logo": "./assets/short-nim.svg",
     "screenshot": "",
-    "developer": "Albermonte"
+    "developer": "@albermonte"
   }
 ]

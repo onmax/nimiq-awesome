@@ -118,11 +118,13 @@ const sortedApps = [...parsedJson].sort((a, b) => {
 
 // Function to get author link
 function getAuthorLink(author: string | null): string {
-  if (author === null || author.trim() === '') {
+  if (author === null || author.trim() === '')
     return "Unknown";
-  } else {
-    return `[${author}](https://github.com/${author})`;
-  }
+  else if (!author.startsWith('@'))
+    return author;
+  else 
+    return `[${author}](https://github.com/${author.slice(1)})`;
+  
 }
 
 // Generate markdown
