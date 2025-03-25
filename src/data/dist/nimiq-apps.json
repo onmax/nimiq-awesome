@@ -158,5 +158,15 @@
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/staking-calculator.svg",
     "screenshot": "",
     "developer": null
+  },
+  {
+    "isOfficial": false,
+    "name": "Nimiq Tip Bot",
+    "description": "A Tip Bot to Tip Humans, using the Nimiq tech",
+    "link": "https://t.me/NimiqTipBot",
+    "type": "Bots",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-tip-bot.svg",
+    "screenshot": "",
+    "developer": "Albermonte"
   }
 ]

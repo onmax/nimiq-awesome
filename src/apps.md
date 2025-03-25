@@ -36,3 +36,4 @@
 
 - [PayNim Telegram Bot](https://t.me/PayNimBot) ([PayNim](https://github.com/onmax)): Send NIM transactions via Telegram.
 - [Twini](https://github.com/Eligioo/twinibot-telegram) ([Twini](https://github.com/onmax)): Frictionless donations with NIM for Twitch.tv
+- [Nimiq Tip Bot](https://t.me/NimiqTipBot) ([Albermonte](https://github.com/onmax)): A Tip Bot to Tip Humans, using the Nimiq tech
