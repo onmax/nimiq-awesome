@@ -12,9 +12,8 @@
   A curated selection of projects, apps, and libraries built on the Nimiq ecosystem.
 </p>
 
-## Missing Resources
-
-Please feel free to contribute by adding missing resources to the list. Read [CONTRIBUTING.md](./CONTRIBUTING.md) for more information on how to contribute.
+> [!NOTE]
+> Feel free to contribute by adding missing resources to the list. [Learn more](./CONTRIBUTING.md).
 
 ---
 
