@@ -29,7 +29,6 @@ consola.info(`Running build script from ${srcDir}`);
 type AppType = 'Insights' | 'E-commerce' | 'Games' | 'Faucet' | 'Promotion' | 'Miner' | 'Wallets' | 'Infrastructure' | 'Bots';
 
 interface App {
-  isOfficial: boolean;
   name: string;
   description: string;
   link: string;
@@ -42,7 +41,6 @@ interface App {
 const AppTypeSchema = union([literal('Insights'), literal('E-commerce'), literal('Games'), literal('Faucet'), literal('Promotion'), literal('Miner'), literal('Wallets'), literal('Infrastructure'), literal('Bots')]);
 
 const AppSchema = object({
-  isOfficial: boolean(),
   name: string(),
   description: string(),
   link: string(),
