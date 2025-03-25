@@ -1,8 +1,16 @@
-# Awesome Nimiq
+<p align="center">
+  <a href="https://tailwindcss.com" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg">
+      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+    </picture>
+  </a>
+</p>
 
-A curated list of projects, applications, and libraries built on top of the Nimiq blockchain. This repository provides developers with tools and resources to build on Nimiq.
-
-This list is being used in https://nimiq.com/apps
+<p align="center">
+  A curated selection of projects, apps, and libraries built on the Nimiq ecosystem.
+</p>
 
 ## Missing Resources
 
