@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Kriptomat",
+    "logo": "./assets/exchanges/kryptomat.svg",
+    "url": "https://kriptomat.io/"
+  },
+  {
+    "name": "AscendEX",
+    "logo": "./assets/exchanges/ascendex.svg",
+    "url": "https://ascendex.com/en"
+  },
+  {
+    "name": "Gate.io",
+    "logo": "./assets/exchanges/gateio.svg",
+    "url": "https://gate.io/"
+  },
+  {
+    "name": "CoinEx",
+    "logo": "./assets/exchanges/coinex.svg",
+    "url": "https://www.coinex.com/en"
+  },
+  {
+    "name": "SimpleSwap",
+    "logo": "./assets/exchanges/simpleswap.svg",
+    "url": "https://simpleswap.io/"
+  },
+  {
+    "name": "Coinpay",
+    "logo": "./assets/exchanges/coinpay.avif",
+    "url": "https://coinpay.cr/"
+  },
+  {
+    "name": "StealthEX",
+    "logo": "./assets/exchanges/stealthex.svg",
+    "url": "https://stealthex.io/"
+  },
+  {
+    "name": "Coinspot",
+    "logo": "./assets/exchanges/coinspot.svg",
+    "url": "https://www.coinspot.com.au/"
+  },
+  {
+    "name": "Changelly",
+    "logo": "./assets/exchanges/changelly.svg",
+    "url": "https://changelly.com/"
+  },
+  {
+    "name": "HitBTC",
+    "logo": "./assets/exchanges/hitbtc.svg",
+    "url": "https://hitbtc.com/"
+  },
+  {
+    "name": "Swapspace",
+    "logo": "./assets/exchanges/swapspace.svg",
+    "url": "https://swapspace.co/"
+  },
+  {
+    "name": "Changehero",
+    "logo":"./assets/exchanges/changehero.svg",
+    "url": "https://changehero.io/"
+  },
+  {
+    "name": "Kucoin",
+    "logo": "./assets/exchanges/kucoin.svg",
+    "url": "https://www.kucoin.com/trade"
+  },
+  {
+    "name": "Swapzone",
+    "logo": "./assets/exchanges/swapzone.svg",
+    "url": "https://swapzone.io/"
+  },
+  {
+    "name": "CoinSwitch",
+    "logo": "./assets/exchanges/coinswitch.svg",
+    "url": "https://coinswitch.co/"
+  }
+]

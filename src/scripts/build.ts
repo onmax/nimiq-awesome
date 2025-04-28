@@ -10,6 +10,7 @@ const srcDir = resolve(__dirname, '../src');
 const dataDir = resolve(srcDir, 'data');
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json');
 const nimiqAppArchiveJson = resolve(dataDir, 'archive/nimiq-apps.archive.json');
+const nimiqExchangesJson = resolve(dataDir, 'nimiq-exchanges.json');
 
 // Get git repository information
 async function getGitInfo() {
@@ -38,6 +39,13 @@ interface App {
   developer: string | null;
 }
 
+// Define Exchange interface
+interface Exchange {
+  name: string;
+  logo: string;
+  url: string;
+}
+
 const AppTypeSchema = union([literal('Insights'), literal('E-commerce'), literal('Games'), literal('Faucet'), literal('Promotion'), literal('Miner'), literal('Wallets'), literal('Infrastructure'), literal('Bots')]);
 
 const AppSchema = object({
@@ -50,12 +58,24 @@ const AppSchema = object({
   developer: nullable(string()),
 });
 
+// Define Exchange Schema
+const ExchangeSchema = object({
+  name: string(),
+  logo: string(),
+  url: string()
+});
+
 const json = readFileSync(nimiqAppJson, 'utf-8');
 const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8');
 const parsedJson = JSON.parse(json) as App[];
 const parsedArchiveJson = JSON.parse(jsonArchive) as App[];
 
+// Read and parse exchanges JSON
+const exchangesJson = readFileSync(nimiqExchangesJson, 'utf-8');
+const parsedExchangesJson = JSON.parse(exchangesJson) as Exchange[];
+
 const AppArraySchema = array(AppSchema);
+const ExchangeArraySchema = array(ExchangeSchema);
 
 // Validate the JSON using valibot
 const validationResult = safeParse(AppArraySchema, parsedJson);
@@ -66,6 +86,16 @@ if (!validationResult.success) {
   process.exit(1);
 } else {
   consola.success('JSON validation successful');
+}
+
+// Validate exchanges JSON
+const exchangesValidationResult = safeParse(ExchangeArraySchema, parsedExchangesJson);
+if (!exchangesValidationResult.success) {
+  consola.error('Exchanges JSON validation failed');
+  consola.error(exchangesValidationResult.issues);
+  process.exit(1);
+} else {
+  consola.success('Exchanges JSON validation successful');
 }
 
 // Skip empty paths as they're valid (not all apps have logos/screenshots)
@@ -93,6 +123,14 @@ for (const app of parsedJson) {
 
   if (app.screenshot && !checkPathExists(app.screenshot, dataDir)) {
     consola.error(`Invalid screenshot path for app "${app.name}": ${app.screenshot}`);
+    allPathsValid = false;
+  }
+}
+
+// Check exchange logo paths
+for (const exchange of parsedExchangesJson) {
+  if (exchange.logo && !checkPathExists(exchange.logo, dataDir)) {
+    consola.error(`Invalid logo path for exchange "${exchange.name}": ${exchange.logo}`);
     allPathsValid = false;
   }
 }
@@ -142,10 +180,24 @@ for (const app of sortedApps) {
   markdown += `- [${app.name}](${app.link}) (${authorLink}): ${app.description}\n`;
 }
 
+// Generate exchanges markdown
+// Sort exchanges alphabetically by name
+const sortedExchanges = [...parsedExchangesJson].sort((a, b) => a.name.localeCompare(b.name));
+let exchangesMarkdown = "## Exchanges\n\nWhere you can buy, sell, or trade Nimiq:\n\n";
+
+for (const exchange of sortedExchanges) {
+  exchangesMarkdown += `- [${exchange.name}](${exchange.url})\n`;
+}
+
 // Write the markdown to apps.md file
 const markdownPath = resolve(srcDir, 'apps.md');
 writeFileSync(markdownPath, markdown);
 consola.success(`Markdown file generated at ${markdownPath}`);
+
+// Write exchanges markdown to exchanges.md file
+const exchangesMarkdownPath = resolve(srcDir, 'exchanges.md');
+writeFileSync(exchangesMarkdownPath, exchangesMarkdown);
+consola.success(`Exchanges markdown file generated at ${exchangesMarkdownPath}`);
 
 // Create distribution version with GitHub raw URLs for assets
 // Resource Types
@@ -244,8 +296,6 @@ async function main() {
   writeFileSync(resourcesMarkdownPath, resourcesMarkdown);
   consola.success(`Resources markdown file generated at ${resourcesMarkdownPath}`);
 
-  // ...existing code for apps...
-
   const { owner, repo } = await getGitInfo();
   const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`;
   const distApps = parsedJson.map(app => ({
@@ -267,6 +317,15 @@ async function main() {
   }));
   const distArchiveJsonPath = resolve(distFolder, 'nimiq-apps.archive.json');
   writeFileSync(distArchiveJsonPath, JSON.stringify(distArchiveApps, null, 2));
+
+  // Process exchanges for distribution JSON
+  const distExchanges = parsedExchangesJson.map(exchange => ({
+    ...exchange,
+    logo: exchange.logo ? `${baseGithubRawUrl}/${exchange.logo.replace(/^\.\//, '')}` : ""
+  }));
+  const distExchangesJsonPath = resolve(distFolder, 'nimiq-exchanges.json');
+  writeFileSync(distExchangesJsonPath, JSON.stringify(distExchanges, null, 2));
+  consola.success(`Distribution JSON for exchanges generated at ${distExchangesJsonPath}`);
 
   const distResourcesJsonPath = resolve(distFolder, 'nimiq-resources.json');
   writeFileSync(distResourcesJsonPath, JSON.stringify(parsedResourcesJson, null, 2));
@@ -313,22 +372,38 @@ async function main() {
         '\n' + resourcesMarkdown + '\n' +
         readmeContent.substring(resourcesEndIndex);
     }
+    
+    // Update exchanges section
+    const exchangesStartMarker = '<!-- automd:file src="./src/exchanges.md" -->';
+    const exchangesEndMarker = '<!-- /automd -->';
+    const exchangesStartIndex = readmeContent.indexOf(exchangesStartMarker);
+    const exchangesEndIndex = readmeContent.indexOf(exchangesEndMarker, exchangesStartIndex);
+    
+    if (exchangesStartIndex !== -1 && exchangesEndIndex !== -1) {
+      readmeContent =
+        readmeContent.substring(0, exchangesStartIndex + exchangesStartMarker.length) +
+        '\n' + exchangesMarkdown + '\n' +
+        readmeContent.substring(exchangesEndIndex);
+      consola.success('Successfully updated README.md with exchanges content');
+    } else {
+      // If markers don't exist, append the exchanges section at the end
+      readmeContent += '\n\n' + exchangesStartMarker + '\n' + exchangesMarkdown + '\n' + exchangesEndMarker;
+      consola.success('Added exchanges section to README.md');
+    }
 
-    // Update apps section (existing code)
-    const appsStartMarker = '<!-- automd:file src="./src/apps.md" -->';
-    const appsEndMarker = '<!-- /automd -->';
-    const appsStartIndex = readmeContent.indexOf(appsStartMarker);
-    const appsEndIndex = readmeContent.indexOf(appsEndMarker, appsStartIndex);
+    // Update apps section again to ensure it's properly updated
+    const appsStartIndex = readmeContent.indexOf(startMarker);
+    const appsEndIndex = readmeContent.indexOf(endMarker, appsStartIndex);
 
     if (appsStartIndex !== -1 && appsEndIndex !== -1) {
       readmeContent =
-        readmeContent.substring(0, appsStartIndex + appsStartMarker.length) +
+        readmeContent.substring(0, appsStartIndex + startMarker.length) +
         '\n' + markdown + '\n' +
         readmeContent.substring(appsEndIndex);
     }
 
     writeFileSync(readmePath, readmeContent);
-    consola.success('Successfully updated README.md with both resources and apps content');
+    consola.success('Successfully updated README.md with all content sections');
   }
 
   consola.success('Build script completed successfully');

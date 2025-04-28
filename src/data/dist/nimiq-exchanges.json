@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Kriptomat",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kryptomat.svg",
+    "url": "https://kriptomat.io/"
+  },
+  {
+    "name": "AscendEX",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/ascendex.svg",
+    "url": "https://ascendex.com/en"
+  },
+  {
+    "name": "Gate.io",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/gateio.svg",
+    "url": "https://gate.io/"
+  },
+  {
+    "name": "CoinEx",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinex.svg",
+    "url": "https://www.coinex.com/en"
+  },
+  {
+    "name": "SimpleSwap",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/simpleswap.svg",
+    "url": "https://simpleswap.io/"
+  },
+  {
+    "name": "Coinpay",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinpay.avif",
+    "url": "https://coinpay.cr/"
+  },
+  {
+    "name": "StealthEX",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/stealthex.svg",
+    "url": "https://stealthex.io/"
+  },
+  {
+    "name": "Coinspot",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinspot.svg",
+    "url": "https://www.coinspot.com.au/"
+  },
+  {
+    "name": "Changelly",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/changelly.svg",
+    "url": "https://changelly.com/"
+  },
+  {
+    "name": "HitBTC",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/hitbtc.svg",
+    "url": "https://hitbtc.com/"
+  },
+  {
+    "name": "Swapspace",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/swapspace.svg",
+    "url": "https://swapspace.co/"
+  },
+  {
+    "name": "Changehero",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/changehero.svg",
+    "url": "https://changehero.io/"
+  },
+  {
+    "name": "Kucoin",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kucoin.svg",
+    "url": "https://www.kucoin.com/trade"
+  },
+  {
+    "name": "Swapzone",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/swapzone.svg",
+    "url": "https://swapzone.io/"
+  },
+  {
+    "name": "CoinSwitch",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinswitch.svg",
+    "url": "https://coinswitch.co/"
+  }
+]
