@@ -76,7 +76,12 @@
 
 <!-- /automd -->
 
+
 ---
+
+> [!NOTE]
+> If you are interested in starting your journey building in the Nimiq Ecosystem, you can start by checking the [Nimiq Developer Center](https://nimiq.com/developers/). Enjoy building on Nimiq!
+
 
 <!-- automd:file src="./src/apps.md" -->
 ## Apps
@@ -121,11 +126,6 @@
 - [Nimiq Tip Bot](https://t.me/NimiqTipBot) ([@albermonte](https://github.com/albermonte)): A Tip Bot to Tip Humans, using the Nimiq tech
 
 <!-- /automd -->
-
----
-
-If you are interested in starting your journey building in the Nimiq Ecosystem, you can start by checking the [Nimiq Developer Center](https://nimiq.com/developers/). Enjoy building on Nimiq!
-
 
 <!-- automd:file src="./src/exchanges.md" -->
 ## Exchanges
