@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://tailwindcss.com" target="_blank">
+  <a href="https://github.com/onmax/nimiq-awesome" target="_blank">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg">
-      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+      <img alt="Nimiq Awesome" src="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
   </a>
 </p>
