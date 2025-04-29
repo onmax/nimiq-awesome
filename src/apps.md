@@ -3,7 +3,7 @@
 ### Wallets
 
 - [Nimiq Pay App](https://nimiq.com/nimiq-pay/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Supports Bitcoin and NIM Decentralized
-- [Nimiq Wallet](https://nimiq.com/wallet/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Available without sign-up Decentralised
+- [Nimiq Wallet](https://nimiq.com/wallet/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Available without sign-up Decentralised 
 - [Trust Wallet](https://trustwallet.com/nimiq-wallet) ([@trustwallet](https://github.com/trustwallet)): A wallet app for managing your coins on Android and iOS.
 
 ### Infrastructure
