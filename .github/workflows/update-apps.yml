@@ -47,6 +47,9 @@ jobs:
 
       - name: Install dependencies
         run: cd src && pnpm install
+
+      - name: Lint
+        run: cd src && pnpm run lint
         
       - name: Build src
         run: cd src && pnpm run build

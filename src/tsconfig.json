@@ -1,26 +1,26 @@
 {
   "compilerOptions": {
-    /* Base Options: */
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "target": "es2022",
-    "resolveJsonModule": true,
+    /* If your code doesn't run in the DOM: */
+    "lib": ["es2022"],
     "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": false,
-    /* Strictness */
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
     /* If transpiling with TypeScript: */
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "sourceMap": true,
+    "resolveJsonModule": true,
+    /* Add Node types */
+    "types": ["node"],
+    /* Strictness */
+    "strict": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
     /* AND if you're building for a library: */
     "declaration": true,
-    /* If your code doesn't run in the DOM: */
-    "lib": ["es2022"],
-    /* Add Node types */
-    "types": ["node"]
+    "sourceMap": true,
+    /* Base Options: */
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "skipLibCheck": true
   }
 }
