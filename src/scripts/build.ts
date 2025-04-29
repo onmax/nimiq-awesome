@@ -109,7 +109,7 @@ function downloadImage(url: string, filepath: string): Promise<void> {
 async function fetchExchangesFromApi() {
   try {
     consola.info('Fetching exchange data from API...');
-    const response = await fetch('http://localhost:3000/api/exchanges');
+    const response = await fetch('https://api.nimiq.dev/api/exchanges');
     if (!response.ok) {
       throw new Error(`API responded with status: ${response.status}`);
     }
