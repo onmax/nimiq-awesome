@@ -1,8 +1,11 @@
 import { resolve, dirname } from 'pathe';
-import { readFileSync, existsSync, writeFileSync } from 'fs';
+import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 import { $ } from 'execa';
 import { safeParse, object, string, boolean, array, literal, union, nullable } from 'valibot';
 import { consola } from 'consola';
+import * as path from 'path';
+import * as fs from 'fs/promises';
+import * as https from 'https';
 
 // Use standard Node.js path for cross-platform compatibility
 const __dirname = dirname('.');
@@ -11,6 +14,17 @@ const dataDir = resolve(srcDir, 'data');
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json');
 const nimiqAppArchiveJson = resolve(dataDir, 'archive/nimiq-apps.archive.json');
 const nimiqExchangesJson = resolve(dataDir, 'nimiq-exchanges.json');
+const exchangeLogosDir = resolve(dataDir, 'assets/exchanges');
+
+// Ensure exchange logos directory exists
+try {
+  if (!existsSync(exchangeLogosDir)) {
+    mkdirSync(exchangeLogosDir, { recursive: true });
+    consola.info(`Created directory for exchange logos: ${exchangeLogosDir}`);
+  }
+} catch (error) {
+  consola.error(`Failed to create directory for exchange logos: ${error}`);
+}
 
 // Get git repository information
 async function getGitInfo() {
@@ -22,6 +36,140 @@ async function getGitInfo() {
   } catch (error) {
     consola.warn('Failed to get git repository information:', error);
     return { owner: 'nimiq', repo: 'awesome' }; // Fallback values
+  }
+}
+
+// Process rich text to extract plain text
+function richTextToPlainText(richText: any[]): string {
+  if (!richText || !Array.isArray(richText) || richText.length === 0) {
+    return '';
+  }
+  
+  return richText
+    .map(node => {
+      if (node.text) {
+        return node.text;
+      } else if (node.type === 'image') {
+        return `[Image: ${node.alt || 'No description'}]`;
+      } else if (node.type === 'embed') {
+        return '[Embedded content]';
+      }
+      return '';
+    })
+    .join('\n');
+}
+
+// Function to download an image from a URL
+function downloadImage(url: string, filepath: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (!url) {
+      reject(new Error('No URL provided'));
+      return;
+    }
+    
+    // Use the Node.js native fs module
+    import('fs').then(fs_standard => {
+      https.get(url, { rejectUnauthorized: false }, (response) => {
+        if (response.statusCode === 200) {
+          const writeStream = fs_standard.createWriteStream(filepath);
+          response.pipe(writeStream);
+          
+          writeStream.on('finish', () => {
+            writeStream.close();
+            consola.success(`Downloaded image to ${filepath}`);
+            resolve();
+          });
+          
+          writeStream.on('error', (err) => {
+            fs.unlink(filepath).catch(console.error);
+            reject(err);
+          });
+        } else if (response.statusCode === 301 || response.statusCode === 302) {
+          // Handle redirects
+          if (response.headers.location) {
+            downloadImage(response.headers.location, filepath)
+              .then(resolve)
+              .catch(reject);
+          } else {
+            reject(new Error(`Redirect with no location header: ${response.statusCode}`));
+          }
+        } else {
+          reject(new Error(`Failed to download image, status code: ${response.statusCode}`));
+        }
+      }).on('error', (err) => {
+        reject(err);
+      });
+    }).catch(err => {
+      reject(err);
+    });
+  });
+}
+
+// Fetch exchange data from API
+async function fetchExchangesFromApi() {
+  try {
+    consola.info('Fetching exchange data from API...');
+    const response = await fetch('http://localhost:3000/api/exchanges');
+    if (!response.ok) {
+      throw new Error(`API responded with status: ${response.status}`);
+    }
+    const data = await response.json() as any;
+    
+    // Transform the data to match our Exchange interface
+    const exchanges = await Promise.all(data.map(async (exchange: any) => {
+      const name = exchange.name;
+      const logoUrl = exchange.logo?.url;
+      
+      // Extract file extension from URL if available, default to svg
+      let fileExtension = 'svg';
+      if (logoUrl) {
+        const urlParts = logoUrl.split('.');
+        const detectedExtension = urlParts[urlParts.length - 1].toLowerCase();
+        
+        // Check if the URL contains a valid image extension
+        const validExtensions = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif'];
+        if (validExtensions.includes(detectedExtension.split('?')[0])) {
+          fileExtension = detectedExtension.split('?')[0]; // Remove query parameters
+        }
+      }
+      
+      const fileName = `${name.toLowerCase().replace(/\s+/g, '-')}.${fileExtension}`;
+      const localLogoPath = `assets/exchanges/${fileName}`;
+      const fullLocalPath = resolve(dataDir, localLogoPath);
+      
+      // Download the logo if it exists in the API response
+      if (logoUrl) {
+        consola.info(`Downloading logo for ${name} from ${logoUrl}`);
+        try {
+          await downloadImage(logoUrl, fullLocalPath);
+          consola.success(`Logo for ${name} downloaded to ${fullLocalPath}`);
+        } catch (error) {
+          consola.error(`Failed to download logo for ${name}: ${error}`);
+          // If download fails but we have an existing file, we'll keep using it
+          if (!existsSync(fullLocalPath)) {
+            consola.warn(`No existing logo found for ${name}, using empty string`);
+          }
+        }
+      }
+      
+      return {
+        name: name,
+        logo: existsSync(fullLocalPath) ? localLogoPath : "",
+        url: exchange.link,
+        description: exchange.description || "",
+        richDescription: exchange.richDescription || null,
+      };
+    }));
+    
+    // Write the data to the JSON file
+    writeFileSync(nimiqExchangesJson, JSON.stringify(exchanges, null, 2));
+    consola.success(`Successfully fetched and saved exchange data to ${nimiqExchangesJson}`);
+    return exchanges;
+  } catch (error) {
+    consola.error('Failed to fetch exchange data from API:', error);
+    consola.warn('Using existing exchange data from JSON file...');
+    // Return null to indicate we should use the existing file
+    return null;
   }
 }
 
@@ -37,6 +185,7 @@ interface App {
   logo: string;
   screenshot: string;
   developer: string | null;
+  richDescription?: any[] | null;
 }
 
 // Define Exchange interface
@@ -44,6 +193,8 @@ interface Exchange {
   name: string;
   logo: string;
   url: string;
+  description?: string;
+  richDescription?: any[] | null;
 }
 
 const AppTypeSchema = union([literal('Insights'), literal('E-commerce'), literal('Games'), literal('Faucet'), literal('Promotion'), literal('Miner'), literal('Wallets'), literal('Infrastructure'), literal('Bots')]);
@@ -56,13 +207,16 @@ const AppSchema = object({
   logo: string(),
   screenshot: string(),
   developer: nullable(string()),
+  richDescription: nullable(array(object({})))
 });
 
 // Define Exchange Schema
 const ExchangeSchema = object({
   name: string(),
   logo: string(),
-  url: string()
+  url: string(),
+  description: nullable(string()),
+  richDescription: nullable(array(object({})))
 });
 
 const json = readFileSync(nimiqAppJson, 'utf-8');
@@ -70,15 +224,22 @@ const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8');
 const parsedJson = JSON.parse(json) as App[];
 const parsedArchiveJson = JSON.parse(jsonArchive) as App[];
 
-// Read and parse exchanges JSON
-const exchangesJson = readFileSync(nimiqExchangesJson, 'utf-8');
-const parsedExchangesJson = JSON.parse(exchangesJson) as Exchange[];
+// For validation, create a temporary copy with richDescription added
+const validationJson = parsedJson.map(app => ({
+  ...app,
+  richDescription: app.richDescription || null
+}));
+
+const validationArchiveJson = parsedArchiveJson.map(app => ({
+  ...app,
+  richDescription: app.richDescription || null
+}));
 
 const AppArraySchema = array(AppSchema);
 const ExchangeArraySchema = array(ExchangeSchema);
 
-// Validate the JSON using valibot
-const validationResult = safeParse(AppArraySchema, parsedJson);
+// Validate the JSON using valibot (using the temporary copy that includes richDescription)
+const validationResult = safeParse(AppArraySchema, validationJson);
 
 if (!validationResult.success) {
   consola.error('JSON validation failed');
@@ -86,16 +247,6 @@ if (!validationResult.success) {
   process.exit(1);
 } else {
   consola.success('JSON validation successful');
-}
-
-// Validate exchanges JSON
-const exchangesValidationResult = safeParse(ExchangeArraySchema, parsedExchangesJson);
-if (!exchangesValidationResult.success) {
-  consola.error('Exchanges JSON validation failed');
-  consola.error(exchangesValidationResult.issues);
-  process.exit(1);
-} else {
-  consola.success('Exchanges JSON validation successful');
 }
 
 // Skip empty paths as they're valid (not all apps have logos/screenshots)
@@ -125,21 +276,6 @@ for (const app of parsedJson) {
     consola.error(`Invalid screenshot path for app "${app.name}": ${app.screenshot}`);
     allPathsValid = false;
   }
-}
-
-// Check exchange logo paths
-for (const exchange of parsedExchangesJson) {
-  if (exchange.logo && !checkPathExists(exchange.logo, dataDir)) {
-    consola.error(`Invalid logo path for exchange "${exchange.name}": ${exchange.logo}`);
-    allPathsValid = false;
-  }
-}
-
-if (!allPathsValid) {
-  consola.error('Some file paths are invalid');
-  process.exit(1);
-} else {
-  consola.success('All file paths are valid');
 }
 
 // Order by importance for better UX
@@ -180,26 +316,11 @@ for (const app of sortedApps) {
   markdown += `- [${app.name}](${app.link}) (${authorLink}): ${app.description}\n`;
 }
 
-// Generate exchanges markdown
-// Sort exchanges alphabetically by name
-const sortedExchanges = [...parsedExchangesJson].sort((a, b) => a.name.localeCompare(b.name));
-let exchangesMarkdown = "## Exchanges\n\nWhere you can buy, sell, or trade Nimiq:\n\n";
-
-for (const exchange of sortedExchanges) {
-  exchangesMarkdown += `- [${exchange.name}](${exchange.url})\n`;
-}
-
 // Write the markdown to apps.md file
 const markdownPath = resolve(srcDir, 'apps.md');
 writeFileSync(markdownPath, markdown);
 consola.success(`Markdown file generated at ${markdownPath}`);
 
-// Write exchanges markdown to exchanges.md file
-const exchangesMarkdownPath = resolve(srcDir, 'exchanges.md');
-writeFileSync(exchangesMarkdownPath, exchangesMarkdown);
-consola.success(`Exchanges markdown file generated at ${exchangesMarkdownPath}`);
-
-// Create distribution version with GitHub raw URLs for assets
 // Resource Types
 type ResourceType = 'developer-tool' | 'validator' | 'documentation' | 'core' | 'utils' | 'node' | 'infrastructure' | 'rpc' | 'ui';
 
@@ -210,6 +331,7 @@ interface Resource {
   source: string | null;
   description: string;
   author: string;
+  richDescription?: any[] | null;
 }
 
 const ResourceTypeSchema = union([
@@ -230,7 +352,8 @@ const ResourceSchema = object({
   link: string(),
   source: nullable(string()),
   description: string(),
-  author: string()
+  author: string(),
+  richDescription: nullable(array(object({})))
 });
 
 const ResourceArraySchema = array(ResourceSchema);
@@ -249,13 +372,77 @@ const resourceTypeOrder = [
 ];
 
 async function main() {
+  // First try to fetch exchanges from API
+  await fetchExchangesFromApi();
+  
+  // Now read the exchanges JSON file (either freshly updated or existing)
+  const exchangesJson = readFileSync(nimiqExchangesJson, 'utf-8');
+  const parsedExchangesJson = JSON.parse(exchangesJson) as Exchange[];
+
+  // For validation, create a temporary copy with required fields added
+  const validationExchangesJson = parsedExchangesJson.map(exchange => ({
+    ...exchange,
+    description: exchange.description || "",
+    richDescription: exchange.richDescription || null
+  }));
+
+  // Validate exchanges JSON using the validation copy
+  const exchangesValidationResult = safeParse(ExchangeArraySchema, validationExchangesJson);
+  if (!exchangesValidationResult.success) {
+    consola.error('Exchanges JSON validation failed');
+    consola.error(exchangesValidationResult.issues);
+    process.exit(1);
+  } else {
+    consola.success('Exchanges JSON validation successful');
+  }
+
+  // Check exchange logo paths
+  for (const exchange of parsedExchangesJson) {
+    if (exchange.logo && !checkPathExists(exchange.logo, dataDir)) {
+      consola.error(`Invalid logo path for exchange "${exchange.name}": ${exchange.logo}`);
+      allPathsValid = false;
+    }
+  }
+
+  if (!allPathsValid) {
+    consola.error('Some file paths are invalid');
+    process.exit(1);
+  } else {
+    consola.success('All file paths are valid');
+  }
+
+  // Generate exchanges markdown
+  // Sort exchanges alphabetically by name
+  const sortedExchanges = [...parsedExchangesJson].sort((a, b) => a.name.localeCompare(b.name));
+  let exchangesMarkdown = "## Exchanges\n\nWhere you can buy, sell, or trade Nimiq:\n\n";
+
+  for (const exchange of sortedExchanges) {
+    // Include description if available
+    let exchangeEntry = `- [${exchange.name}](${exchange.url})`;
+    if (exchange.description) {
+      exchangeEntry += `: ${exchange.description}`;
+    }
+    exchangesMarkdown += exchangeEntry + '\n';
+  }
+
+  // Write exchanges markdown to exchanges.md file
+  const exchangesMarkdownPath = resolve(srcDir, 'exchanges.md');
+  writeFileSync(exchangesMarkdownPath, exchangesMarkdown);
+  consola.success(`Exchanges markdown file generated at ${exchangesMarkdownPath}`);
+
   // Validate JSON and generate markdown first
   const nimiqResourcesJson = resolve(dataDir, 'nimiq-resources.json');
   const resourcesJson = readFileSync(nimiqResourcesJson, 'utf-8');
   const parsedResourcesJson = JSON.parse(resourcesJson) as Resource[];
 
-  // Validate resources JSON
-  const resourcesValidationResult = safeParse(ResourceArraySchema, parsedResourcesJson);
+  // For validation, create a temporary copy with richDescription added
+  const validationResourcesJson = parsedResourcesJson.map(resource => ({
+    ...resource,
+    richDescription: resource.richDescription || null
+  }));
+  
+  // Validate resources JSON using the validation copy
+  const resourcesValidationResult = safeParse(ResourceArraySchema, validationResourcesJson);
   if (!resourcesValidationResult.success) {
     consola.error('Resources JSON validation failed');
     consola.error(resourcesValidationResult.issues);

@@ -1,77 +1,107 @@
 [
   {
     "name": "Kriptomat",
-    "logo": "./assets/exchanges/kryptomat.svg",
-    "url": "https://kriptomat.io/"
+    "logo": "assets/exchanges/kriptomat.svg",
+    "url": "https://kriptomat.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "AscendEX",
-    "logo": "./assets/exchanges/ascendex.svg",
-    "url": "https://ascendex.com/en"
+    "logo": "assets/exchanges/ascendex.svg",
+    "url": "https://ascendex.com/en",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Gate.io",
-    "logo": "./assets/exchanges/gateio.svg",
-    "url": "https://gate.io/"
+    "logo": "assets/exchanges/gate.io.svg",
+    "url": "https://gate.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "CoinEx",
-    "logo": "./assets/exchanges/coinex.svg",
-    "url": "https://www.coinex.com/en"
+    "logo": "assets/exchanges/coinex.svg",
+    "url": "https://www.coinex.com/en",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "SimpleSwap",
-    "logo": "./assets/exchanges/simpleswap.svg",
-    "url": "https://simpleswap.io/"
+    "logo": "assets/exchanges/simpleswap.svg",
+    "url": "https://simpleswap.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Coinpay",
-    "logo": "./assets/exchanges/coinpay.avif",
-    "url": "https://coinpay.cr/"
+    "logo": "assets/exchanges/coinpay.png",
+    "url": "https://coinpay.cr/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "StealthEX",
-    "logo": "./assets/exchanges/stealthex.svg",
-    "url": "https://stealthex.io/"
+    "logo": "assets/exchanges/stealthex.svg",
+    "url": "https://stealthex.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Coinspot",
-    "logo": "./assets/exchanges/coinspot.svg",
-    "url": "https://www.coinspot.com.au/"
+    "logo": "assets/exchanges/coinspot.svg",
+    "url": "https://www.coinspot.com.au/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Changelly",
-    "logo": "./assets/exchanges/changelly.svg",
-    "url": "https://changelly.com/"
+    "logo": "assets/exchanges/changelly.svg",
+    "url": "https://changelly.com/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "HitBTC",
-    "logo": "./assets/exchanges/hitbtc.svg",
-    "url": "https://hitbtc.com/"
+    "logo": "assets/exchanges/hitbtc.svg",
+    "url": "https://hitbtc.com/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Swapspace",
-    "logo": "./assets/exchanges/swapspace.svg",
-    "url": "https://swapspace.co/"
+    "logo": "assets/exchanges/swapspace.svg",
+    "url": "https://swapspace.co/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Changehero",
-    "logo":"./assets/exchanges/changehero.svg",
-    "url": "https://changehero.io/"
+    "logo": "assets/exchanges/changehero.svg",
+    "url": "https://changehero.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Kucoin",
-    "logo": "./assets/exchanges/kucoin.svg",
-    "url": "https://www.kucoin.com/trade"
+    "logo": "assets/exchanges/kucoin.svg",
+    "url": "https://www.kucoin.com/trade",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Swapzone",
-    "logo": "./assets/exchanges/swapzone.svg",
-    "url": "https://swapzone.io/"
+    "logo": "assets/exchanges/swapzone.svg",
+    "url": "https://swapzone.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "CoinSwitch",
-    "logo": "./assets/exchanges/coinswitch.svg",
-    "url": "https://coinswitch.co/"
+    "logo": "assets/exchanges/coinswitch.svg",
+    "url": "https://coinswitch.co/",
+    "description": "",
+    "richDescription": null
   }
 ]

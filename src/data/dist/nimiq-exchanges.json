@@ -1,77 +1,107 @@
 [
   {
     "name": "Kriptomat",
-    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kryptomat.svg",
-    "url": "https://kriptomat.io/"
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kriptomat.svg",
+    "url": "https://kriptomat.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "AscendEX",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/ascendex.svg",
-    "url": "https://ascendex.com/en"
+    "url": "https://ascendex.com/en",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Gate.io",
-    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/gateio.svg",
-    "url": "https://gate.io/"
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/gate.io.svg",
+    "url": "https://gate.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "CoinEx",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinex.svg",
-    "url": "https://www.coinex.com/en"
+    "url": "https://www.coinex.com/en",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "SimpleSwap",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/simpleswap.svg",
-    "url": "https://simpleswap.io/"
+    "url": "https://simpleswap.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Coinpay",
-    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinpay.avif",
-    "url": "https://coinpay.cr/"
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinpay.png",
+    "url": "https://coinpay.cr/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "StealthEX",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/stealthex.svg",
-    "url": "https://stealthex.io/"
+    "url": "https://stealthex.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Coinspot",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinspot.svg",
-    "url": "https://www.coinspot.com.au/"
+    "url": "https://www.coinspot.com.au/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Changelly",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/changelly.svg",
-    "url": "https://changelly.com/"
+    "url": "https://changelly.com/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "HitBTC",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/hitbtc.svg",
-    "url": "https://hitbtc.com/"
+    "url": "https://hitbtc.com/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Swapspace",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/swapspace.svg",
-    "url": "https://swapspace.co/"
+    "url": "https://swapspace.co/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Changehero",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/changehero.svg",
-    "url": "https://changehero.io/"
+    "url": "https://changehero.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Kucoin",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kucoin.svg",
-    "url": "https://www.kucoin.com/trade"
+    "url": "https://www.kucoin.com/trade",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "Swapzone",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/swapzone.svg",
-    "url": "https://swapzone.io/"
+    "url": "https://swapzone.io/",
+    "description": "",
+    "richDescription": null
   },
   {
     "name": "CoinSwitch",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/coinswitch.svg",
-    "url": "https://coinswitch.co/"
+    "url": "https://coinswitch.co/",
+    "description": "",
+    "richDescription": null
   }
 ]
