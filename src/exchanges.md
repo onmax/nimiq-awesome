@@ -13,6 +13,7 @@ Where you can buy, sell, or trade Nimiq:
 - [HitBTC](https://hitbtc.com/)
 - [Kriptomat](https://kriptomat.io/)
 - [Kucoin](https://www.kucoin.com/trade)
+- [MEXC](https://www.mexc.com/)
 - [SimpleSwap](https://simpleswap.io/)
 - [StealthEX](https://stealthex.io/)
 - [Swapspace](https://swapspace.co/)

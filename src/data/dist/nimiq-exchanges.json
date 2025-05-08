@@ -1,5 +1,12 @@
 [
   {
+    "name": "MEXC",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/mexc.svg",
+    "url": "https://www.mexc.com/",
+    "description": "",
+    "richDescription": null
+  },
+  {
     "name": "Kriptomat",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/exchanges/kriptomat.svg",
     "url": "https://kriptomat.io/",
