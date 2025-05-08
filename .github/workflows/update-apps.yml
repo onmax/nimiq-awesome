@@ -53,6 +53,9 @@ jobs:
         
       - name: Build src
         run: cd src && pnpm run build
+
+      - name: Fix lint
+        run: cd src && pnpm run lint:fix
         
       - name: Check for changes
         id: git-check
