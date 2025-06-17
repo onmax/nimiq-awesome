@@ -168,6 +168,14 @@
     "author": "@Nimiq"
   },
   {
+    "type": "developer-tool",
+    "name": "Nimiq MCP Server",
+    "link": "https://github.com/onmax/nimiq-mcp",
+    "source": "https://github.com/onmax/nimiq-mcp",
+    "description": "Model Context Protocol server for AI integration with Nimiq blockchain",
+    "author": "@onmax"
+  },
+  {
     "type": "ui",
     "name": "Nimiq Style Framework",
     "link": "https://nimiq.github.io/nimiq-style/",

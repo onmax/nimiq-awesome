@@ -7,6 +7,7 @@
 - [Nimiq Demo Project](https://github.com/nimiq/nimiq-demo) ([Source](https://github.com/nimiq/nimiq-demo)) ([@Nimiq](https://github.com/Nimiq)): Simple project demonstrating wallet and transaction functions
 - [Nimiq Playground](https://nimiq-playground.pages.dev/) ([Source](https://github.com/onmax/nimiq-playground)) ([@onmax](https://github.com/onmax)): Online IDE for testing and experimenting with Nimiq code
 - [Nimiq Cashlink Bulk Generator](https://github.com/nimiq/cashlink-generator) ([Source](https://github.com/nimiq/cashlink-generator/tree/master)) ([@Nimiq](https://github.com/Nimiq)): Tool to create and manage NIM cashlinks in bulk
+- [Nimiq MCP Server](https://github.com/onmax/nimiq-mcp) ([Source](https://github.com/onmax/nimiq-mcp)) ([@onmax](https://github.com/onmax)): Model Context Protocol server for AI integration with Nimiq blockchain
 
 ### Documentation
 
