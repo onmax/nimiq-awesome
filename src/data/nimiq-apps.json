@@ -115,16 +115,7 @@
     "logo": "./assets/nimiq-game-store.webp",
     "screenshot": "",
     "developer": "Paul"
-  },
-  {
-    "name": "PayNim Telegram Bot",
-    "description": "Send NIM transactions via Telegram.",
-    "link": "https://t.me/PayNimBot",
-    "type": "Bots",
-    "logo": "./assets/paynim-telegram-bot.svg",
-    "screenshot": "",
-    "developer": "PayNim"
-  },
+  }, 
   {
     "name": "Twini",
     "description": "Frictionless donations with NIM for Twitch.tv",

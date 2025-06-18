@@ -97,5 +97,14 @@
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/short-nim.svg",
     "screenshot": "",
     "developer": "@albermonte"
+  },
+  {
+    "name": "PayNim Telegram Bot",
+    "description": "Send NIM transactions via Telegram.",
+    "link": "https://t.me/PayNimBot",
+    "type": "Bots",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/paynim-telegram-bot.svg",
+    "screenshot": "",
+    "developer": "PayNim"
   }
 ]
