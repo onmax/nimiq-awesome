@@ -176,6 +176,14 @@
     "author": "@onmax"
   },
   {
+    "type": "developer-tool",
+    "name": "Nimiq Tools",
+    "link": "https://nimiq-tools.github.io/",
+    "source": "https://github.com/nimiq-tools/nimiq-tools.github.io",
+    "description": "Set of Nimiq tools for both online and offline usage including address management, balance checking, transaction generation, and message signing",
+    "author": "@eligioo"
+  },
+  {
     "type": "ui",
     "name": "Nimiq Style Framework",
     "link": "https://nimiq.github.io/nimiq-style/",
