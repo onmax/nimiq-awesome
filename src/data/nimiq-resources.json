@@ -28,7 +28,7 @@
     "name": "Nimiq Developer Center",
     "link": "https://nimiq.com/developers/",
     "source": "https://github.com/nimiq/developer-center",
-    "description": "Official guide with tutorials and technical references",
+    "description": "Official documentation for the Nimiq ecosystem",
     "author": "@Nimiq"
   },
   {
@@ -38,6 +38,14 @@
     "source": null,
     "description": "Documentation for the Nimiq JSON-RPC interface",
     "author": "@DovAzencot"
+  },
+  {
+    "type": "documentation",
+    "name": "Nimiq Tutorial",
+    "link": "https://tutorial.nimiq.dev",
+    "source": "https://github.com/onmax/nimiq-tutorial",
+    "description": "Learn how to build decentralized applications with the Nimiq blockchain using the Web Client",
+    "author": "@nimiq"
   },
   {
     "type": "developer-tool",
