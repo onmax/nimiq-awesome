@@ -5,7 +5,7 @@
     "link": "https://hub.nimiq.com/",
     "source": "https://github.com/nimiq/hub",
     "description": "Unified interface for accounts, addresses, and contracts",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "developer-tool",
@@ -13,7 +13,7 @@
     "link": "https://keyguard.nimiq.com/",
     "source": "https://github.com/nimiq/keyguard",
     "description": "Secure key management and transaction signing",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "validator",
@@ -21,7 +21,7 @@
     "link": "https://validators-api-mainnet.nuxt.dev/",
     "source": "https://github.com/nimiq/validators-api",
     "description": "Dashboard and API for monitoring validators",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "documentation",
@@ -29,7 +29,7 @@
     "link": "https://nimiq.com/developers/",
     "source": "https://github.com/nimiq/developer-center",
     "description": "Official documentation for the Nimiq ecosystem",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "documentation",
@@ -53,7 +53,7 @@
     "link": "https://github.com/nimiq/nimiq-demo",
     "source": "https://github.com/nimiq/nimiq-demo",
     "description": "Simple project demonstrating wallet and transaction functions",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "core",
@@ -61,7 +61,7 @@
     "link": "https://github.com/nimiq/core-rs-albatross",
     "source": "https://github.com/nimiq/core-rs-albatross",
     "description": "Rust implementation of Nimiq consensus (Albatross/PoS)",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "core",
@@ -77,7 +77,7 @@
     "link": "https://github.com/nimiq/nimiq-utils",
     "source": "https://github.com/nimiq/nimiq-utils",
     "description": "Collection of JS utilities for Nimiq",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "node",
@@ -173,7 +173,7 @@
     "link": "https://github.com/nimiq/cashlink-generator",
     "source": "https://github.com/nimiq/cashlink-generator/tree/master",
     "description": "Tool to create and manage NIM cashlinks in bulk",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "developer-tool",
@@ -197,7 +197,7 @@
     "link": "https://nimiq.github.io/nimiq-style/",
     "source": null,
     "description": "Official CSS framework with Nimiq colors and fonts",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "ui",
@@ -221,7 +221,7 @@
     "link": "https://github.com/nimiq/identicons",
     "source": "https://github.com/nimiq/identicons",
     "description": "JS library for generating identicons from Nimiq addresses",
-    "author": "@Nimiq"
+    "author": "@nimiq"
   },
   {
     "type": "ui",
