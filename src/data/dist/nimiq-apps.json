@@ -27,13 +27,22 @@
     "developer": "@nimiq"
   },
   {
-    "name": "NimWorld",
-    "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
+    "name": "Pixels",
+    "description": "A 2048 x 1024 drawing canvas where you can draw pixels with NIM. Draw up to 8 pixels per transaction starting from 0.1 NIM.",
+    "link": "https://pixels.nimpowered.com/",
+    "type": "Games",
+    "logo": "",
+    "screenshot": "",
+    "developer": "@paulghz"
+  },
+  {
+    "name": "nimworld",
+    "description": "Buy and customize tiles on a world map with 5670 available tiles. Color your tile and add messages, but beware - others can outbid you!",
     "link": "https://world.nimpowered.com/",
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-world.webp",
     "screenshot": "",
-    "developer": null
+    "developer": "@paulghz"
   },
   {
     "name": "Nimtris",
