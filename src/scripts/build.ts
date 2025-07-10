@@ -304,6 +304,35 @@ function getAuthorLink(author: string | null): string {
     return `[${author}](https://github.com/${author.slice(1)})`
 }
 
+// Function to generate TOC from markdown content
+function generateTOC(markdownContent: string): string {
+  const lines = markdownContent.split('\n')
+  const toc: string[] = []
+  
+  for (const line of lines) {
+    // Match heading lines (## and ###)
+    const headingMatch = line.match(/^(#{2,3})\s+(.+)$/)
+    if (headingMatch && headingMatch[1] && headingMatch[2]) {
+      const level = headingMatch[1].length
+      const title = headingMatch[2]
+      
+      // Create anchor link (GitHub style)
+      const anchor = title
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '') // Remove special characters
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .replace(/^-|-$/g, '') // Remove leading/trailing hyphens
+      
+      // Create indentation based on heading level
+      const indent = '  '.repeat(level - 2)
+      toc.push(`${indent}- [${title}](#${anchor})`)
+    }
+  }
+  
+  return toc.join('\n')
+}
+
 // Generate markdown
 let markdown = '## Apps\n'
 let currentType = ''
@@ -597,6 +626,19 @@ async function main() {
         = `${readmeContent.substring(0, appsStartIndex + startMarker.length)
         }\n${markdown}\n${
           readmeContent.substring(appsEndIndex)}`
+    }
+
+    // Generate and update TOC after all sections have been processed
+    const tocStartMarker = '<!-- automd:with options="toc" -->'
+    const tocEndMarker = '<!-- /automd -->'
+    const tocStartIndex = readmeContent.indexOf(tocStartMarker)
+    const tocEndIndex = readmeContent.indexOf(tocEndMarker, tocStartIndex)
+    
+    if (tocStartIndex !== -1 && tocEndIndex !== -1) {
+      // Generate TOC from the current README content
+      const toc = generateTOC(readmeContent)
+      readmeContent = `${readmeContent.substring(0, tocStartIndex + tocStartMarker.length)}\n${toc}\n${readmeContent.substring(tocEndIndex)}`
+      consola.success('Successfully generated and updated TOC in README.md')
     }
 
     writeFileSync(readmePath, readmeContent)

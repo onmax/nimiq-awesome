@@ -3,7 +3,7 @@
 ### Wallets
 
 - [Nimiq Pay App](https://nimiq.com/nimiq-pay/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Supports Bitcoin and NIM Decentralized
-- [Nimiq Wallet](https://nimiq.com/wallet/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Available without sign-up Decentralised
+- [Nimiq Wallet](https://nimiq.com/wallet/) ([@nimiq](https://github.com/nimiq)): The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy, sell, and much more. Available without sign-up. Decentralized
 - [Trust Wallet](https://trustwallet.com/nimiq-wallet) ([@trustwallet](https://github.com/trustwallet)): A wallet app for managing your coins on Android and iOS.
 
 ### Infrastructure
@@ -19,7 +19,7 @@
 ### Games
 
 - [NimWorld](https://world.nimpowered.com/) (Unknown): A pixel war / million dollar page on a world map powered by Nimiq blockchain
-- [Nimtris](https://nimtris.com/) ([@Eligioo](https://github.com/Eligioo)): Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.d
+- [Nimtris](https://nimtris.com/) ([@Eligioo](https://github.com/Eligioo)): Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.
 - [Nimiq Sunset Cyberspace](https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US) ([@albermonte](https://github.com/albermonte)): Score points, beat your own records and earn as many NIM as you can!
 - [Nimiq 2048](https://2048.nimiq.com/) ([@maestroi](https://github.com/maestroi)): A Nimiq-themed version of the popular 2048 game.
 
