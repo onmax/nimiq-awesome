@@ -10,7 +10,7 @@
   },
   {
     "name": "Nimiq Wallet",
-    "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Available without sign-up Decentralised",
+    "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy, sell, and much more. Available without sign-up. Decentralized",
     "link": "https://nimiq.com/wallet/",
     "type": "Wallets",
     "logo": "",
@@ -37,7 +37,7 @@
   },
   {
     "name": "Nimtris",
-    "description": "Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.d",
+    "description": "Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.",
     "link": "https://nimtris.com/",
     "type": "Games",
     "logo": "./assets/nimtris.webp",
