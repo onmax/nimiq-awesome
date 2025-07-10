@@ -504,7 +504,14 @@ async function main() {
       currentResourceType = resource.type
       const formattedType = currentResourceType
         .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .map(word => {
+          // Handle acronyms that should be all uppercase
+          const acronyms = ['rpc', 'ui', 'api', 'sdk', 'cli', 'ide', 'npm', 'cdn', 'url', 'html', 'css', 'js', 'ts']
+          if (acronyms.includes(word.toLowerCase())) {
+            return word.toUpperCase()
+          }
+          return word.charAt(0).toUpperCase() + word.slice(1)
+        })
         .join(' ')
       resourcesMarkdown += `\n### ${formattedType}\n\n`
     }

@@ -22,14 +22,14 @@
 - [Nimiq Gleam](https://github.com/sisou/nimiq_gleam) ([Source](https://github.com/sisou/nimiq_gleam)) ([@sisou](https://github.com/sisou)): Modules and helpers for Nimiq in Gleam
 - [Nim Log](https://nimlog.paberr.net/history.html) ([@paberr](https://github.com/paberr)): Explorer for Nimiq blockchain logs and transactions
 
-### Rpc
+### RPC
 
 - [Open RPC server](https://rpc.nimiqwatch.com/) ([@sisou](https://github.com/sisou)): A public JSON-RPC server to make initial developments easier
 - [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc) ([Source](https://github.com/sisou/gleam-nimiq-rpc)) ([@sisou](https://github.com/sisou)): Gleam library for Nimiq JSON-RPC interaction
 - [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts) ([Source](https://github.com/onmax/albatross-rpc-client-ts)) ([@onmax](https://github.com/onmax)): Fully typed RPC client for Nimiq in TypeScript
 - [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc) ([Source](https://jsr.io/@blouflash/nimiq-rpc)) ([@blouflash](https://github.com/blouflash)): JSON-RPC client for Nimiq blockchain
 
-### Ui
+### UI
 
 - [Nimiq Style Framework](https://nimiq.github.io/nimiq-style/) ([@nimiq](https://github.com/nimiq)): Official CSS framework with Nimiq colors and fonts
 - [Nimiq CSS](https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-css) ([Source](https://github.com/onmax/nimiq-ui/tree/main/packages/nimiq-css)) ([@onmax](https://github.com/onmax)): Modern CSS library for Nimiq styling with UnoCSS/Tailwind presets
