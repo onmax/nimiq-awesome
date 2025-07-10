@@ -42,7 +42,7 @@
   {
     "type": "documentation",
     "name": "Nimiq Tutorial",
-    "link": "https://tutorial.nimiq.dev",
+    "link": "https://nimiq.guide/",
     "source": "https://github.com/onmax/nimiq-tutorial",
     "description": "Learn how to build decentralized applications with the Nimiq blockchain using the Web Client",
     "author": "@nimiq"

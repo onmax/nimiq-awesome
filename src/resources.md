@@ -14,7 +14,7 @@
 
 - [Nimiq Developer Center](https://nimiq.com/developers/) ([Source](https://github.com/nimiq/developer-center)) ([@nimiq](https://github.com/nimiq)): Official documentation for the Nimiq ecosystem
 - [NimiqHub RPC Docs](https://www.nimiqhub.com/docs/rpc) ([@DovAzencot](https://github.com/DovAzencot)): Documentation for the Nimiq JSON-RPC interface
-- [Nimiq Tutorial](https://tutorial.nimiq.dev) ([Source](https://github.com/onmax/nimiq-tutorial)) ([@nimiq](https://github.com/nimiq)): Learn how to build decentralized applications with the Nimiq blockchain using the Web Client
+- [Nimiq Tutorial](https://nimiq.guide/) ([Source](https://github.com/onmax/nimiq-tutorial)) ([@nimiq](https://github.com/nimiq)): Learn how to build decentralized applications with the Nimiq blockchain using the Web Client
 
 ### Core
 
