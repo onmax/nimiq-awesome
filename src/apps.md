@@ -14,7 +14,7 @@
 
 - [Cryptopayment.link](https://cryptopayment.link/) ([@nimiq](https://github.com/nimiq)): Get paid in crypto! Charge your customers with Nimiq, Bitcoin or Ethereum. Create a custom link and QR code in seconds.
 - [Nimiq Shop](https://shop.nimiq.com/) ([@nimiq](https://github.com/nimiq)): Use your NIM to get Nimiq Swag. Experience the swift Nimiq Checkout.
-- [Nimiq Game Store](https://nimiq-game-store.paulgertz.com/) (Paul): Buy PC games with NIM and experience the Nimiq Checkout.
+- [Nimiq Game Store](https://nimiq-game-store.paulgertz.com/) ([@paulghz](https://github.com/paulghz)): Buy PC games with NIM and experience the Nimiq Checkout.
 
 ### Games
 
