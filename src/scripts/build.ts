@@ -308,28 +308,29 @@ function getAuthorLink(author: string | null): string {
 function generateTOC(markdownContent: string): string {
   const lines = markdownContent.split('\n')
   const toc: string[] = []
-  
+
   for (const line of lines) {
     // Match heading lines (## and ###)
-    const headingMatch = line.match(/^(#{2,3})\s+(.+)$/)
+    // Use a more specific pattern to avoid backtracking
+    const headingMatch = line.match(/^(#{2,3})[ \t]+([^ \t].*)$/)
     if (headingMatch && headingMatch[1] && headingMatch[2]) {
       const level = headingMatch[1].length
       const title = headingMatch[2]
-      
+
       // Create anchor link (GitHub style)
       const anchor = title
         .toLowerCase()
         .replace(/[^\w\s-]/g, '') // Remove special characters
         .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
-        .replace(/^-|-$/g, '') // Remove leading/trailing hyphens
-      
+        .replace(/-{2,}/g, '-') // Replace multiple hyphens with single
+        .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
+
       // Create indentation based on heading level
       const indent = '  '.repeat(level - 2)
       toc.push(`${indent}- [${title}](#${anchor})`)
     }
   }
-  
+
   return toc.join('\n')
 }
 
@@ -504,7 +505,7 @@ async function main() {
       currentResourceType = resource.type
       const formattedType = currentResourceType
         .split('-')
-        .map(word => {
+        .map((word) => {
           // Handle acronyms that should be all uppercase
           const acronyms = ['rpc', 'ui', 'api', 'sdk', 'cli', 'ide', 'npm', 'cdn', 'url', 'html', 'css', 'js', 'ts']
           if (acronyms.includes(word.toLowerCase())) {
@@ -640,7 +641,7 @@ async function main() {
     const tocEndMarker = '<!-- /automd -->'
     const tocStartIndex = readmeContent.indexOf(tocStartMarker)
     const tocEndIndex = readmeContent.indexOf(tocEndMarker, tocStartIndex)
-    
+
     if (tocStartIndex !== -1 && tocEndIndex !== -1) {
       // Generate TOC from the current README content
       const toc = generateTOC(readmeContent)
