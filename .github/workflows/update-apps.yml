@@ -48,15 +48,18 @@ jobs:
       - name: Install dependencies
         run: cd src && pnpm install
 
-      - name: Lint
+      - name: Lint (check)
+        id: lint-check
         run: cd src && pnpm run lint
+        continue-on-error: true
+
+      - name: Fix lint issues
+        id: lint-fix
+        run: cd src && pnpm run lint:fix
         
       - name: Build src
         run: cd src && pnpm run build
 
-      - name: Fix lint
-        run: cd src && pnpm run lint:fix
-        
       - name: Check for changes
         id: git-check
         run: |
@@ -68,5 +71,9 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit -am "chore: update apps documentation and dist files"
+          if [ "${{ steps.lint-check.outcome }}" = "failure" ]; then
+            git commit -am "chore: auto-fix linting issues and update documentation"
+          else
+            git commit -am "chore: update apps documentation and dist files"
+          fi
           git push
