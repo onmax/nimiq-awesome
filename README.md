@@ -128,13 +128,14 @@
 
 - [Cryptopayment.link](https://cryptopayment.link/) ([@nimiq](https://github.com/nimiq)): Get paid in crypto! Charge your customers with Nimiq, Bitcoin or Ethereum. Create a custom link and QR code in seconds.
 - [Nimiq Shop](https://shop.nimiq.com/) ([@nimiq](https://github.com/nimiq)): Use your NIM to get Nimiq Swag. Experience the swift Nimiq Checkout.
-- [Nimiq Game Store](https://nimiq-game-store.paulgertz.com/) (Paul): Buy PC games with NIM and experience the Nimiq Checkout.
+- [Nimiq Game Store](https://nimiq-game-store.paulgertz.com/) ([@paulghz](https://github.com/paulghz)): Buy PC games with NIM and experience the Nimiq Checkout.
 
 ### Games
 
-- [NimWorld](https://world.nimpowered.com/) (Unknown): A pixel war / million dollar page on a world map powered by Nimiq blockchain
 - [Nimtris](https://nimtris.com/) ([@Eligioo](https://github.com/Eligioo)): Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.
 - [Nimiq Sunset Cyberspace](https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US) ([@albermonte](https://github.com/albermonte)): Score points, beat your own records and earn as many NIM as you can!
+- [NimWorld](https://world.nimpowered.com/) ([@paulghz](https://github.com/paulghz)): A pixel war / million dollar page on a world map powered by Nimiq blockchain
+- [Pixels](https://pixels.nimpowered.com/) ([@paulghz](https://github.com/paulghz)): A 2048 x 1024 drawing canvas where you can draw pixels with NIM. Draw up to 8 pixels per transaction starting from 0.1 NIM.
 - [Nimiq 2048](https://2048.nimiq.com/) ([@maestroi](https://github.com/maestroi)): A Nimiq-themed version of the popular 2048 game.
 
 ### Insights

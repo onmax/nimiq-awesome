@@ -27,15 +27,6 @@
     "developer": "@nimiq"
   },
   {
-    "name": "NimWorld",
-    "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
-    "link": "https://world.nimpowered.com/",
-    "type": "Games",
-    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-world.webp",
-    "screenshot": "",
-    "developer": null
-  },
-  {
     "name": "Nimtris",
     "description": "Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.",
     "link": "https://nimtris.com/",
@@ -123,7 +114,25 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-game-store.webp",
     "screenshot": "",
-    "developer": "Paul"
+    "developer": "@paulghz"
+  },
+  {
+    "name": "NimWorld",
+    "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
+    "link": "https://world.nimpowered.com/",
+    "type": "Games",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-world.webp",
+    "screenshot": "",
+    "developer": "@paulghz"
+  },
+  {
+    "name": "Pixels",
+    "description": "A 2048 x 1024 drawing canvas where you can draw pixels with NIM. Draw up to 8 pixels per transaction starting from 0.1 NIM.",
+    "link": "https://pixels.nimpowered.com/",
+    "type": "Games",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/pixels_logo.png",
+    "screenshot": "",
+    "developer": "@paulghz"
   },
   {
     "name": "Twini",
