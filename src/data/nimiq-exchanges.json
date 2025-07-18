@@ -1,54 +1,5 @@
 [
   {
-    "name": "MEXC",
-    "logo": "assets/exchanges/mexc.svg",
-    "url": "https://www.mexc.com/",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "Kriptomat",
-    "logo": "assets/exchanges/kriptomat.svg",
-    "url": "https://kriptomat.io/",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "AscendEX",
-    "logo": "assets/exchanges/ascendex.svg",
-    "url": "https://ascendex.com/en",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "Gate.io",
-    "logo": "assets/exchanges/gate.io.svg",
-    "url": "https://gate.io/",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "CoinEx",
-    "logo": "assets/exchanges/coinex.svg",
-    "url": "https://www.coinex.com/en",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "SimpleSwap",
-    "logo": "assets/exchanges/simpleswap.svg",
-    "url": "https://simpleswap.io/",
-    "description": "",
-    "richDescription": null
-  },
-  {
-    "name": "Coinpay",
-    "logo": "assets/exchanges/coinpay.png",
-    "url": "https://coinpay.cr/",
-    "description": "",
-    "richDescription": null
-  },
-  {
     "name": "StealthEX",
     "logo": "assets/exchanges/stealthex.svg",
     "url": "https://stealthex.io/",
@@ -108,6 +59,55 @@
     "name": "CoinSwitch",
     "logo": "assets/exchanges/coinswitch.svg",
     "url": "https://coinswitch.co/",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "Kriptomat",
+    "logo": "assets/exchanges/kriptomat.svg",
+    "url": "https://kriptomat.io/",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "AscendEX",
+    "logo": "assets/exchanges/ascendex.svg",
+    "url": "https://ascendex.com/en",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "Gate.io",
+    "logo": "assets/exchanges/gate.io.svg",
+    "url": "https://gate.io/",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "CoinEx",
+    "logo": "assets/exchanges/coinex.svg",
+    "url": "https://www.coinex.com/en",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "SimpleSwap",
+    "logo": "assets/exchanges/simpleswap.svg",
+    "url": "https://simpleswap.io/",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "Coinpay",
+    "logo": "assets/exchanges/coinpay.png",
+    "url": "https://coinpay.cr/",
+    "description": "",
+    "richDescription": null
+  },
+  {
+    "name": "MEXC",
+    "logo": "assets/exchanges/mexc.svg",
+    "url": "https://www.mexc.com/",
     "description": "",
     "richDescription": null
   }

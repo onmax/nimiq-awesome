@@ -2,7 +2,7 @@
   {
     "name": "Nimiq Pay App",
     "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy and sell and much more. Supports Bitcoin and NIM Decentralized",
-    "link": "https://nimiq.com/nimiq-pay/",
+    "link": "https://nimiq.com/nimiq-pay",
     "type": "Wallets",
     "logo": "",
     "screenshot": "./assets/nimiq-pay.webp",
@@ -11,7 +11,7 @@
   {
     "name": "Nimiq Wallet",
     "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy, sell, and much more. Available without sign-up. Decentralized",
-    "link": "https://nimiq.com/wallet/",
+    "link": "https://nimiq.com/wallet",
     "type": "Wallets",
     "logo": "",
     "screenshot": "./assets/nimiq-wallet.svg",
@@ -29,7 +29,7 @@
   {
     "name": "Nimtris",
     "description": "Nimtris is a fun way to introduce people to Nimiq and cryptocurrencies. Set up an account and start earning some NIM by playing a Tetris-like game.",
-    "link": "https://nimtris.com/",
+    "link": "https://nimtris.com",
     "type": "Games",
     "logo": "./assets/nimtris.webp",
     "screenshot": "",
@@ -47,7 +47,7 @@
   {
     "name": "Cryptopayment.link",
     "description": "Get paid in crypto! Charge your customers with Nimiq, Bitcoin or Ethereum. Create a custom link and QR code in seconds.",
-    "link": "https://cryptopayment.link/",
+    "link": "https://cryptopayment.link",
     "type": "E-commerce",
     "logo": "./assets/crypto-payment-logo.svg",
     "screenshot": "",
@@ -56,7 +56,7 @@
   {
     "name": "Nimiq Shop",
     "description": "Use your NIM to get Nimiq Swag. Experience the swift Nimiq Checkout.",
-    "link": "https://shop.nimiq.com/",
+    "link": "https://shop.nimiq.com",
     "type": "E-commerce",
     "logo": "./assets/nimiq-shop.svg",
     "screenshot": "",
@@ -65,7 +65,7 @@
   {
     "name": "Nimiq Gift Cards",
     "description": "Treat your friends and family to the future of money! Find different gift card themes for different Holidays! Gift NIM today!",
-    "link": "https://www.nimiq.com/cards/",
+    "link": "https://www.nimiq.com/cards",
     "type": "Promotion",
     "logo": "./assets/nimiq-gift-card.svg",
     "screenshot": "",
@@ -74,7 +74,7 @@
   {
     "name": "NIM Donations",
     "description": "Easily receive donations by creating a personalized button or QR code.",
-    "link": "https://www.nimiq.com/accept-donations/",
+    "link": "https://www.nimiq.com/accept-donations",
     "type": "Infrastructure",
     "logo": "./assets/accept-donations.svg",
     "screenshot": "",
@@ -83,7 +83,7 @@
   {
     "name": "Nimiq.watch",
     "description": "Nimiq Blockchain Explorer.",
-    "link": "https://nimiq.watch/",
+    "link": "https://nimiq.watch",
     "type": "Insights",
     "logo": "./assets/nimiq-watch.svg",
     "screenshot": "",
@@ -92,7 +92,7 @@
   {
     "name": "NimiqHub",
     "description": "Nimiq Blockchain Explorer.",
-    "link": "https://www.nimiqhub.com/",
+    "link": "https://www.nimiqhub.com",
     "type": "Insights",
     "logo": "",
     "screenshot": "",
@@ -110,7 +110,7 @@
   {
     "name": "Nimiq Game Store",
     "description": "Buy PC games with NIM and experience the Nimiq Checkout.",
-    "link": "https://nimiq-game-store.paulgertz.com/",
+    "link": "https://nimiq-game-store.paulgertz.com",
     "type": "E-commerce",
     "logo": "./assets/nimiq-game-store.webp",
     "screenshot": "",
@@ -119,7 +119,7 @@
   {
     "name": "NimWorld",
     "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
-    "link": "https://world.nimpowered.com/",
+    "link": "https://world.nimpowered.com",
     "type": "Games",
     "logo": "./assets/nim-world.webp",
     "screenshot": "",
@@ -128,7 +128,7 @@
   {
     "name": "Pixels",
     "description": "A 2048 x 1024 drawing canvas where you can draw pixels with NIM. Draw up to 8 pixels per transaction starting from 0.1 NIM.",
-    "link": "https://pixels.nimpowered.com/",
+    "link": "https://pixels.nimpowered.com",
     "type": "Games",
     "logo": "./assets/pixels_logo.png",
     "screenshot": "",
@@ -146,7 +146,7 @@
   {
     "name": "Staking Calculator",
     "description": "Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.",
-    "link": "https://www.nimiq.com/staking-calculator/",
+    "link": "https://www.nimiq.com/staking-calculator",
     "type": "Insights",
     "logo": "./assets/staking-calculator.svg",
     "screenshot": "",
@@ -164,7 +164,7 @@
   {
     "name": "Nimiq 2048",
     "description": "A Nimiq-themed version of the popular 2048 game.",
-    "link": "https://2048.nimiq.com/",
+    "link": "https://2048.nimiq.com",
     "type": "Games",
     "logo": "./assets/nimiq-2048.svg",
     "screenshot": "",

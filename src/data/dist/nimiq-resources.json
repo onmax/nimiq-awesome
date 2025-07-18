@@ -2,7 +2,7 @@
   {
     "type": "developer-tool",
     "name": "Nimiq Hub",
-    "link": "https://hub.nimiq.com/",
+    "link": "https://hub.nimiq.com",
     "source": "https://github.com/nimiq/hub",
     "description": "Unified interface for accounts, addresses, and contracts",
     "author": "@nimiq"
@@ -10,7 +10,7 @@
   {
     "type": "developer-tool",
     "name": "Nimiq Keyguard",
-    "link": "https://keyguard.nimiq.com/",
+    "link": "https://keyguard.nimiq.com",
     "source": "https://github.com/nimiq/keyguard",
     "description": "Secure key management and transaction signing",
     "author": "@nimiq"
@@ -18,7 +18,7 @@
   {
     "type": "validator",
     "name": "Validators Dashboard & API",
-    "link": "https://validators-api-mainnet.nuxt.dev/",
+    "link": "https://validators-api-mainnet.nuxt.dev",
     "source": "https://github.com/nimiq/validators-api",
     "description": "Dashboard and API for monitoring validators",
     "author": "@nimiq"
@@ -26,7 +26,7 @@
   {
     "type": "documentation",
     "name": "Nimiq Developer Center",
-    "link": "https://nimiq.com/developers/",
+    "link": "https://nimiq.com/developers",
     "source": "https://github.com/nimiq/developer-center",
     "description": "Official documentation for the Nimiq ecosystem",
     "author": "@nimiq"
@@ -42,7 +42,7 @@
   {
     "type": "documentation",
     "name": "Nimiq Tutorial",
-    "link": "https://nimiq.guide/",
+    "link": "https://nimiq.guide",
     "source": "https://github.com/onmax/nimiq-tutorial",
     "description": "Learn how to build decentralized applications with the Nimiq blockchain using the Web Client",
     "author": "@nimiq"
@@ -122,7 +122,7 @@
   {
     "type": "developer-tool",
     "name": "Nimiq Playground",
-    "link": "https://nimiq-playground.pages.dev/",
+    "link": "https://nimiq-playground.pages.dev",
     "source": "https://github.com/onmax/nimiq-playground",
     "description": "Online IDE for testing and experimenting with Nimiq code",
     "author": "@onmax"
@@ -138,7 +138,7 @@
   {
     "type": "rpc",
     "name": "Open RPC server",
-    "link": "https://rpc.nimiqwatch.com/",
+    "link": "https://rpc.nimiqwatch.com",
     "source": null,
     "description": "A public JSON-RPC server to make initial developments easier",
     "author": "@sisou"
@@ -186,7 +186,7 @@
   {
     "type": "developer-tool",
     "name": "Nimiq Tools",
-    "link": "https://nimiq-tools.github.io/",
+    "link": "https://nimiq-tools.github.io",
     "source": "https://github.com/nimiq-tools/nimiq-tools.github.io",
     "description": "Set of Nimiq tools for both online and offline usage including address management, balance checking, transaction generation, and message signing",
     "author": "@eligioo"
@@ -194,7 +194,7 @@
   {
     "type": "ui",
     "name": "Nimiq Style Framework",
-    "link": "https://nimiq.github.io/nimiq-style/",
+    "link": "https://nimiq.github.io/nimiq-style",
     "source": null,
     "description": "Official CSS framework with Nimiq colors and fonts",
     "author": "@nimiq"
@@ -226,7 +226,7 @@
   {
     "type": "ui",
     "name": "Identicons ESM",
-    "link": "https://onmax.github.io/nimiq-identicons/",
+    "link": "https://onmax.github.io/nimiq-identicons",
     "source": "https://github.com/onmax/nimiq-identicons",
     "description": "Fork of Nimiq Identicons with ESM and TS support",
     "author": "@onmax"
