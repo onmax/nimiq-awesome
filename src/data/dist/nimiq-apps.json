@@ -11,7 +11,7 @@
   {
     "name": "Nimiq Wallet",
     "description": "The Nimiq Wallet has it all. Super easy usability. Own the keys. Connect directly to the blockchain. Buy, sell, and much more. Available without sign-up. Decentralized",
-    "link": "https://nimiq.com/wallet",
+    "link": "https://wallet.nimiq.com",
     "type": "Wallets",
     "logo": "",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-wallet.svg",
@@ -101,7 +101,7 @@
   {
     "name": "Nimiq Sunset Cyberspace",
     "description": "Score points, beat your own records and earn as many NIM as you can!",
-    "link": "https://play.google.com/store/src/details?id=com.nimiqsunsetcyberspace&hl=de&gl=US",
+    "link": "https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace",
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-sunset-cyberspace.webp",
     "screenshot": "",
