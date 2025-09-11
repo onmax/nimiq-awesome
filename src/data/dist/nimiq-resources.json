@@ -168,6 +168,14 @@
     "author": "@blouflash"
   },
   {
+    "type": "rpc",
+    "name": "Nimiq Account API Gleam",
+    "link": "https://github.com/sisou/nimiq_account_api_gleam",
+    "source": "https://github.com/sisou/nimiq_account_api_gleam",
+    "description": "Basic Nimiq account API service for checking addresses and sending to fixed recipients",
+    "author": "@sisou"
+  },
+  {
     "type": "developer-tool",
     "name": "Nimiq Cashlink Bulk Generator",
     "link": "https://github.com/nimiq/cashlink-generator",

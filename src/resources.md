@@ -28,6 +28,7 @@
 - [Nimiq JSON-RPC Client for Gleam](https://github.com/sisou/gleam-nimiq-rpc) ([Source](https://github.com/sisou/gleam-nimiq-rpc)) ([@sisou](https://github.com/sisou)): Gleam library for Nimiq JSON-RPC interaction
 - [Albatross RPC Client TS](https://github.com/onmax/albatross-rpc-client-ts) ([Source](https://github.com/onmax/albatross-rpc-client-ts)) ([@onmax](https://github.com/onmax)): Fully typed RPC client for Nimiq in TypeScript
 - [Nimiq RPC Client for TS](https://jsr.io/@blouflash/nimiq-rpc) ([Source](https://jsr.io/@blouflash/nimiq-rpc)) ([@blouflash](https://github.com/blouflash)): JSON-RPC client for Nimiq blockchain
+- [Nimiq Account API Gleam](https://github.com/sisou/nimiq_account_api_gleam) ([Source](https://github.com/sisou/nimiq_account_api_gleam)) ([@sisou](https://github.com/sisou)): Basic Nimiq account API service for checking addresses and sending to fixed recipients
 
 ### UI
 
