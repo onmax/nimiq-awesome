@@ -244,7 +244,7 @@
     "name": "Nimiq Changelog",
     "link": "https://nimiq-changelog.je-cf9.workers.dev/",
     "source": "https://github.com/onmax/nimiq-changelog",
-    "description": "Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.",
+    "description": "Track latest releases and changes across Nimiq ecosystem projects",
     "author": "@onmax"
   }
 ]
