@@ -55,6 +55,7 @@
 - [Nimiq Cashlink Bulk Generator](https://github.com/nimiq/cashlink-generator) ([Source](https://github.com/nimiq/cashlink-generator/tree/master)) ([@nimiq](https://github.com/nimiq)): Tool to create and manage NIM cashlinks in bulk
 - [Nimiq MCP Server](https://github.com/onmax/nimiq-mcp) ([Source](https://github.com/onmax/nimiq-mcp)) ([@onmax](https://github.com/onmax)): Model Context Protocol server for AI integration with Nimiq blockchain
 - [Nimiq Tools](https://nimiq-tools.github.io) ([Source](https://github.com/nimiq-tools/nimiq-tools.github.io)) ([@eligioo](https://github.com/eligioo)): Set of Nimiq tools for both online and offline usage including address management, balance checking, transaction generation, and message signing
+- [Nimiq Changelog](https://nimiq-changelog.je-cf9.workers.dev/) ([Source](https://github.com/onmax/nimiq-changelog)) ([@onmax](https://github.com/onmax)): Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.
 
 ### Documentation
 
@@ -145,7 +146,6 @@
 - [Nimiq.watch](https://nimiq.watch) ([@sisou](https://github.com/sisou)): Nimiq Blockchain Explorer.
 - [NimiqHub](https://www.nimiqhub.com) ([@DovAzencot](https://github.com/DovAzencot)): Nimiq Blockchain Explorer.
 - [Staking Calculator](https://www.nimiq.com/staking-calculator) ([@nimiq](https://github.com/nimiq)): Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.
-- [Nimiq Changelog](https://nimiq-changelog.je-cf9.workers.dev/) ([@onmax](https://github.com/onmax)): Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.
 
 ### Promotion
 

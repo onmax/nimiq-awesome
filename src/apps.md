@@ -30,7 +30,6 @@
 - [Nimiq.watch](https://nimiq.watch) ([@sisou](https://github.com/sisou)): Nimiq Blockchain Explorer.
 - [NimiqHub](https://www.nimiqhub.com) ([@DovAzencot](https://github.com/DovAzencot)): Nimiq Blockchain Explorer.
 - [Staking Calculator](https://www.nimiq.com/staking-calculator) ([@nimiq](https://github.com/nimiq)): Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.
-- [Nimiq Changelog](https://nimiq-changelog.je-cf9.workers.dev/) ([@onmax](https://github.com/onmax)): Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.
 
 ### Promotion
 

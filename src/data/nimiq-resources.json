@@ -238,5 +238,13 @@
     "source": "https://github.com/onmax/nimiq-identicons",
     "description": "Fork of Nimiq Identicons with ESM and TS support",
     "author": "@onmax"
+  },
+  {
+    "type": "developer-tool",
+    "name": "Nimiq Changelog",
+    "link": "https://nimiq-changelog.je-cf9.workers.dev/",
+    "source": "https://github.com/onmax/nimiq-changelog",
+    "description": "Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.",
+    "author": "@onmax"
   }
 ]

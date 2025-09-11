@@ -169,14 +169,5 @@
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-2048.svg",
     "screenshot": "",
     "developer": "@maestroi"
-  },
-  {
-    "name": "Nimiq Changelog",
-    "description": "Discover the latest releases from Nimiq ecosystem projects. Track version updates, release notes, and changes across multiple repositories including Pay, Hub, Wallet, Keyguard, and Albatross.",
-    "link": "https://nimiq-changelog.je-cf9.workers.dev/",
-    "type": "Insights",
-    "logo": "",
-    "screenshot": "",
-    "developer": "@onmax"
   }
 ]
