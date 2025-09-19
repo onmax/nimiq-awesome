@@ -59,3 +59,7 @@ This is a curated collection of Nimiq ecosystem projects with an automated build
 - Asset paths in JSON should be relative (e.g., `"./assets/logo.svg"`)
 - Distribution files contain absolute GitHub URLs for external consumption
 - ESLint uses @antfu/eslint-config with TypeScript support
+
+## Task Master AI Instructions
+**Import Task Master's development workflow commands and guidelines, treat as if import is in the main CLAUDE.md file.**
+@./.taskmaster/CLAUDE.md
