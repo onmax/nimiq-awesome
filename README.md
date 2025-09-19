@@ -188,16 +188,17 @@ Where you can buy, sell, or trade Nimiq:
 <!-- automd:file src="./src/rpc-servers.md" -->
 ## Open RPC Servers
 
-⚠️ **Warning**: These are public RPC servers that may not be suitable for production applications. They may log your data and have no uptime guarantees. Use at your own risk.
+> [!WARNING]
+> These are public RPC servers that may not be suitable for production applications. They may log your data and have no uptime guarantees. Use at your own risk.
 
 ### Mainnet
 
-- **[NimiqWatch](https://rpc.nimiqwatch.com)** ([@sisou](https://github.com/sisou))
+- **[Nimiq Watch Mainnet](https://rpc.nimiqwatch.com)** ([@sisou](https://github.com/sisou))
   Public RPC server operated by NimiqWatch for mainnet access
 
 ### Testnet
 
-- **[NimiqWatch](https://rpc.testnet.nimiqwatch.com/)** ([@sisou](https://github.com/sisou))
+- **[Nimiq Watch Testnet](https://rpc.testnet.nimiqwatch.com/)** ([@sisou](https://github.com/sisou))
   Public RPC server operated by NimiqWatch for testnet access
 
 <!-- /automd -->

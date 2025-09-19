@@ -1,7 +1,7 @@
 {
   "mainnet": [
     {
-      "name": "NimiqWatch",
+      "name": "Nimiq Watch Mainnet",
       "endpoint": "https://rpc.nimiqwatch.com",
       "maintainer": "sisou",
       "statusLink": null,
@@ -11,7 +11,7 @@
   ],
   "testnet": [
     {
-      "name": "NimiqWatch",
+      "name": "Nimiq Watch Testnet",
       "endpoint": "https://rpc.testnet.nimiqwatch.com/",
       "maintainer": "sisou",
       "statusLink": null,

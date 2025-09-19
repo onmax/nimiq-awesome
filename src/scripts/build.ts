@@ -571,7 +571,8 @@ async function main() {
 
   // Generate RPC servers markdown
   let rpcServersMarkdown = '## Open RPC Servers\n\n'
-  rpcServersMarkdown += '⚠️ **Warning**: These are public RPC servers that may not be suitable for production applications. '
+  rpcServersMarkdown += '> [!WARNING]\n'
+  rpcServersMarkdown += '> These are public RPC servers that may not be suitable for production applications. '
   rpcServersMarkdown += 'They may log your data and have no uptime guarantees. Use at your own risk.\n\n'
 
   // Group servers by network
