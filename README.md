@@ -41,6 +41,10 @@
 - [Open RPC Servers](#open-rpc-servers)
   - [Mainnet](#mainnet)
   - [Testnet](#testnet)
+- [API Access](#api-access)
+  - [Available Endpoints](#available-endpoints)
+  - [Usage Examples](#usage-examples)
+  - [Data Structure](#data-structure)
 <!-- /automd -->
 
 ---
@@ -202,3 +206,72 @@ Where you can buy, sell, or trade Nimiq:
   Public RPC server operated by NimiqWatch for testnet access
 
 <!-- /automd -->
+
+## API Access
+
+You can use this repository as a data source by making HTTP requests to the distribution files. All data is available in JSON format with absolute URLs for easy consumption:
+
+### Available Endpoints
+
+**Apps & Wallets:**
+```
+https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-apps.json
+```
+
+**Developer Resources:**
+```
+https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-resources.json
+```
+
+**Exchanges:**
+```
+https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-exchanges.json
+```
+
+**Open RPC Servers:**
+```
+https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/rpc-servers.json
+```
+
+### Usage Examples
+
+**JavaScript/TypeScript:**
+```javascript
+// Fetch all Nimiq apps
+const apps = await fetch('https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-apps.json')
+  .then(res => res.json());
+
+// Fetch RPC servers grouped by network
+const rpcServers = await fetch('https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/rpc-servers.json')
+  .then(res => res.json());
+console.log(rpcServers.mainnet); // Array of mainnet RPC servers
+console.log(rpcServers.testnet); // Array of testnet RPC servers
+```
+
+**Python:**
+```python
+import requests
+
+# Fetch developer resources
+response = requests.get('https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-resources.json')
+resources = response.json()
+
+# Filter by resource type
+core_resources = [r for r in resources if r['type'] == 'core']
+```
+
+**cURL:**
+```bash
+# Get all exchanges
+curl https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-exchanges.json
+
+# Get apps and save to file
+curl -o nimiq-apps.json https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/dist/nimiq-apps.json
+```
+
+### Data Structure
+
+All distribution files contain complete metadata with absolute URLs for logos, screenshots, and other assets. The data is automatically updated when changes are made to the source files.
+
+> [!NOTE]
+> Distribution files are automatically generated and may have slight delays between source updates and availability. For the most up-to-date data, consider caching with appropriate TTL values.
