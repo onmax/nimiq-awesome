@@ -1,0 +1,18 @@
+[
+  {
+    "name": "NimiqWatch",
+    "endpoint": "https://rpc.nimiqwatch.com",
+    "maintainer": "sisou",
+    "statusLink": null,
+    "network": "mainnet",
+    "description": "Public RPC server operated by NimiqWatch for mainnet access"
+  },
+  {
+    "name": "NimiqWatch",
+    "endpoint": "https://rpc.testnet.nimiqwatch.com/",
+    "maintainer": "sisou",
+    "statusLink": null,
+    "network": "testnet",
+    "description": "Public RPC server operated by NimiqWatch for testnet access"
+  }
+]

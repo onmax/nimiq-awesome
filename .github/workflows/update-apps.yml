@@ -8,6 +8,7 @@ on:
       - '!src/src.md'
       - '!src/data/dist/nimiq-apps.json'
       - '!src/data/dist/nimiq-apps.archive.json'
+      - '!src/data/dist/rpc-servers.json'
   # Allow manual trigger
   workflow_dispatch:
 
@@ -74,6 +75,6 @@ jobs:
           if [ "${{ steps.lint-check.outcome }}" = "failure" ]; then
             git commit -am "chore: auto-fix linting issues and update documentation"
           else
-            git commit -am "chore: update apps documentation and dist files"
+            git commit -am "chore: update documentation and distribution files"
           fi
           git push

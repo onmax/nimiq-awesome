@@ -14,6 +14,7 @@ const dataDir = resolve(srcDir, 'data')
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json')
 const nimiqAppArchiveJson = resolve(dataDir, 'archive/nimiq-apps.archive.json')
 const nimiqExchangesJson = resolve(dataDir, 'nimiq-exchanges.json')
+const nimiqRpcServersJson = resolve(dataDir, 'nimiq-rpc-servers.json')
 const exchangeLogosDir = resolve(dataDir, 'assets/exchanges')
 
 // Ensure exchange logos directory exists
@@ -206,6 +207,18 @@ interface Exchange {
   richDescription?: any[] | null
 }
 
+// Define RPC Server types and interface
+type NetworkType = 'mainnet' | 'testnet'
+
+interface RPCServer {
+  name: string
+  endpoint: string
+  maintainer: string
+  statusLink?: string | null
+  network: NetworkType
+  description?: string | null
+}
+
 const AppTypeSchema = union([literal('Insights'), literal('E-commerce'), literal('Games'), literal('Faucet'), literal('Promotion'), literal('Miner'), literal('Wallets'), literal('Infrastructure'), literal('Bots')])
 
 const AppSchema = object({
@@ -228,6 +241,18 @@ const ExchangeSchema = object({
   richDescription: nullable(array(object({}))),
 })
 
+// Define RPC Server Schema
+const NetworkTypeSchema = union([literal('mainnet'), literal('testnet')])
+
+const RPCServerSchema = object({
+  name: string(),
+  endpoint: string(),
+  maintainer: string(),
+  statusLink: nullable(string()),
+  network: NetworkTypeSchema,
+  description: nullable(string()),
+})
+
 const json = readFileSync(nimiqAppJson, 'utf-8')
 const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8')
 const parsedJson = JSON.parse(json) as App[]
@@ -241,6 +266,7 @@ const validationJson = parsedJson.map(app => ({
 
 const AppArraySchema = array(AppSchema)
 const ExchangeArraySchema = array(ExchangeSchema)
+const RPCServerArraySchema = array(RPCServerSchema)
 
 // Validate the JSON using valibot (using the temporary copy that includes richDescription)
 const validationResult = safeParse(AppArraySchema, validationJson)
@@ -528,6 +554,60 @@ async function main() {
   writeFileSync(resourcesMarkdownPath, resourcesMarkdown)
   consola.success(`Resources markdown file generated at ${resourcesMarkdownPath}`)
 
+  // Process RPC servers
+  const rpcServersJson = readFileSync(nimiqRpcServersJson, 'utf-8')
+  const parsedRpcServersJson = JSON.parse(rpcServersJson) as RPCServer[]
+
+  // Validate RPC servers JSON
+  const rpcServersValidationResult = safeParse(RPCServerArraySchema, parsedRpcServersJson)
+  if (!rpcServersValidationResult.success) {
+    consola.error('RPC servers JSON validation failed')
+    consola.error(rpcServersValidationResult.issues)
+    process.exit(1)
+  }
+  else {
+    consola.success('RPC servers JSON validation successful')
+  }
+
+  // Generate RPC servers markdown
+  let rpcServersMarkdown = '## Open RPC Servers\n\n'
+  rpcServersMarkdown += '⚠️ **Warning**: These are public RPC servers that may not be suitable for production applications. '
+  rpcServersMarkdown += 'They may log your data and have no uptime guarantees. Use at your own risk.\n\n'
+
+  // Group servers by network
+  const mainnetServers = parsedRpcServersJson.filter(server => server.network === 'mainnet')
+  const testnetServers = parsedRpcServersJson.filter(server => server.network === 'testnet')
+
+  if (mainnetServers.length > 0) {
+    rpcServersMarkdown += '### Mainnet\n\n'
+    for (const server of mainnetServers) {
+      const maintainerLink = `[@${server.maintainer}](https://github.com/${server.maintainer})`
+      const statusLink = server.statusLink ? ` - [Status & Limits](${server.statusLink})` : ''
+      rpcServersMarkdown += `- **[${server.name}](${server.endpoint})** (${maintainerLink})${statusLink}\n`
+      if (server.description) {
+        rpcServersMarkdown += `  ${server.description}\n`
+      }
+    }
+    rpcServersMarkdown += '\n'
+  }
+
+  if (testnetServers.length > 0) {
+    rpcServersMarkdown += '### Testnet\n\n'
+    for (const server of testnetServers) {
+      const maintainerLink = `[@${server.maintainer}](https://github.com/${server.maintainer})`
+      const statusLink = server.statusLink ? ` - [Status & Limits](${server.statusLink})` : ''
+      rpcServersMarkdown += `- **[${server.name}](${server.endpoint})** (${maintainerLink})${statusLink}\n`
+      if (server.description) {
+        rpcServersMarkdown += `  ${server.description}\n`
+      }
+    }
+  }
+
+  // Write RPC servers markdown to file
+  const rpcServersMarkdownPath = resolve(srcDir, 'rpc-servers.md')
+  writeFileSync(rpcServersMarkdownPath, rpcServersMarkdown)
+  consola.success(`RPC servers markdown file generated at ${rpcServersMarkdownPath}`)
+
   const { owner, repo } = await getGitInfo()
   const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`
   const distApps = parsedJson.map(app => ({
@@ -561,6 +641,15 @@ async function main() {
 
   const distResourcesJsonPath = resolve(distFolder, 'nimiq-resources.json')
   writeFileSync(distResourcesJsonPath, JSON.stringify(parsedResourcesJson, null, 2))
+
+  // Create RPC servers distribution JSON with network grouping
+  const distRpcServers = {
+    mainnet: mainnetServers,
+    testnet: testnetServers,
+  }
+  const distRpcServersJsonPath = resolve(distFolder, 'rpc-servers.json')
+  writeFileSync(distRpcServersJsonPath, JSON.stringify(distRpcServers, null, 2))
+  consola.success(`Distribution JSON for RPC servers generated at ${distRpcServersJsonPath}`)
 
   // Update the main README.md with the apps.md content
   const readmePath = resolve(__dirname, '../README.md')
@@ -623,6 +712,25 @@ async function main() {
       // If markers don't exist, append the exchanges section at the end
       readmeContent += `\n\n${exchangesStartMarker}\n${exchangesMarkdown}\n${exchangesEndMarker}`
       consola.success('Added exchanges section to README.md')
+    }
+
+    // Update RPC servers section
+    const rpcServersStartMarker = '<!-- automd:file src="./src/rpc-servers.md" -->'
+    const rpcServersEndMarker = '<!-- /automd -->'
+    const rpcServersStartIndex = readmeContent.indexOf(rpcServersStartMarker)
+    const rpcServersEndIndex = readmeContent.indexOf(rpcServersEndMarker, rpcServersStartIndex)
+
+    if (rpcServersStartIndex !== -1 && rpcServersEndIndex !== -1) {
+      readmeContent
+        = `${readmeContent.substring(0, rpcServersStartIndex + rpcServersStartMarker.length)
+        }\n${rpcServersMarkdown}\n${
+          readmeContent.substring(rpcServersEndIndex)}`
+      consola.success('Successfully updated README.md with RPC servers content')
+    }
+    else {
+      // If markers don't exist, append the RPC servers section after exchanges
+      readmeContent += `\n\n${rpcServersStartMarker}\n${rpcServersMarkdown}\n${rpcServersEndMarker}`
+      consola.success('Added RPC servers section to README.md')
     }
 
     // Update apps section again to ensure it's properly updated
