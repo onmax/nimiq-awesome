@@ -241,6 +241,14 @@
   },
   {
     "type": "developer-tool",
+    "name": "Nimiq Starter",
+    "link": "https://github.com/onmax/nimiq-starter",
+    "source": "https://github.com/onmax/nimiq-starter",
+    "description": "Starter template for building applications with Nimiq blockchain integration",
+    "author": "@onmax"
+  },
+  {
+    "type": "developer-tool",
     "name": "Nimiq Changelog",
     "link": "https://nimiq-changelog.je-cf9.workers.dev/",
     "source": "https://github.com/onmax/nimiq-changelog",
