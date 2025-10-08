@@ -121,7 +121,7 @@
     "description": "A pixel war / million dollar page on a world map powered by Nimiq blockchain",
     "link": "https://world.nimpowered.com",
     "type": "Games",
-    "logo": "./assets/nim-world.webp",
+    "logo": "./assets/nim-world.svg",
     "screenshot": "",
     "developer": "@paulghz"
   },
