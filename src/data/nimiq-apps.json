@@ -18,6 +18,15 @@
     "developer": "@nimiq"
   },
   {
+    "name": "Multisig Wallet",
+    "description": "Share wallets with family, friends, and business partners",
+    "link": "https://multisig.nimiq.com",
+    "type": "Wallets",
+    "logo": "",
+    "screenshot": "./assets/multisig-preview.svg",
+    "developer": "@nimiq"
+  },
+  {
     "name": "Crypto Map",
     "description": "Discover the best places to buy with crypto. Find crypto-friendly locations worldwide in our map. Start spending your crypto today!",
     "link": "https://map.nimiq.com",
