@@ -12,7 +12,7 @@
       "name": "RE:NIM Explorer",
       "description": "Nimiq Blockchain Explorer.",
       "link": "https://nim.re/explorer",
-      "logo": "./assets/re-nim.png",
+      "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/re-nim.png",
       "developer": "@nim-re",
       "network": "mainnet"
     },

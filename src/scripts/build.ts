@@ -645,8 +645,14 @@ async function main() {
 
   // Create explorers distribution JSON
   const distExplorers = {
-    mainnet: mainnetExplorers,
-    testnet: testnetExplorers,
+    mainnet: mainnetExplorers.map(explorer => ({
+      ...explorer,
+      logo: explorer.logo?.startsWith('data:') ? explorer.logo : (explorer.logo ? `${baseGithubRawUrl}/${explorer.logo.replace(/^\.\//, '')}` : ''),
+    })),
+    testnet: testnetExplorers.map(explorer => ({
+      ...explorer,
+      logo: explorer.logo?.startsWith('data:') ? explorer.logo : (explorer.logo ? `${baseGithubRawUrl}/${explorer.logo.replace(/^\.\//, '')}` : ''),
+    })),
   }
   const distExplorersJsonPath = resolve(distFolder, 'nimiq-explorers.json')
   writeFileSync(distExplorersJsonPath, JSON.stringify(distExplorers, null, 2))
