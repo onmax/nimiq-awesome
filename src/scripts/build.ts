@@ -580,7 +580,7 @@ async function main() {
     explorersMarkdown += '### Mainnet\n\n'
     for (const explorer of mainnetExplorers) {
       const authorLink = getAuthorLink(explorer.developer)
-      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink}): ${explorer.description}\n`
+      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink})\n`
     }
     explorersMarkdown += '\n'
   }
@@ -589,7 +589,7 @@ async function main() {
     explorersMarkdown += '### Testnet\n\n'
     for (const explorer of testnetExplorers) {
       const authorLink = getAuthorLink(explorer.developer)
-      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink}): ${explorer.description}\n`
+      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink})\n`
     }
   }
 
