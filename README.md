@@ -202,6 +202,7 @@ Where you can buy, sell, or trade Nimiq:
 - [RE:NIM Explorer](https://nim.re/explorer) ([@nim-re](https://github.com/nim-re))
 - [NimiqHub](https://www.nimiqhub.com) ([@DovAzencot](https://github.com/DovAzencot))
 - [NimiqScan](https://nimiqscan.com) ([@mrmaestroi](https://github.com/mrmaestroi))
+- [Nimiq.cafe](https://nimiq.cafe/explorer) ([@miao-yu](https://github.com/miao-yu))
 
 ### Testnet
 

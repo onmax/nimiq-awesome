@@ -27,6 +27,13 @@
       "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiqscan.png",
       "developer": "@mrmaestroi",
       "network": "mainnet"
+    },
+    {
+      "name": "Nimiq.cafe",
+      "link": "https://nimiq.cafe/explorer",
+      "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-cafe.png",
+      "developer": "@miao-yu",
+      "network": "mainnet"
     }
   ],
   "testnet": [
