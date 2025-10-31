@@ -38,6 +38,9 @@
   - [Promotion](#promotion)
   - [Bots](#bots)
 - [Exchanges](#exchanges)
+- [Explorers](#explorers)
+  - [Mainnet](#mainnet)
+  - [Testnet](#testnet)
 - [Open RPC Servers](#open-rpc-servers)
   - [Mainnet](#mainnet)
   - [Testnet](#testnet)
@@ -149,8 +152,6 @@
 ### Insights
 
 - [Crypto Map](https://map.nimiq.com) ([@nimiq](https://github.com/nimiq)): Discover the best places to buy with crypto. Find crypto-friendly locations worldwide in our map. Start spending your crypto today!
-- [Nimiq.watch](https://nimiq.watch) ([@sisou](https://github.com/sisou)): Nimiq Blockchain Explorer.
-- [NimiqHub](https://www.nimiqhub.com) ([@DovAzencot](https://github.com/DovAzencot)): Nimiq Blockchain Explorer.
 - [Staking Calculator](https://www.nimiq.com/staking-calculator) ([@nimiq](https://github.com/nimiq)): Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.
 
 ### Promotion
@@ -185,6 +186,20 @@ Where you can buy, sell, or trade Nimiq:
 - [StealthEX](https://stealthex.io/)
 - [Swapspace](https://swapspace.co/)
 - [Swapzone](https://swapzone.io/)
+
+<!-- /automd -->
+
+<!-- automd:file src="./src/explorers.md" -->
+## Explorers
+
+### Mainnet
+
+- [Nimiq.watch](https://nimiq.watch) ([@sisou](https://github.com/sisou)): Nimiq Blockchain Explorer.
+- [NimiqHub](https://www.nimiqhub.com) ([@DovAzencot](https://github.com/DovAzencot)): Nimiq Blockchain Explorer.
+
+### Testnet
+
+- [Nimiq.watch Testnet](https://testnet.nimiq.watch) ([@sisou](https://github.com/sisou)): Nimiq Blockchain Explorer for Testnet.
 
 <!-- /automd -->
 
