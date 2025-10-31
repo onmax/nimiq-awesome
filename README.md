@@ -6,6 +6,10 @@
       <img alt="Nimiq Awesome" src="https://raw.githubusercontent.com/onmax/nimiq-awesome/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
   </a>
+  <br>
+  <a href="https://hub.nimiq.com" target="_blank">
+    <img src="./.github/nimiq-hub-logo.svg" alt="Nimiq Hub" width="20" height="20">
+  </a>
 </p>
 
 <p align="center">
