@@ -7,7 +7,6 @@ import { $ } from 'execa'
 import { dirname, resolve } from 'pathe'
 import { array, literal, nullable, object, safeParse, string, union } from 'valibot'
 
-// Use standard Node.js path for cross-platform compatibility
 const __dirname = dirname('.')
 const srcDir = resolve(__dirname, '../src')
 const dataDir = resolve(srcDir, 'data')
@@ -18,7 +17,6 @@ const nimiqExplorersJson = resolve(dataDir, 'nimiq-explorers.json')
 const nimiqRpcServersJson = resolve(dataDir, 'nimiq-rpc-servers.json')
 const exchangeLogosDir = resolve(dataDir, 'assets/exchanges')
 
-// Ensure exchange logos directory exists
 try {
   if (!existsSync(exchangeLogosDir)) {
     mkdirSync(exchangeLogosDir, { recursive: true })
@@ -29,7 +27,6 @@ catch (error) {
   consola.error(`Failed to create directory for exchange logos: ${error}`)
 }
 
-// Get git repository information
 async function getGitInfo() {
   try {
     const remoteUrl = (await $`git config --get remote.origin.url`).stdout
@@ -39,33 +36,10 @@ async function getGitInfo() {
   }
   catch (error) {
     consola.warn('Failed to get git repository information:', error)
-    return { owner: 'nimiq', repo: 'awesome' } // Fallback values
+    return { owner: 'nimiq', repo: 'awesome' }
   }
 }
 
-// Process rich text to extract plain text
-// function richTextToPlainText(richText: any[]): string {
-//   if (!richText || !Array.isArray(richText) || richText.length === 0) {
-//     return ''
-//   }
-
-//   return richText
-//     .map((node) => {
-//       if (node.text) {
-//         return node.text
-//       }
-//       else if (node.type === 'image') {
-//         return `[Image: ${node.alt || 'No description'}]`
-//       }
-//       else if (node.type === 'embed') {
-//         return '[Embedded content]'
-//       }
-//       return ''
-//     })
-//     .join('\n')
-// }
-
-// Function to download an image from a URL
 function downloadImage(url: string, filepath: string): Promise<void> {
   return new Promise((resolve, reject) => {
     if (!url) {
@@ -73,7 +47,6 @@ function downloadImage(url: string, filepath: string): Promise<void> {
       return
     }
 
-    // Use the Node.js native fs module
     import('node:fs').then((fs_standard) => {
       https.get(url, { rejectUnauthorized: false }, (response) => {
         if (response.statusCode === 200) {
@@ -92,7 +65,6 @@ function downloadImage(url: string, filepath: string): Promise<void> {
           })
         }
         else if (response.statusCode === 301 || response.statusCode === 302) {
-          // Handle redirects
           if (response.headers.location) {
             downloadImage(response.headers.location, filepath)
               .then(resolve)
@@ -114,7 +86,6 @@ function downloadImage(url: string, filepath: string): Promise<void> {
   })
 }
 
-// Fetch exchange data from API
 async function fetchExchangesFromApi() {
   try {
     consola.info('Fetching exchange data from API...')
@@ -124,21 +95,18 @@ async function fetchExchangesFromApi() {
     }
     const data = await response.json() as any
 
-    // Transform the data to match our Exchange interface
     const exchanges = await Promise.all(data.map(async (exchange: any) => {
       const name = exchange.name
       const logoUrl = exchange.logo?.url
 
-      // Extract file extension from URL if available, default to svg
       let fileExtension = 'svg'
       if (logoUrl) {
         const urlParts = logoUrl.split('.')
         const detectedExtension = urlParts[urlParts.length - 1].toLowerCase()
 
-        // Check if the URL contains a valid image extension
         const validExtensions = ['svg', 'png', 'jpg', 'jpeg', 'webp', 'avif']
         if (validExtensions.includes(detectedExtension.split('?')[0])) {
-          fileExtension = detectedExtension.split('?')[0] // Remove query parameters
+          fileExtension = detectedExtension.split('?')[0]
         }
       }
 
@@ -146,7 +114,6 @@ async function fetchExchangesFromApi() {
       const localLogoPath = `assets/exchanges/${fileName}`
       const fullLocalPath = resolve(dataDir, localLogoPath)
 
-      // Download the logo if it exists in the API response
       if (logoUrl) {
         consola.info(`Downloading logo for ${name} from ${logoUrl}`)
         try {
@@ -155,7 +122,6 @@ async function fetchExchangesFromApi() {
         }
         catch (error) {
           consola.error(`Failed to download logo for ${name}: ${error}`)
-          // If download fails but we have an existing file, we'll keep using it
           if (!existsSync(fullLocalPath)) {
             consola.warn(`No existing logo found for ${name}, using empty string`)
           }
@@ -171,7 +137,6 @@ async function fetchExchangesFromApi() {
       }
     }))
 
-    // Write the data to the JSON file
     writeFileSync(nimiqExchangesJson, JSON.stringify(exchanges, null, 2))
     consola.success(`Successfully fetched and saved exchange data to ${nimiqExchangesJson}`)
     return exchanges
@@ -179,7 +144,6 @@ async function fetchExchangesFromApi() {
   catch (error) {
     consola.error('Failed to fetch exchange data from API:', error)
     consola.warn('Using existing exchange data from JSON file...')
-    // Return null to indicate we should use the existing file
     return null
   }
 }
@@ -199,7 +163,6 @@ interface App {
   richDescription?: any[] | null
 }
 
-// Define Exchange interface
 interface Exchange {
   name: string
   logo: string
@@ -208,7 +171,6 @@ interface Exchange {
   richDescription?: any[] | null
 }
 
-// Define RPC Server types and interface
 type NetworkType = 'mainnet' | 'testnet'
 
 interface RPCServer {
@@ -220,7 +182,6 @@ interface RPCServer {
   description?: string | null
 }
 
-// Define Explorer interface
 interface Explorer {
   name: string
   description: string
@@ -243,7 +204,6 @@ const AppSchema = object({
   richDescription: nullable(array(object({}))),
 })
 
-// Define Exchange Schema
 const ExchangeSchema = object({
   name: string(),
   logo: string(),
@@ -252,7 +212,6 @@ const ExchangeSchema = object({
   richDescription: nullable(array(object({}))),
 })
 
-// Define RPC Server Schema
 const NetworkTypeSchema = union([literal('mainnet'), literal('testnet')])
 
 const RPCServerSchema = object({
@@ -264,7 +223,6 @@ const RPCServerSchema = object({
   description: nullable(string()),
 })
 
-// Define Explorer Schema
 const ExplorerSchema = object({
   name: string(),
   description: string(),
@@ -279,7 +237,6 @@ const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8')
 const parsedJson = JSON.parse(json) as App[]
 const parsedArchiveJson = JSON.parse(jsonArchive) as App[]
 
-// For validation, create a temporary copy with richDescription added
 const validationJson = parsedJson.map(app => ({
   ...app,
   richDescription: app.richDescription || null,
@@ -290,7 +247,6 @@ const ExchangeArraySchema = array(ExchangeSchema)
 const RPCServerArraySchema = array(RPCServerSchema)
 const ExplorerArraySchema = array(ExplorerSchema)
 
-// Validate the JSON using valibot (using the temporary copy that includes richDescription)
 const validationResult = safeParse(AppArraySchema, validationJson)
 
 if (!validationResult.success) {
@@ -302,7 +258,6 @@ else {
   consola.success('JSON validation successful')
 }
 
-// Skip empty paths as they're valid (not all apps have logos/screenshots)
 function checkPathExists(filePath: string, baseDir: string): boolean {
   if (!filePath || filePath.trim() === '')
     return true
@@ -317,7 +272,6 @@ function checkPathExists(filePath: string, baseDir: string): boolean {
   return exists
 }
 
-// Verify asset files exist to prevent dead links
 let allPathsValid = true
 
 for (const app of parsedJson) {
@@ -332,17 +286,14 @@ for (const app of parsedJson) {
   }
 }
 
-// Order by importance for better UX
 const appTypeOrder = ['Wallets', 'Infrastructure', 'E-commerce', 'Games', 'Insights', 'Promotion', 'Bots', 'Miner', 'Faucet']
 
-// Sort apps by type according to the defined order
 const sortedApps = [...parsedJson].sort((a, b) => {
   const indexA = appTypeOrder.indexOf(a.type)
   const indexB = appTypeOrder.indexOf(b.type)
   return indexA - indexB
 })
 
-// Function to get author link
 function getAuthorLink(author: string | null): string {
   if (author === null || author.trim() === '')
     return 'Unknown'
@@ -352,19 +303,16 @@ function getAuthorLink(author: string | null): string {
     return `[${author}](https://github.com/${author.slice(1)})`
 }
 
-// Function to generate TOC from markdown content
 function generateTOC(markdownContent: string): string {
   const lines = markdownContent.split('\n')
   const toc: string[] = []
 
   for (const line of lines) {
-    // Match heading lines (## and ###)
     const headingMatch = line.match(/^(#{2,3})[ \t]+([^ \t].*)$/)
     if (headingMatch && headingMatch[1] && headingMatch[2]) {
       const level = headingMatch[1].length
       const title = headingMatch[2]
 
-      // Create anchor link (GitHub style)
       const anchor = title
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')
@@ -372,7 +320,6 @@ function generateTOC(markdownContent: string): string {
         .replace(/-{2,}/g, '-')
         .replace(/^-+|-+$/g, '')
 
-      // Create indentation based on heading level
       const indent = '  '.repeat(level - 2)
       toc.push(`${indent}- [${title}](#${anchor})`)
     }
@@ -381,29 +328,24 @@ function generateTOC(markdownContent: string): string {
   return toc.join('\n')
 }
 
-// Generate markdown
 let markdown = '## Apps\n'
 let currentType = ''
 
 for (const app of sortedApps) {
-  // Create section headers for each type
   if (app.type !== currentType) {
     currentType = app.type
     markdown += `\n### ${currentType}\n\n`
   }
 
-  // Use linked author name
   const authorLink = getAuthorLink(app.developer)
 
   markdown += `- [${app.name}](${app.link}) (${authorLink}): ${app.description}\n`
 }
 
-// Write the markdown to apps.md file
 const markdownPath = resolve(srcDir, 'apps.md')
 writeFileSync(markdownPath, markdown)
 consola.success(`Markdown file generated at ${markdownPath}`)
 
-// Resource Types
 type ResourceType = 'developer-tool' | 'validator' | 'documentation' | 'core' | 'utils' | 'node' | 'infrastructure' | 'rpc' | 'ui'
 
 interface Resource {
@@ -440,7 +382,6 @@ const ResourceSchema = object({
 
 const ResourceArraySchema = array(ResourceSchema)
 
-// Resources order by importance
 const resourceTypeOrder = [
   'developer-tool',
   'documentation',
@@ -454,21 +395,17 @@ const resourceTypeOrder = [
 ]
 
 async function main() {
-  // First try to fetch exchanges from API
   await fetchExchangesFromApi()
 
-  // Now read the exchanges JSON file (either freshly updated or existing)
   const exchangesJson = readFileSync(nimiqExchangesJson, 'utf-8')
   const parsedExchangesJson = JSON.parse(exchangesJson) as Exchange[]
 
-  // For validation, create a temporary copy with required fields added
   const validationExchangesJson = parsedExchangesJson.map(exchange => ({
     ...exchange,
     description: exchange.description || '',
     richDescription: exchange.richDescription || null,
   }))
 
-  // Validate exchanges JSON using the validation copy
   const exchangesValidationResult = safeParse(ExchangeArraySchema, validationExchangesJson)
   if (!exchangesValidationResult.success) {
     consola.error('Exchanges JSON validation failed')
@@ -479,7 +416,6 @@ async function main() {
     consola.success('Exchanges JSON validation successful')
   }
 
-  // Check exchange logo paths
   for (const exchange of parsedExchangesJson) {
     if (exchange.logo && !checkPathExists(exchange.logo, dataDir)) {
       consola.error(`Invalid logo path for exchange "${exchange.name}": ${exchange.logo}`)
@@ -495,13 +431,10 @@ async function main() {
     consola.success('All file paths are valid')
   }
 
-  // Generate exchanges markdown
-  // Sort exchanges alphabetically by name
   const sortedExchanges = [...parsedExchangesJson].sort((a, b) => a.name.localeCompare(b.name))
   let exchangesMarkdown = '## Exchanges\n\nWhere you can buy, sell, or trade Nimiq:\n\n'
 
   for (const exchange of sortedExchanges) {
-    // Include description if available
     let exchangeEntry = `- [${exchange.name}](${exchange.url})`
     if (exchange.description) {
       exchangeEntry += `: ${exchange.description}`
@@ -509,23 +442,19 @@ async function main() {
     exchangesMarkdown += `${exchangeEntry}\n`
   }
 
-  // Write exchanges markdown to exchanges.md file
   const exchangesMarkdownPath = resolve(srcDir, 'exchanges.md')
   writeFileSync(exchangesMarkdownPath, exchangesMarkdown)
   consola.success(`Exchanges markdown file generated at ${exchangesMarkdownPath}`)
 
-  // Validate JSON and generate markdown first
   const nimiqResourcesJson = resolve(dataDir, 'nimiq-resources.json')
   const resourcesJson = readFileSync(nimiqResourcesJson, 'utf-8')
   const parsedResourcesJson = JSON.parse(resourcesJson) as Resource[]
 
-  // For validation, create a temporary copy with richDescription added
   const validationResourcesJson = parsedResourcesJson.map(resource => ({
     ...resource,
     richDescription: resource.richDescription || null,
   }))
 
-  // Validate resources JSON using the validation copy
   const resourcesValidationResult = safeParse(ResourceArraySchema, validationResourcesJson)
   if (!resourcesValidationResult.success) {
     consola.error('Resources JSON validation failed')
@@ -536,14 +465,12 @@ async function main() {
     consola.success('Resources JSON validation successful')
   }
 
-  // Sort resources by type
   const sortedResources = [...parsedResourcesJson].sort((a, b) => {
     const indexA = resourceTypeOrder.indexOf(a.type)
     const indexB = resourceTypeOrder.indexOf(b.type)
     return indexA - indexB
   })
 
-  // Generate resources markdown
   let resourcesMarkdown = '## Developer Resources\n'
   let currentResourceType = ''
 
@@ -553,7 +480,6 @@ async function main() {
       const formattedType = currentResourceType
         .split('-')
         .map((word) => {
-          // Handle acronyms that should be all uppercase
           const acronyms = ['rpc', 'ui', 'api', 'sdk', 'cli', 'ide', 'npm', 'cdn', 'url', 'html', 'css', 'js', 'ts']
           if (acronyms.includes(word.toLowerCase())) {
             return word.toUpperCase()
@@ -565,7 +491,7 @@ async function main() {
     }
 
     const sourceLink = resource.source ? ` ([Source](${resource.source}))` : ''
-    // Link the author name to GitHub profile
+
     const authorLink = getAuthorLink(resource.author)
     resourcesMarkdown += `- [${resource.name}](${resource.link})${sourceLink} (${authorLink}): ${resource.description}\n`
   }
