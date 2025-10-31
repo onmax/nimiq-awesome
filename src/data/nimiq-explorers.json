@@ -27,7 +27,7 @@
     "developer": "@mrmaestroi",
     "network": "mainnet"
   },
-  {"name": "Nimiq.cafe", "link": "https://nimiq.cafe/explorer", "logo": "./assets/nimiq-cafe.png", "developer": "@miao-yu", "network": "mainnet"},
+  { "name": "Nimiq.cafe", "link": "https://nimiq.cafe/explorer", "logo": "./assets/nimiq-cafe.png", "developer": "@miao-yu", "network": "mainnet" },
   {
     "name": "Nimiq.watch Testnet",
     "link": "https://test.nimiq.watch",
