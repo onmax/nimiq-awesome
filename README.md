@@ -51,6 +51,7 @@
 
 
 <!-- automd:file src="./src/resources.md" -->
+
 ## Developer Resources
 
 ### Developer Tool
@@ -122,6 +123,7 @@
 
 
 <!-- automd:file src="./src/apps.md" -->
+
 ## Apps
 
 ### Wallets
@@ -166,6 +168,7 @@
 <!-- /automd -->
 
 <!-- automd:file src="./src/exchanges.md" -->
+
 ## Exchanges
 
 Where you can buy, sell, or trade Nimiq:
@@ -190,6 +193,7 @@ Where you can buy, sell, or trade Nimiq:
 <!-- /automd -->
 
 <!-- automd:file src="./src/explorers.md" -->
+
 ## Explorers
 
 ### Mainnet
@@ -204,6 +208,7 @@ Where you can buy, sell, or trade Nimiq:
 <!-- /automd -->
 
 <!-- automd:file src="./src/rpc-servers.md" -->
+
 ## Open RPC Servers
 
 > [!WARNING]

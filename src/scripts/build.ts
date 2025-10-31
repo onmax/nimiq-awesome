@@ -359,7 +359,6 @@ function generateTOC(markdownContent: string): string {
 
   for (const line of lines) {
     // Match heading lines (## and ###)
-    // Use a more specific pattern to avoid backtracking
     const headingMatch = line.match(/^(#{2,3})[ \t]+([^ \t].*)$/)
     if (headingMatch && headingMatch[1] && headingMatch[2]) {
       const level = headingMatch[1].length
@@ -368,10 +367,10 @@ function generateTOC(markdownContent: string): string {
       // Create anchor link (GitHub style)
       const anchor = title
         .toLowerCase()
-        .replace(/[^\w\s-]/g, '') // Remove special characters
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-{2,}/g, '-') // Replace multiple hyphens with single
-        .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-{2,}/g, '-')
+        .replace(/^-+|-+$/g, '')
 
       // Create indentation based on heading level
       const indent = '  '.repeat(level - 2)
@@ -727,133 +726,32 @@ async function main() {
   writeFileSync(distExplorersJsonPath, JSON.stringify(distExplorers, null, 2))
   consola.success(`Distribution JSON for explorers generated at ${distExplorersJsonPath}`)
 
-  // Update the main README.md with the apps.md content
-  const readmePath = resolve(__dirname, '../README.md')
-  consola.info(`Looking for README.md at: ${readmePath}`)
+  // Use automd to update README.md file includes
+  const readmePath = resolve(srcDir, '../README.md')
+  consola.info('Using automd to update README.md file includes...')
 
-  // Read the README.md content
+  try {
+    await $`automd --input=${readmePath}`
+    consola.success('Successfully updated README.md using automd')
+  }
+  catch {
+    consola.warn('automd had issues, continuing with TOC generation...')
+  }
+
+  // Update TOC manually (automd doesn't have native TOC generator)
   if (existsSync(readmePath)) {
     let readmeContent = readFileSync(readmePath, 'utf-8')
-
-    // Define the markers for automatic content insertion in README.md
-    const startMarker = '<!-- automd:file src="./src/apps.md" -->'
-    const endMarker = '<!-- /automd -->'
-
-    // Find the section in README.md to update
-    const startIndex = readmeContent.indexOf(startMarker)
-    const endIndex = readmeContent.indexOf(endMarker, startIndex)
-
-    if (startIndex !== -1 && endIndex !== -1) {
-      // Replace the content between the markers with the new apps.md content
-      const updatedReadmeContent
-        = `${readmeContent.substring(0, startIndex + startMarker.length)
-        }\n${markdown}\n${
-          readmeContent.substring(endIndex)}`
-
-      // Write the updated README.md
-      writeFileSync(readmePath, updatedReadmeContent)
-      consola.success(`Successfully updated ${readmePath} with apps.md content`)
-    }
-    else {
-      consola.error('Could not find the automd markers in README.md')
-    }
-
-    // Update resources section
-    const resourcesStartMarker = '<!-- automd:file src="./src/resources.md" -->'
-    const resourcesEndMarker = '<!-- /automd -->'
-    const resourcesStartIndex = readmeContent.indexOf(resourcesStartMarker)
-    const resourcesEndIndex = readmeContent.indexOf(resourcesEndMarker, resourcesStartIndex)
-
-    if (resourcesStartIndex !== -1 && resourcesEndIndex !== -1) {
-      readmeContent
-        = `${readmeContent.substring(0, resourcesStartIndex + resourcesStartMarker.length)
-        }\n${resourcesMarkdown}\n${
-          readmeContent.substring(resourcesEndIndex)}`
-    }
-
-    // Update exchanges section
-    const exchangesStartMarker = '<!-- automd:file src="./src/exchanges.md" -->'
-    const exchangesEndMarker = '<!-- /automd -->'
-    const exchangesStartIndex = readmeContent.indexOf(exchangesStartMarker)
-    const exchangesEndIndex = readmeContent.indexOf(exchangesEndMarker, exchangesStartIndex)
-
-    if (exchangesStartIndex !== -1 && exchangesEndIndex !== -1) {
-      readmeContent
-        = `${readmeContent.substring(0, exchangesStartIndex + exchangesStartMarker.length)
-        }\n${exchangesMarkdown}\n${
-          readmeContent.substring(exchangesEndIndex)}`
-      consola.success('Successfully updated README.md with exchanges content')
-    }
-    else {
-      // If markers don't exist, append the exchanges section at the end
-      readmeContent += `\n\n${exchangesStartMarker}\n${exchangesMarkdown}\n${exchangesEndMarker}`
-      consola.success('Added exchanges section to README.md')
-    }
-
-    // Update RPC servers section
-    const rpcServersStartMarker = '<!-- automd:file src="./src/rpc-servers.md" -->'
-    const rpcServersEndMarker = '<!-- /automd -->'
-    const rpcServersStartIndex = readmeContent.indexOf(rpcServersStartMarker)
-    const rpcServersEndIndex = readmeContent.indexOf(rpcServersEndMarker, rpcServersStartIndex)
-
-    if (rpcServersStartIndex !== -1 && rpcServersEndIndex !== -1) {
-      readmeContent
-        = `${readmeContent.substring(0, rpcServersStartIndex + rpcServersStartMarker.length)
-        }\n${rpcServersMarkdown}\n${
-          readmeContent.substring(rpcServersEndIndex)}`
-      consola.success('Successfully updated README.md with RPC servers content')
-    }
-    else {
-      // If markers don't exist, append the RPC servers section after exchanges
-      readmeContent += `\n\n${rpcServersStartMarker}\n${rpcServersMarkdown}\n${rpcServersEndMarker}`
-      consola.success('Added RPC servers section to README.md')
-    }
-
-    // Update explorers section
-    const explorersStartMarker = '<!-- automd:file src="./src/explorers.md" -->'
-    const explorersEndMarker = '<!-- /automd -->'
-    const explorersStartIndex = readmeContent.indexOf(explorersStartMarker)
-    const explorersEndIndex = readmeContent.indexOf(explorersEndMarker, explorersStartIndex)
-
-    if (explorersStartIndex !== -1 && explorersEndIndex !== -1) {
-      readmeContent
-        = `${readmeContent.substring(0, explorersStartIndex + explorersStartMarker.length)
-        }\n${explorersMarkdown}\n${
-          readmeContent.substring(explorersEndIndex)}`
-      consola.success('Successfully updated README.md with explorers content')
-    }
-    else {
-      // If markers don't exist, append the explorers section
-      readmeContent += `\n\n${explorersStartMarker}\n${explorersMarkdown}\n${explorersEndMarker}`
-      consola.success('Added explorers section to README.md')
-    }
-
-    // Update apps section again to ensure it's properly updated
-    const appsStartIndex = readmeContent.indexOf(startMarker)
-    const appsEndIndex = readmeContent.indexOf(endMarker, appsStartIndex)
-
-    if (appsStartIndex !== -1 && appsEndIndex !== -1) {
-      readmeContent
-        = `${readmeContent.substring(0, appsStartIndex + startMarker.length)
-        }\n${markdown}\n${
-          readmeContent.substring(appsEndIndex)}`
-    }
-
-    // Generate and update TOC after all sections have been processed
     const tocStartMarker = '<!-- automd:with options="toc" -->'
     const tocEndMarker = '<!-- /automd -->'
     const tocStartIndex = readmeContent.indexOf(tocStartMarker)
     const tocEndIndex = readmeContent.indexOf(tocEndMarker, tocStartIndex)
 
     if (tocStartIndex !== -1 && tocEndIndex !== -1) {
-      // Generate TOC from the current README content
       const toc = generateTOC(readmeContent)
       readmeContent = `${readmeContent.substring(0, tocStartIndex + tocStartMarker.length)}\n${toc}\n${readmeContent.substring(tocEndIndex)}`
+      writeFileSync(readmePath, readmeContent)
       consola.success('Successfully generated and updated TOC in README.md')
     }
-
-    writeFileSync(readmePath, readmeContent)
-    consola.success('Successfully updated README.md with all content sections')
   }
 
   consola.success('Build script completed successfully')
