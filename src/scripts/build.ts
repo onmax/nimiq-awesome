@@ -184,7 +184,6 @@ interface RPCServer {
 
 interface Explorer {
   name: string
-  description: string
   link: string
   logo: string
   developer: string | null
@@ -225,7 +224,6 @@ const RPCServerSchema = object({
 
 const ExplorerSchema = object({
   name: string(),
-  description: string(),
   link: string(),
   logo: string(),
   developer: nullable(string()),
