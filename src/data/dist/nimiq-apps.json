@@ -90,24 +90,6 @@
     "developer": "@nimiq"
   },
   {
-    "name": "Nimiq.watch",
-    "description": "Nimiq Blockchain Explorer.",
-    "link": "https://nimiq.watch",
-    "type": "Insights",
-    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-watch.svg",
-    "screenshot": "",
-    "developer": "@sisou"
-  },
-  {
-    "name": "NimiqHub",
-    "description": "Nimiq Blockchain Explorer.",
-    "link": "https://www.nimiqhub.com",
-    "type": "Insights",
-    "logo": "",
-    "screenshot": "",
-    "developer": "@DovAzencot"
-  },
-  {
     "name": "Nimiq Sunset Cyberspace",
     "description": "Score points, beat your own records and earn as many NIM as you can!",
     "link": "https://play.google.com/store/apps/details?id=com.nimiqsunsetcyberspace",

@@ -14,6 +14,7 @@ const dataDir = resolve(srcDir, 'data')
 const nimiqAppJson = resolve(dataDir, 'nimiq-apps.json')
 const nimiqAppArchiveJson = resolve(dataDir, 'archive/nimiq-apps.archive.json')
 const nimiqExchangesJson = resolve(dataDir, 'nimiq-exchanges.json')
+const nimiqExplorersJson = resolve(dataDir, 'nimiq-explorers.json')
 const nimiqRpcServersJson = resolve(dataDir, 'nimiq-rpc-servers.json')
 const exchangeLogosDir = resolve(dataDir, 'assets/exchanges')
 
@@ -219,6 +220,16 @@ interface RPCServer {
   description?: string | null
 }
 
+// Define Explorer interface
+interface Explorer {
+  name: string
+  description: string
+  link: string
+  logo: string
+  developer: string | null
+  network: NetworkType
+}
+
 const AppTypeSchema = union([literal('Insights'), literal('E-commerce'), literal('Games'), literal('Faucet'), literal('Promotion'), literal('Miner'), literal('Wallets'), literal('Infrastructure'), literal('Bots')])
 
 const AppSchema = object({
@@ -253,6 +264,16 @@ const RPCServerSchema = object({
   description: nullable(string()),
 })
 
+// Define Explorer Schema
+const ExplorerSchema = object({
+  name: string(),
+  description: string(),
+  link: string(),
+  logo: string(),
+  developer: nullable(string()),
+  network: NetworkTypeSchema,
+})
+
 const json = readFileSync(nimiqAppJson, 'utf-8')
 const jsonArchive = readFileSync(nimiqAppArchiveJson, 'utf-8')
 const parsedJson = JSON.parse(json) as App[]
@@ -267,6 +288,7 @@ const validationJson = parsedJson.map(app => ({
 const AppArraySchema = array(AppSchema)
 const ExchangeArraySchema = array(ExchangeSchema)
 const RPCServerArraySchema = array(RPCServerSchema)
+const ExplorerArraySchema = array(ExplorerSchema)
 
 // Validate the JSON using valibot (using the temporary copy that includes richDescription)
 const validationResult = safeParse(AppArraySchema, validationJson)
@@ -609,6 +631,50 @@ async function main() {
   writeFileSync(rpcServersMarkdownPath, rpcServersMarkdown)
   consola.success(`RPC servers markdown file generated at ${rpcServersMarkdownPath}`)
 
+  // Process explorers
+  const explorersJson = readFileSync(nimiqExplorersJson, 'utf-8')
+  const parsedExplorersJson = JSON.parse(explorersJson) as Explorer[]
+
+  // Validate explorers JSON
+  const explorersValidationResult = safeParse(ExplorerArraySchema, parsedExplorersJson)
+  if (!explorersValidationResult.success) {
+    consola.error('Explorers JSON validation failed')
+    consola.error(explorersValidationResult.issues)
+    process.exit(1)
+  }
+  else {
+    consola.success('Explorers JSON validation successful')
+  }
+
+  // Generate explorers markdown
+  let explorersMarkdown = '## Explorers\n\n'
+
+  // Group explorers by network
+  const mainnetExplorers = parsedExplorersJson.filter(explorer => explorer.network === 'mainnet')
+  const testnetExplorers = parsedExplorersJson.filter(explorer => explorer.network === 'testnet')
+
+  if (mainnetExplorers.length > 0) {
+    explorersMarkdown += '### Mainnet\n\n'
+    for (const explorer of mainnetExplorers) {
+      const authorLink = getAuthorLink(explorer.developer)
+      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink}): ${explorer.description}\n`
+    }
+    explorersMarkdown += '\n'
+  }
+
+  if (testnetExplorers.length > 0) {
+    explorersMarkdown += '### Testnet\n\n'
+    for (const explorer of testnetExplorers) {
+      const authorLink = getAuthorLink(explorer.developer)
+      explorersMarkdown += `- [${explorer.name}](${explorer.link}) (${authorLink}): ${explorer.description}\n`
+    }
+  }
+
+  // Write explorers markdown to file
+  const explorersMarkdownPath = resolve(srcDir, 'explorers.md')
+  writeFileSync(explorersMarkdownPath, explorersMarkdown)
+  consola.success(`Explorers markdown file generated at ${explorersMarkdownPath}`)
+
   const { owner, repo } = await getGitInfo()
   const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`
   const distApps = parsedJson.map(app => ({
@@ -651,6 +717,15 @@ async function main() {
   const distRpcServersJsonPath = resolve(distFolder, 'rpc-servers.json')
   writeFileSync(distRpcServersJsonPath, JSON.stringify(distRpcServers, null, 2))
   consola.success(`Distribution JSON for RPC servers generated at ${distRpcServersJsonPath}`)
+
+  // Create explorers distribution JSON
+  const distExplorers = {
+    mainnet: mainnetExplorers,
+    testnet: testnetExplorers,
+  }
+  const distExplorersJsonPath = resolve(distFolder, 'nimiq-explorers.json')
+  writeFileSync(distExplorersJsonPath, JSON.stringify(distExplorers, null, 2))
+  consola.success(`Distribution JSON for explorers generated at ${distExplorersJsonPath}`)
 
   // Update the main README.md with the apps.md content
   const readmePath = resolve(__dirname, '../README.md')
@@ -732,6 +807,25 @@ async function main() {
       // If markers don't exist, append the RPC servers section after exchanges
       readmeContent += `\n\n${rpcServersStartMarker}\n${rpcServersMarkdown}\n${rpcServersEndMarker}`
       consola.success('Added RPC servers section to README.md')
+    }
+
+    // Update explorers section
+    const explorersStartMarker = '<!-- automd:file src="./src/explorers.md" -->'
+    const explorersEndMarker = '<!-- /automd -->'
+    const explorersStartIndex = readmeContent.indexOf(explorersStartMarker)
+    const explorersEndIndex = readmeContent.indexOf(explorersEndMarker, explorersStartIndex)
+
+    if (explorersStartIndex !== -1 && explorersEndIndex !== -1) {
+      readmeContent
+        = `${readmeContent.substring(0, explorersStartIndex + explorersStartMarker.length)
+        }\n${explorersMarkdown}\n${
+          readmeContent.substring(explorersEndIndex)}`
+      consola.success('Successfully updated README.md with explorers content')
+    }
+    else {
+      // If markers don't exist, append the explorers section
+      readmeContent += `\n\n${explorersStartMarker}\n${explorersMarkdown}\n${explorersEndMarker}`
+      consola.success('Added explorers section to README.md')
     }
 
     // Update apps section again to ensure it's properly updated
