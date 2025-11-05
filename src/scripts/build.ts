@@ -600,8 +600,14 @@ async function main() {
 
   const { owner, repo } = await getGitInfo()
   const baseGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data`
+
+  function generateSlug(name: string): string {
+    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '').replace(/-{2,}/g, '-').replace(/^-+|-+$/g, '')
+  }
+
   const distApps = parsedJson.map(app => ({
     ...app,
+    slug: generateSlug(app.name),
     logo: app.logo ? `${baseGithubRawUrl}/${app.logo.replace(/^\.\//, '')}` : '',
     screenshot: app.screenshot ? `${baseGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : '',
   }))
@@ -614,6 +620,7 @@ async function main() {
   const baseArchiveGithubRawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/src/data/archive`
   const distArchiveApps = parsedArchiveJson.map(app => ({
     ...app,
+    slug: generateSlug(app.name),
     logo: app.logo ? `${baseArchiveGithubRawUrl}/${app.logo.replace(/^\.\//, '')}` : '',
     screenshot: app.screenshot ? `${baseArchiveGithubRawUrl}/${app.screenshot.replace(/^\.\//, '')}` : '',
   }))

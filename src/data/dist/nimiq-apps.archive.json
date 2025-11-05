@@ -6,7 +6,8 @@
     "type": "Infrastructure",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/supersimpleswap.svg",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/supersimpleswap.svg",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "supersimpleswap"
   },
   {
     "name": "Nimiq Vouchers",
@@ -15,7 +16,8 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/nimiq-voucher.webp",
     "screenshot": "",
-    "developer": "Paul"
+    "developer": "Paul",
+    "slug": "nimiq-vouchers"
   },
   {
     "name": "Nimiq Mopsus",
@@ -24,7 +26,8 @@
     "type": "Insights",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/nimiq-mopsus.svg",
     "screenshot": "",
-    "developer": "Ken Blazer"
+    "developer": "Ken Blazer",
+    "slug": "nimiq-mopsus"
   },
   {
     "name": "Web Miner",
@@ -33,7 +36,8 @@
     "type": "Miner",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/web-miner.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "web-miner"
   },
   {
     "name": "Project Nimizuela",
@@ -42,7 +46,8 @@
     "type": "Promotion",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/project-nimizuela.svg",
     "screenshot": "",
-    "developer": "Project Nimizuela"
+    "developer": "Project Nimizuela",
+    "slug": "project-nimizuela"
   },
   {
     "name": "NimiPay",
@@ -51,7 +56,8 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/nimipay.svg",
     "screenshot": "",
-    "developer": "Nimipay"
+    "developer": "Nimipay",
+    "slug": "nimipay"
   },
   {
     "name": "Albermonte's Miner",
@@ -60,7 +66,8 @@
     "type": "Miner",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/desktop-miner.svg",
     "screenshot": "",
-    "developer": "@albermonte"
+    "developer": "@albermonte",
+    "slug": "albermontes-miner"
   },
   {
     "name": "Nini",
@@ -69,7 +76,8 @@
     "type": "Infrastructure",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/nini.svg",
     "screenshot": "",
-    "developer": "Smitop"
+    "developer": "Smitop",
+    "slug": "nini"
   },
   {
     "name": "Nimiq WP",
@@ -78,7 +86,8 @@
     "type": "Miner",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/web-miner.svg",
     "screenshot": "",
-    "developer": "@Eligioo"
+    "developer": "@Eligioo",
+    "slug": "nimiq-wp"
   },
   {
     "name": "Desktop Miner",
@@ -87,7 +96,8 @@
     "type": "Miner",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/desktop-miner.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "desktop-miner"
   },
   {
     "name": "Short NIM",
@@ -96,7 +106,8 @@
     "type": "Miner",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/short-nim.svg",
     "screenshot": "",
-    "developer": "@albermonte"
+    "developer": "@albermonte",
+    "slug": "short-nim"
   },
   {
     "name": "PayNim Telegram Bot",
@@ -105,6 +116,7 @@
     "type": "Bots",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/archive/assets/paynim-telegram-bot.svg",
     "screenshot": "",
-    "developer": "PayNim"
+    "developer": "PayNim",
+    "slug": "paynim-telegram-bot"
   }
 ]

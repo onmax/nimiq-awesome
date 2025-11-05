@@ -6,7 +6,8 @@
     "type": "Wallets",
     "logo": "",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-pay.webp",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "nimiq-pay-app"
   },
   {
     "name": "Nimiq Wallet",
@@ -15,7 +16,8 @@
     "type": "Wallets",
     "logo": "",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-wallet.svg",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "nimiq-wallet"
   },
   {
     "name": "Multisig Wallet",
@@ -24,7 +26,8 @@
     "type": "Wallets",
     "logo": "",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/multisig-preview.svg",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "multisig-wallet"
   },
   {
     "name": "Crypto Map",
@@ -33,7 +36,8 @@
     "type": "Insights",
     "logo": "",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/crypto-map.webp",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "crypto-map"
   },
   {
     "name": "Nimtris",
@@ -42,7 +46,8 @@
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimtris.svg",
     "screenshot": "",
-    "developer": "@Eligioo"
+    "developer": "@Eligioo",
+    "slug": "nimtris"
   },
   {
     "name": "Trust Wallet",
@@ -51,7 +56,8 @@
     "type": "Wallets",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/trust-wallet.svg",
     "screenshot": "",
-    "developer": "@trustwallet"
+    "developer": "@trustwallet",
+    "slug": "trust-wallet"
   },
   {
     "name": "Cryptopayment.link",
@@ -60,7 +66,8 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/crypto-payment-logo.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "cryptopaymentlink"
   },
   {
     "name": "Nimiq Shop",
@@ -69,7 +76,8 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-shop.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "nimiq-shop"
   },
   {
     "name": "Nimiq Gift Cards",
@@ -78,7 +86,8 @@
     "type": "Promotion",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-gift-card.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "nimiq-gift-cards"
   },
   {
     "name": "NIM Donations",
@@ -87,7 +96,8 @@
     "type": "Infrastructure",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/accept-donations.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "nim-donations"
   },
   {
     "name": "Nimiq Sunset Cyberspace",
@@ -96,7 +106,8 @@
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-sunset-cyberspace.svg",
     "screenshot": "",
-    "developer": "@albermonte"
+    "developer": "@albermonte",
+    "slug": "nimiq-sunset-cyberspace"
   },
   {
     "name": "Nimiq Game Store",
@@ -105,7 +116,8 @@
     "type": "E-commerce",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-game-store.svg",
     "screenshot": "",
-    "developer": "@paulghz"
+    "developer": "@paulghz",
+    "slug": "nimiq-game-store"
   },
   {
     "name": "NimWorld",
@@ -114,7 +126,8 @@
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-world.svg",
     "screenshot": "",
-    "developer": "@paulghz"
+    "developer": "@paulghz",
+    "slug": "nimworld"
   },
   {
     "name": "Pixels",
@@ -123,7 +136,8 @@
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/pixels_logo.png",
     "screenshot": "",
-    "developer": "@paulghz"
+    "developer": "@paulghz",
+    "slug": "pixels"
   },
   {
     "name": "Twini",
@@ -132,7 +146,8 @@
     "type": "Bots",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/twini-app.svg",
     "screenshot": "",
-    "developer": "@Eligioo"
+    "developer": "@Eligioo",
+    "slug": "twini"
   },
   {
     "name": "Staking Calculator",
@@ -141,7 +156,8 @@
     "type": "Insights",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/staking-calculator.svg",
     "screenshot": "",
-    "developer": "@nimiq"
+    "developer": "@nimiq",
+    "slug": "staking-calculator"
   },
   {
     "name": "Nimiq Tip Bot",
@@ -150,7 +166,8 @@
     "type": "Bots",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-tip-bot.svg",
     "screenshot": "",
-    "developer": "@albermonte"
+    "developer": "@albermonte",
+    "slug": "nimiq-tip-bot"
   },
   {
     "name": "Nimiq 2048",
@@ -159,6 +176,7 @@
     "type": "Games",
     "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-2048.svg",
     "screenshot": "",
-    "developer": "@maestroi"
+    "developer": "@maestroi",
+    "slug": "nimiq-2048"
   }
 ]
