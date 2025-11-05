@@ -6,6 +6,7 @@ import { consola } from 'consola'
 import { $ } from 'execa'
 import { dirname, resolve } from 'pathe'
 import { array, literal, nullable, object, safeParse, string, union } from 'valibot'
+import { optimizeAssets } from './optimize-assets.js'
 
 const __dirname = dirname('.')
 const srcDir = resolve(__dirname, '../src')
@@ -662,6 +663,9 @@ async function main() {
   const distExplorersJsonPath = resolve(distFolder, 'nimiq-explorers.json')
   writeFileSync(distExplorersJsonPath, JSON.stringify(distExplorers, null, 2))
   consola.success(`Distribution JSON for explorers generated at ${distExplorersJsonPath}`)
+
+  // Optimize SVG assets
+  await optimizeAssets()
 
   // Use automd to update README.md file includes
   const readmePath = resolve(srcDir, '../README.md')

@@ -11,8 +11,10 @@
     "build": "esno ./scripts/build.ts"
   },
   "dependencies": {
+    "@iconify/utils": "^3.0.2",
     "esno": "^4.8.0",
-    "execa": "^9.5.2"
+    "execa": "^9.5.2",
+    "svgo": "^4.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",
