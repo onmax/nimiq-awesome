@@ -24,7 +24,7 @@
     "description": "Share wallets with family, friends, and business partners",
     "link": "https://multisig.nimiq.com",
     "type": "Wallets",
-    "logo": "",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nimiq-multisig-wallet.svg",
     "screenshot": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/multisig-preview.svg",
     "developer": "@nimiq",
     "slug": "multisig-wallet"
