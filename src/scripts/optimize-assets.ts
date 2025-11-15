@@ -60,12 +60,16 @@ async function optimizeSvg(filePath: string): Promise<OptimizationResult> {
   let content = readFileSync(filePath, 'utf-8')
   const originalSize = Buffer.byteLength(content, 'utf-8')
 
+  // Files to keep original color (white)
+  const keepColorFiles = ['accept-donations.svg', 'nim-world.svg', 'nimiq-multisig-wallet.svg', 'crypto-payment-logo.svg']
+  const shouldKeepColor = keepColorFiles.some(file => filePath.includes(file))
+
   // Detect colors before optimization
   const colors = detectFillColors(content)
   const hadSingleColor = colors.length === 1
 
-  // Replace with currentColor if single color
-  if (hadSingleColor) {
+  // Replace with currentColor if single color (unless excluded)
+  if (hadSingleColor && !shouldKeepColor) {
     content = replaceWithCurrentColor(content, colors[0])
   }
 
