@@ -29,6 +29,7 @@
 
 - [Crypto Map](https://map.nimiq.com) ([@nimiq](https://github.com/nimiq)): Discover the best places to buy with crypto. Find crypto-friendly locations worldwide in our map. Start spending your crypto today!
 - [Staking Calculator](https://www.nimiq.com/staking-calculator) ([@nimiq](https://github.com/nimiq)): Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.
+- [Nimiq FM](https://nimiq.fm) ([@nimiq](https://github.com/nimiq)): The soundtrack of the Nimiq blockchain. Real-time music generated from validator addresses as blocks are produced.
 
 ### Promotion
 

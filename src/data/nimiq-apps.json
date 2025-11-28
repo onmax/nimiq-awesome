@@ -160,5 +160,14 @@
     "logo": "./assets/nimiq-2048.svg",
     "screenshot": "",
     "developer": "@maestroi"
+  },
+  {
+    "name": "Nimiq FM",
+    "description": "The soundtrack of the Nimiq blockchain. Real-time music generated from validator addresses as blocks are produced.",
+    "link": "https://nimiq.fm",
+    "type": "Insights",
+    "logo": "./assets/nimiq-fm.svg",
+    "screenshot": "",
+    "developer": "@nimiq"
   }
 ]
