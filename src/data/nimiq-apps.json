@@ -162,6 +162,15 @@
     "developer": "@maestroi"
   },
   {
+    "name": "Nimiq DOOM",
+    "description": "Experimental proof-of-concept showcasing creative blockchain use cases through a retro DOOM game demo. Explores on-chain and hybrid data storage possibilities.",
+    "link": "https://maestroi.github.io/nimiq-doom/",
+    "type": "Games",
+    "logo": "./assets/nimiq-hexagon.svg",
+    "screenshot": "",
+    "developer": "@maestroi"
+  },
+  {
     "name": "Nimiq FM",
     "description": "The soundtrack of the Nimiq blockchain. Real-time music generated from validator addresses as blocks are produced.",
     "link": "https://nimiq.fm",
