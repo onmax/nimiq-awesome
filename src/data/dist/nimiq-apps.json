@@ -198,5 +198,15 @@
     "screenshot": "",
     "developer": "@nimiq",
     "slug": "nimiq-fm"
+  },
+  {
+    "name": "Nim Stalker",
+    "description": "A blockchain transaction graph visualizer. Search any address and discover the web of transactions.",
+    "link": "https://nimstalker.com",
+    "type": "Insights",
+    "logo": "https://raw.githubusercontent.com/onmax/nimiq-awesome/main/src/data/assets/nim-stalker.svg",
+    "screenshot": "",
+    "developer": "@Albermonte",
+    "slug": "nim-stalker"
   }
 ]
