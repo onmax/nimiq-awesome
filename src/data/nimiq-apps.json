@@ -178,5 +178,14 @@
     "logo": "./assets/nimiq-fm.svg",
     "screenshot": "",
     "developer": "@nimiq"
+  },
+  {
+    "name": "Nimiq Chat",
+    "description": "A community platform for the Nimiq ecosystem. Login with your wallet address, create threads and post under your address.",
+    "link": "https://nimiq.chat",
+    "type": "Infrastructure",
+    "logo": "./assets/nimiq-chat.svg",
+    "screenshot": "",
+    "developer": "@Harlski"
   }
 ]

@@ -10,6 +10,7 @@
 ### Infrastructure
 
 - [NIM Donations](https://www.nimiq.com/accept-donations) ([@nimiq](https://github.com/nimiq)): Easily receive donations by creating a personalized button or QR code.
+- [Nimiq Chat](https://nimiq.chat) ([@Harlski](https://github.com/Harlski)): A community platform for the Nimiq ecosystem. Login with your wallet address, create threads and post under your address.
 
 ### E-commerce
 
