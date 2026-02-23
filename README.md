@@ -108,6 +108,7 @@
 
 - [arpl](https://github.com/sisou/arpl) ([Source](https://github.com/sisou/arpl)) ([@sisou](https://github.com/sisou)): CLI tool for remote management of Nimiq nodes
 - [Postgres Chain Mirror](https://github.com/sisou/bun-drizzle-chain-mirror) ([Source](https://github.com/sisou/bun-drizzle-chain-mirror)) ([@sisou](https://github.com/sisou)): Mirrors Nimiq blockchain data into a PostgreSQL database
+- [Lightweight History Node](https://github.com/Albermonte/core-rs-albatross-slim) ([Source](https://github.com/Albermonte/core-rs-albatross-slim)) ([@Albermonte](https://github.com/Albermonte)): Stripped-down read-only history node exposing 11 RPC methods for querying accounts, transactions, and blocks
 
 ### Infrastructure
 
