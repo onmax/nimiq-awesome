@@ -254,5 +254,13 @@
     "source": "https://github.com/onmax/nimiq-changelog",
     "description": "Track latest releases and changes across Nimiq ecosystem projects",
     "author": "@onmax"
+  },
+  {
+    "type": "node",
+    "name": "Lightweight History Node",
+    "link": "https://github.com/Albermonte/core-rs-albatross-slim",
+    "source": "https://github.com/Albermonte/core-rs-albatross-slim",
+    "description": "Stripped-down read-only history node exposing 11 RPC methods for querying accounts, transactions, and blocks",
+    "author": "@Albermonte"
   }
 ]
