@@ -108,6 +108,7 @@
 
 - [arpl](https://github.com/sisou/arpl) ([Source](https://github.com/sisou/arpl)) ([@sisou](https://github.com/sisou)): CLI tool for remote management of Nimiq nodes
 - [Postgres Chain Mirror](https://github.com/sisou/bun-drizzle-chain-mirror) ([Source](https://github.com/sisou/bun-drizzle-chain-mirror)) ([@sisou](https://github.com/sisou)): Mirrors Nimiq blockchain data into a PostgreSQL database
+- [Lightweight History Node](https://github.com/Albermonte/core-rs-albatross-slim) ([Source](https://github.com/Albermonte/core-rs-albatross-slim)) ([@Albermonte](https://github.com/Albermonte)): Stripped-down read-only history node exposing 11 RPC methods for querying accounts, transactions, and blocks
 
 ### Infrastructure
 
@@ -158,6 +159,7 @@
 - [Crypto Map](https://map.nimiq.com) ([@nimiq](https://github.com/nimiq)): Discover the best places to buy with crypto. Find crypto-friendly locations worldwide in our map. Start spending your crypto today!
 - [Staking Calculator](https://www.nimiq.com/staking-calculator) ([@nimiq](https://github.com/nimiq)): Empowered by Albatross, Nimiq's unique Proof-of-Stake algorithm, even small amounts of NIM can generate rewards. Plan ahead for staking and calculate your potential rewards with the Nimiq Staking Calculator.
 - [Nimiq FM](https://nimiq.fm) ([@nimiq](https://github.com/nimiq)): The soundtrack of the Nimiq blockchain. Real-time music generated from validator addresses as blocks are produced.
+- [Nim Stalker](https://nimstalker.com) ([@Albermonte](https://github.com/Albermonte)): A blockchain transaction graph visualizer. Search any address and discover the web of transactions.
 
 ### Promotion
 
