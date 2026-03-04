@@ -180,6 +180,15 @@
     "developer": "@nimiq"
   },
   {
+    "name": "Nimiq Chat",
+    "description": "A community platform for the Nimiq ecosystem. Login with your wallet address, create threads and post under your address.",
+    "link": "https://nimiq.chat",
+    "type": "Infrastructure",
+    "logo": "./assets/nimiq-chat.svg",
+    "screenshot": "",
+    "developer": "@Harlski"
+  },
+  {
     "name": "Nim Stalker",
     "description": "A blockchain transaction graph visualizer. Search any address and discover the web of transactions.",
     "link": "https://nimstalker.com",
